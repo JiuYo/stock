@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../libs/mui/mui.min.css" rel="stylesheet" />
+		<link href="../../css/framecore/log/log.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-input-row mui-search btnsearch">
+				<a href="javascript:">
+			    	<input type="search" class="mui-input-clear btnsearch" readonly="readonly" placeholder="搜索">
+			    </a> 
+			</div>
+			
+		</div>
+</body>
+
+</html>
+
+
+<script src="../../../libs/require/require.js" data-main="../../js/main" id="current-page" current-page="framecore/about/about" target-module="framecore/about/about" defer async="true"></script>

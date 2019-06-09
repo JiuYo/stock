@@ -1,0 +1,41 @@
+define(['jquery','common',"model/UserModel"], function ($,common) {　　　　
+  var sqlite = {};
+  //数据库名称  版本  大小
+  var db=openDatabase("hollyriseproblem",'1.0.0','',65536);  
+  var sqlitesql = "create table if not exists tb_d_user(username CHAR(50),userpassword CHAR(50),mark TEXT)";
+  
+  sqlite.init = function (){
+  		sqlite.executeSql(sqlitesql,[]);
+  };
+  
+  /**
+   * 执行sql
+   * @param {Object} sql sql语句
+   * @param {Object} params 参数
+   * @param {Object} success 成功后的回调
+   * @param {Object} error 失败后的回调
+   */
+  sqlite.executeSql = function(sql,params,success,error){
+  	db.transaction(function (tx){
+            tx.executeSql(sql,params,function(tx,res){
+					//alert("创建表成功");
+					if(success)
+					{
+						success(tx,res);
+					}
+                },function(tx,err){
+                    //alert(err.message)
+                    if(error)
+                    {
+                    	error(tx,err);
+                    }
+                });
+        });
+  }
+  
+  
+  
+  //默认加载对象时,执行创建数据库的语句
+  sqlite.init();
+  return sqlite;
+});

@@ -1,0 +1,64 @@
+.message-title{
+	font-size: 14px;
+	color: #000000;
+	width: 75%;
+	word-break: break-all;
+}
+.mui-table-view-cell p{
+	font-size: 12px;
+}
+.relative{
+	position: relative;
+}
+.red-circle{
+	width: 6px;
+    height: 6px;
+    display: inline-block;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    left: 44px;
+}
+body{
+	background-color: #FFFFFF;
+}
+.mui-content{
+	background-color: #FFFFFF;
+	margin-top: 34px;
+}
+.noData{
+	color: #333333;
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 5rem;
+    text-align: center;
+    display: none;
+}
+.mui-slider-handle img{
+	border-radius: 0.4rem;
+}
+#search{
+	margin-bottom: 0;
+}
+.btnsearch{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 222;
+	height: 34px;
+	background-color: #CCCCCC;
+	text-align: center;
+	line-height: 34px;
+}
+.mui-icon{
+	font-size: 16px;
+}
+.mui-icon-search:before{
+	padding-right: 5px;
+	font-size: 18px;
+}
+.mui-table-view-cell{
+	padding: 11px 8px;
+}

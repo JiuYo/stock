@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../libs/mui/mui.min.css" rel="stylesheet" />
+		<link href="../../css/framecore/contacts/contact.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-input-row mui-search">
+				<input id="search" type="search" class="mui-input-clear" placeholder="搜索">
+			</div>
+			
+		</div>
+</body>
+
+</html>
+
+
+<script src="../../../libs/require/require.js" data-main="../../js/main" id="current-page" current-page="framecore/contacts/contact" target-module="framecore/contacts/contact" defer async="true"></script>

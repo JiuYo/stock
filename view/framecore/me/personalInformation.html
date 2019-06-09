@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../libs/mui/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/framecore/me/personalInformation.css"/>
+	</head>
+
+	<body class="mui-fullscreen">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>设置
+				</button>
+				<h1 class="mui-center mui-title">用户信息</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						
+						<ul class="mui-table-view">
+							<!--<li class="mui-table-view-cell">
+								<a id="head">头像
+									<span class="mui-pull-right head">
+									<img class="head-img mui-action-preview" id="head-img1" src=""/>
+								</span>
+								</a>
+							</li>-->
+							<li class="mui-table-view-cell">
+								<a>部门<span class="mui-pull-right" id="department"></span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a>姓名<span class="mui-pull-right" id="userName"></span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a>手机号<span class="mui-pull-right" id="userPhone"></span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a>办公电话<span class="mui-pull-right" id="userTel"></span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a>邮箱<span class="mui-pull-right" id="userEmail"></span></a>
+							</li>
+						</ul>
+						<button type="button" id="btn" class="mui-btn mui-btn-primary mui-btn-block editBtn">编辑</button>
+					</div>
+				</div>
+				<!--页面主内容区结束-->
+			</div>
+	</body>
+	<script src="../../../libs/require/require.js" data-main="../../js/main" id="current-page" current-page="framecore/me/personalInformation" target-module="framecore/me/personalInformation" defer async="true"></script>
+
+</html>

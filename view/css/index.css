@@ -1,0 +1,43 @@
+.title{
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+	
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			.oa-contact-content {
+				width: 100%;
+			}
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			.oa-contact-name, oa-contact-position {
+				float: left;
+			}
+			.mui-bar-tab .mui-tab-item .mui-icon{
+				color: #333333;
+			}
+			.mui-bar .mui-icon{
+				font-size: 20px;
+			}
+			.mui-bar-tab .mui-active .mui-icon{
+				color: #3496fa;
+			}
+			.mui-bar-tab .mui-tab-item.mui-active{
+				color: #3496fa;
+			}

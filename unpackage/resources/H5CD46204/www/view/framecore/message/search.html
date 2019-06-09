@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../libs/mui/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/framecore/message/search.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/problem/problemList.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/fault/faultList.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" >
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">搜索</h1>
+		</header>
+		<div class="mui-content" style="margin-top: 0px;">
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="top: 44px;">
+				<div class="mui-scroll">
+			
+			<div class="mui-shuru">			
+				<input id="searchValue"type="text" class="mui-kuang" placeholder="请输入搜索内容">
+				<span class="mui-icon mui-icon-search"></span>
+				<button id="search">搜索</button>
+			</div>
+			
+	       <div class="search-box mui-segmented-control tabTitle">
+		       	<a id="problemSerach" href="" style="display: none;" class="mui-control-item mui-active">报告单</a>
+		       	<a id="componentSerach" href="" style="display: none;" class="mui-control-item">成品件</a>
+	       		<a id="faultSerach" href="" style="display: none;" class="mui-control-item">包装箱</a>
+	       		<a id="deliverablesDetailSerach" href="" style="display: none;" class="mui-control-item">雷云交付物</a>
+	       </div>
+	       
+
+	       	<div id="item1" class="mui-control-content mui-active">
+	       		<ul class="mui-table-view mui-table-view-chevron appendUL">
+					<!--<li class="mui-table-view-cell mui-media">
+							<img class="mui-media-object mui-pull-left" src="../../images/cbd.jpg">
+							<div class="mui-media-body mui-clearfix">
+								<span class="order-con">报告单号:<span class="order-num">7897986556790</span></span>
+								<span class="right-time mui-pull-right">2018.10.20</span>
+								<p class='order-list'><span>图号:</span><span class="pic-num">DSFGDGDS</span></p>
+								<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
+								<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
+								<p class='order-list'><span>状态:</span><span class="audit-pass">审批通过</span></p>
+							</div>
+					</li>-->
+	       		</ul>
+	       	</div>
+
+	       <div class="noData">
+	       		您目前还没有相关数据！
+	       </div>
+	       </div>
+	       </div>
+	</div>
+	    
+	</body>
+</html>
+
+
+<script src="../../../libs/require/require.js" data-main="../../js/main" id="current-page" current-page="framecore/message/search" target-module="framecore/message/search" defer async="true"></script>

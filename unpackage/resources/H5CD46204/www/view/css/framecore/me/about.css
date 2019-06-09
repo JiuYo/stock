@@ -1,0 +1,70 @@
+/*头部样式*/
+.mui-bar {
+    background-color: #000000;
+}
+.mui-title{
+color: #FFFFFF;
+}
+.mui-bar .mui-icon {
+    color: #FFFFFF;
+    font-size: 18px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+li{
+	list-style: none;
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+}
+.right{
+	float: right;
+	padding-right: 20px;
+}
+.appLogo{
+	width: 80px;
+	margin: 1rem auto;
+}
+.appLogo img{
+	width: 100%;
+}
+ul li{
+	background-color: #FFFFFF;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #CCCCCC;
+	font-size: 14px;
+}
+ul li .tit {
+	padding-left: 15px;
+}
+.service{
+	width: 96%;
+	margin: 2rem auto;
+}
+.serviceTit{
+	border-top: 1px solid #a2a2a2;
+	text-align: center;
+}
+.serviceTit span{
+	padding: 0 20px;
+    background-color: #efeff4;
+    position: relative;
+    top: -13px;
+    height: 26px;
+    display: inline-block;
+    line-height: 26px;
+}
+.Qrcode{
+	width: 120px;
+	margin: 0 auto 1rem;
+}
+.Qrcode img{
+	width: 100%;
+}
+.licenseService{
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+}

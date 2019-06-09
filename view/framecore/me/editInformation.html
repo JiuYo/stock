@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../libs/mui/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/framecore/me/editInformation.css"/>
+		<link rel="stylesheet" href="../../../libs/layer/layer.css" />
+	</head>
+
+	<body class="mui-fullscreen">
+			<div class="mui-navbar-inner mui-bar mui-bar-nav">
+				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
+					<span class="mui-icon mui-icon-left-nav"></span>设置
+				</button>
+				<h1 class="mui-center mui-title">编辑用户信息</h1>
+			</div>
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll  editUserInfor">
+						<ul class="mui-table-view">
+							<!--<li class="mui-table-view-cell">
+								<a id="head">头像
+									<span class="mui-pull-right head">
+									<img class="head-img mui-action-preview" id="head-img1" src=""/>
+								</span>
+								</a>
+							</li>-->
+							<li class="mui-table-view-cell">
+								<a>部门<span class="mui-pull-right" id="department"></span></a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a>
+									姓名
+									<input class="mui-pull-right webkitaaaa" datatype="s2-25" label="姓名" id="realName" value="">
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a>
+									手机号
+									<input class="mui-pull-right webkitaaaa" datatype="{^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$}" label="手机号" id="mobilePhone" value="">
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a>
+									办公电话
+									<input class="mui-pull-right webkitaaaa"  label="办公电话"  id="officePhone" value="">
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a>
+									邮箱
+									<input class="mui-pull-right webkitaaaa" datatype="" label="邮箱" id="email" value="">
+								</a>
+							</li>
+						</ul>
+						
+						
+						<button type="button" id="saveBtn" class="mui-btn mui-btn-primary mui-btn-block saveBtn">保存</button>
+					</div>
+				</div>
+				<!--页面主内容区结束-->
+			</div>
+	</body>
+	<script src="../../../libs/require/require.js" data-main="../../js/main" id="current-page" current-page="framecore/me/editInformation" target-module="framecore/me/editInformation" defer async="true"></script>
+
+</html>

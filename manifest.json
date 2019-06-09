@@ -1,0 +1,746 @@
+{
+    "@platforms" : [ "android", "iPhone", "iPad" ],
+    "id" : "H5CD46204", /*应用的标识，创建应用时自动生成，勿手动修改*/
+    "name" : "stock", /*应用名称，程序桌面图标名称*/
+    "version" : {
+        "name" : "1.0", /*应用版本名称*/
+        "code" : "83"
+    },
+    "description" : "", /*应用描述信息*/
+    "icons" : {
+        "72" : "icon.png"
+    },
+    "launch_path" : "view/launch.html", /*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "developer" : {
+        "name" : "", /*开发者名称*/
+        "email" : "", /*开发者邮箱地址*/
+        "url" : "http://www.dcloud.io"
+    },
+    "permissions" : {
+        "Accelerometer" : {
+            "description" : "访问加速度感应器"
+        },
+        "Cache" : {
+            "description" : "管理应用缓存"
+        },
+        "Console" : {
+            "description" : "跟踪调试输出日志"
+        },
+        "Downloader" : {
+            "description" : "文件下载管理"
+        },
+        "Events" : {
+            "description" : "应用扩展事件"
+        },
+        "File" : {
+            "description" : "访问本地文件系统"
+        },
+        "Gallery" : {
+            "description" : "访问系统相册"
+        },
+        "Invocation" : {
+            "description" : "使用Native.js能力"
+        },
+        "Orientation" : {
+            "description" : "访问方向感应器"
+        },
+        "Proximity" : {
+            "description" : "访问距离感应器"
+        },
+        "Storage" : {
+            "description" : "管理应用本地数据"
+        },
+        "UI" : {},
+        "Uploader" : {
+            "description" : "管理文件上传任务"
+        },
+        "Runtime" : {
+            "description" : "访问运行期环境"
+        },
+        "XMLHttpRequest" : {
+            "description" : "跨域网络访问"
+        },
+        "Zip" : {
+            "description" : "文件压缩与解压缩"
+        },
+        "Webview" : {},
+        "NativeUI" : {},
+        "Navigator" : {},
+        "NativeObj" : {},
+        "Device" : {},
+        "SQLite" : {}
+    },
+    "plus" : {
+        "splashscreen" : {
+            "autoclose" : true, /*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+            "waiting" : true,
+            "delay" : "0"
+        },
+        "runmode" : "liberate", /*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+        "signature" : "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==", /*可选，保留给应用签名，暂不使用*/
+        "distribute" : {
+            "apple" : {
+                "appid" : "", /*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+                "mobileprovision" : "", /*iOS应用打包配置文件*/
+                "password" : "", /*iOS应用打包个人证书导入密码*/
+                "p12" : "", /*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+                "devices" : "universal", /*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+                "frameworks" : []
+            },
+            "google" : {
+                "packagename" : "", /*Android应用包名，如io.dcloud.HelloH5*/
+                "keystore" : "", /*Android应用打包使用的密钥库文件*/
+                "password" : "", /*Android应用打包使用密钥库中证书的密码*/
+                "aliasname" : "", /*Android应用打包使用密钥库中证书的别名*/
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+                    "<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>"
+                ]
+            },
+            "orientation" : [ "portrait-primary", "portrait-secondary" ], /*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+            "icons" : {
+                "ios" : {
+                    "prerendered" : true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+
+                    /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+                    "iphone" : {
+                        "normal" : "unpackage/res/icons/57x57.png", /*iPhone普通屏幕程序图标，分辨率：57x57*/
+                        "retina" : "unpackage/res/icons/114x114.png", /*iPhone高分屏程序图标，分辨率：114x114*/
+
+                        /*iPhone iOS7高分屏程序图标，分辨率：120x120*/
+                        "spotlight-normal" : "unpackage/res/icons/29x29.png", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
+                        "spotlight-retina" : "unpackage/res/icons/58x58.png", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
+
+                        /*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal" : "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png"
+                    },
+                    "ipad" : {
+                        "normal" : "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+                        "retina" : "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+
+                        /*iPad iOS7程序图标，分辨率：76x76*//*iPad iOS7高分屏程序图标，分辨率：152x152*/
+                        "spotlight-normal" : "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+                        "spotlight-retina" : "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+
+                        /*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*//*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*//*iPad设置页面程序图标，分辨率：29x29*/
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png"
+                    },
+                    "appstore" : "unpackage/res/icons/1024x1024.png"
+                },
+                "android" : {
+                    "mdpi" : "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+                    "ldpi" : "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+                    "hdpi" : "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+                    "xhdpi" : "unpackage/res/icons/96x96.png", /*720P高分屏程序图标，分辨率：96x96*/
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                }
+            },
+            "splashscreen" : {
+                "ios" : {
+                    "iphone" : {
+                        "default" : ""
+                    },
+                    "ipad" : {
+                        "portrait" : "", /*iPad竖屏启动图片，分辨率：768x1004*/
+                        "portrait-retina" : "", /*iPad高分屏竖屏图片，分辨率：1536x2008*/
+                        "landscape" : "", /*iPad横屏启动图片，分辨率：1024x748*/
+                        "landscape-retina" : "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+                        "portrait7" : "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+                        "portrait-retina7" : "", /*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+                        "landscape7" : "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+                        "landscape-retina7" : ""
+                    }
+                },
+                "android" : {
+                    "mdpi" : "", /*普通屏启动图片，分辨率：240x282*/
+                    "ldpi" : ""
+                }
+            }
+        }
+    },
+    "dependencies" : {
+        "pages" : {
+            "setting.html" : {
+                "href" : "setting.html",
+                "resources" : [
+                    "js/mui.min.js",
+                    "js/mui.view.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+                    "libs/easymob-webim-sdk/json2.js",
+                    "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+                    "js/feedback.js",
+                    "js/feedback-page.js",
+                    "js/mui.locker.js",
+                    "js/app.js",
+                    "css/mui.min.css",
+                    "fonts/mui.ttf",
+                    "css/feedback-page.css",
+                    "images/iconfont-tianjia.png"
+                ],
+                "refer" : [ "login.html" ],
+                "priority" : 1
+            },
+            "main.html" : {
+                "href" : "main.html",
+                "resources" : [ "css/mui.min.css", "fonts/mui.ttf", "js/mui.min.js", "js/app.js" ],
+                "refer" : [ "setting.html" ],
+                "priority" : 1
+            },
+            "unlock.html" : {
+                "href" : "unlock.html",
+                "resources" : [
+                    "css/mui.min.css",
+                    "fonts/mui.ttf",
+                    "js/mui.min.js",
+                    "js/mui.locker.js",
+                    "js/app.js"
+                ],
+                "refer" : [ "login.html", "main.html" ],
+                "priority" : 0
+            },
+            "forget_password.html" : {
+                "href" : "forget_password.html",
+                "resources" : [
+                    "css/mui.min.css",
+                    "fonts/mui.ttf",
+                    "css/style.css",
+                    "js/mui.min.js",
+                    "js/app.js"
+                ],
+                "priority" : 1
+            },
+            "reg.html" : {
+                "href" : "reg.html",
+                "resources" : [
+                    "css/mui.min.css",
+                    "fonts/mui.ttf",
+                    "css/style.css",
+                    "js/mui.min.js",
+                    "js/app.js"
+                ],
+                "refer" : [ "login.html" ],
+                "priority" : 3
+            },
+            "login.html" : {
+                "href" : "login.html",
+                "resources" : [
+                    "css/mui.min.css",
+                    "fonts/mui.ttf",
+                    "css/style.css",
+                    "js/mui.min.js",
+                    "js/mui.enterfocus.js",
+                    "js/app.js",
+                    "images/qihoo.png",
+                    "images/qq.png",
+                    "images/sinaweibo.png",
+                    "images/weixin.png"
+                ],
+                "refer" : [ "unlock.html", "forget_password.html", "main.html", "reg.html" ],
+                "priority" : 0
+            },
+            "view/index.html" : {
+                "resources" : [
+                    "libs/fonts/mui.ttf",
+                    "libs/require/css.js",
+                    "model/UserModel.js",
+                    "view/js/index.js",
+                    "view/js/main.js",
+                    "view/task.html",
+                    "libs/mui/mui.min.css",
+                    "service/login.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/mui/mui.min.js",
+                    "libs/require/require.js",
+                    "view/js/common.js",
+                    "libs/mui/mui.update.js",
+                    "utils/sysupdate.js",
+                    "view/framecore/message/task.html",
+                    "view/framecore/message/task_sub.html",
+                    "view/framecore/me/me.html"
+                ],
+                "refer" : [
+                    "view/me.html",
+                    "view/app.html",
+                    "view/maillist.html",
+                    "view/framecore/app/applist.html",
+                    "view/framecore/contacts/contact.html",
+                    "view/framecore/contacts/contact_sub.html"
+                ],
+                "priority" : 0
+            },
+            "view/me.html" : {
+                "resources" : [
+                    "libs/require/css.js",
+                    "view/js/me.js",
+                    "model/UserModel.js",
+                    "libs/mui/mui.min.css",
+                    "service/login.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/mui/mui.min.js",
+                    "view/js/common.js",
+                    "view/js/main.js",
+                    "libs/require/require.js",
+                    "view/css/me.css",
+                    "view/images/cbd.jpg"
+                ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "view/app.html" : {
+                "resources" : [
+                    "libs/require/css.js",
+                    "model/UserModel.js",
+                    "libs/mui/mui.min.css",
+                    "service/login.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/mui/mui.min.js",
+                    "view/js/app.js",
+                    "view/js/common.js",
+                    "view/js/maillist.js",
+                    "view/css/app.css",
+                    "view/images/yuantiao.jpg"
+                ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "view/task.html" : {
+                "resources" : [
+                    "libs/require/css.js",
+                    "model/UserModel.js",
+                    "libs/mui/mui.min.css",
+                    "service/login.js",
+                    "view/js/task.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/mui/mui.min.js",
+                    "view/js/common.js",
+                    "view/js/main.js",
+                    "libs/require/require.js",
+                    "view/images/shuijiao.jpg",
+                    "view/images/yuantiao.jpg",
+                    "view/images/cbd.jpg",
+                    "view/outpage/page.html"
+                ],
+                "refer" : [ "view/login.html", "view/feedback/feedback.html" ],
+                "priority" : 0
+            },
+            "view/maillist.html" : {
+                "resources" : [
+                    "libs/require/css.js",
+                    "model/UserModel.js",
+                    "libs/mui/mui.min.css",
+                    "service/login.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "view/js/maillist.js",
+                    "libs/mui/mui.min.js",
+                    "view/js/common.js",
+                    "view/images/shuijiao.jpg",
+                    "view/images/cbd.jpg",
+                    "view/images/yuantiao.jpg",
+                    "view/css/maillist.css"
+                ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "view/login.html" : {
+                "resources" : [
+                    "libs/require/css.js",
+                    "model/UserModel.js",
+                    "view/js/login.js",
+                    "view/js/main.js",
+                    "libs/mui/mui.min.css",
+                    "service/login.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/mui/mui.min.js",
+                    "libs/require/require.js",
+                    "view/js/common.js",
+                    "view/css/login.css",
+                    "libs/fonts/mui.ttf",
+                    "dao/unlineimpl/sqlitetools.js",
+                    "dao/unlineimpl/login.js",
+                    "dao/onlineimpl/login.js",
+                    "dao/onlineimpl/route.js"
+                ],
+                "refer" : [ "view/index.html", "view/framecore/me/agreement.html" ],
+                "priority" : 0
+            },
+            "view/testhtml.html" : {
+                "resources" : [ "libs/mui/mui.min.js", "libs/mui/mui.min.css" ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "view/feedback/feedback.html" : {
+                "resources" : [
+                    "view/js/feedback/feedback.js",
+                    "libs/require/css.js",
+                    "model/UserModel.js",
+                    "view/css/feedback/feedback.css",
+                    "libs/mui/mui.min.css",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/mui/mui.min.js",
+                    "view/js/common.js"
+                ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "view/outpage/page.html" : {
+                "resources" : [
+                    "model/UserModel.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "view/js/common.js",
+                    "libs/require/css.js",
+                    "libs/mui/mui.min.css",
+                    "libs/mui/mui.min.js",
+                    "view/js/outpage/page.js",
+                    "libs/require/require.js"
+                ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "view/framecore/message/task.html" : {
+                "resources" : [
+                    "libs/require/css.js",
+                    "view/js/framecore/message/task.js",
+                    "model/UserModel.js",
+                    "view/framecore/message/task_sub.html",
+                    "service/login.js",
+                    "libs/mui/mui.min.css",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/mui/mui.min.js",
+                    "view/css/framecore/message/task.css",
+                    "view/js/common.js",
+                    "view/framecore/message/search.html",
+                    "libs/fonts/mui.ttf",
+                    "libs/require/require.js"
+                ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "view/framecore/message/task_sub.html" : {
+                "resources" : [
+                    "libs/mui/mui.min.js",
+                    "libs/fonts/mui.ttf",
+                    "libs/mui/mui.min.css",
+                    "view/css/framecore/message/task.css",
+                    "view/images/shuijiao.jpg",
+                    "view/images/yuantiao.jpg",
+                    "view/images/cbd.jpg",
+                    "libs/require/css.js",
+                    "model/UserModel.js",
+                    "service/login.js",
+                    "view/js/framecore/message/task_sub.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "view/js/common.js"
+                ],
+                "refer" : [
+                    "view/framecore/message/search.html",
+                    "view/component/LookDetail.html",
+                    "view/component/comShipDetail.html",
+                    "view/problem/problemDetail.html",
+                    "view/problem/problemDetailProgress.html",
+                    "view/component/componentDetail.html",
+                    "view/fault/fiveBoxList.html",
+                    "view/component/oemOperationDetail.html",
+                    "view/problem/addProblemDetail.html",
+                    "view/fault/shipmentDetail.html",
+                    "view/component/pacReceiveDetail.html",
+                    "view/fault/fiveDifferentList.html",
+                    "view/component/comOperationDetail.html",
+                    "view/component/oemShipDetail.html",
+                    "view/component/problemDetail.html"
+                ],
+                "priority" : 0
+            },
+            "view/framecore/message/search.html" : {
+                "resources" : [
+                    "view/css/framecore/message/search.css",
+                    "view/framecore/message/task.html",
+                    "libs/fonts/mui.ttf",
+                    "libs/require/css.js",
+                    "view/js/framecore/message/task.js",
+                    "model/UserModel.js",
+                    "service/login.js",
+                    "libs/mui/mui.min.css",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/mui/mui.min.js",
+                    "libs/require/require.js",
+                    "view/js/common.js",
+                    "view/js/framecore/message/search.js"
+                ],
+                "refer" : [
+                    "view/component/allComponentDetail.html",
+                    "view/fault/fiveDifferentList.html",
+                    "view/problem/problemDetailProgress.html",
+                    "view/kit/deliverablesDetail.html"
+                ],
+                "priority" : 0
+            },
+            "view/framecore/app/applist.html" : {
+                "resources" : [
+                    "libs/require/css.js",
+                    "view/js/framecore/app/applist.js",
+                    "model/UserModel.js",
+                    "libs/mui/mui.min.css",
+                    "service/login.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "libs/mui/mui.min.js",
+                    "view/js/common.js",
+                    "view/css/framecore/app/applist.css",
+                    "libs/require/require.js",
+                    "view/images/shuijiao.jpg",
+                    "view/images/yuantiao.jpg",
+                    "view/images/cbd.jpg",
+                    "dao/onlineimpl/framecore/app.js",
+                    "service/framecore/app.js",
+                    "dao/onlineimpl/route.js"
+                ],
+                "refer" : [
+                    "view/component/allComponentList.html",
+                    "view/problem/addProblemDetail.html",
+                    "view/problem/approve.html",
+                    "view/problem/problemList.html",
+                    "view/component/componentListByOem.html",
+                    "view/component/componentList.html",
+                    "view/component/componentScheduleList.html",
+                    "view/fault/faultList.html",
+                    "view/problem/toZeroList.html",
+                    "view/kit/deliverablesList.html",
+                    "view/report/showReport.html",
+                    "view/fault/sendBatchList.html"
+                ],
+                "priority" : 0
+            },
+            "view/framecore/contacts/contact.html" : {
+                "resources" : [
+                    "model/UserModel.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "view/js/common.js",
+                    "libs/fonts/mui.ttf",
+                    "libs/require/css.js",
+                    "view/js/framecore/contacts/contact.js",
+                    "service/login.js",
+                    "libs/mui/mui.min.css",
+                    "libs/mui/mui.min.js",
+                    "libs/require/require.js",
+                    "view/framecore/contacts/contact_sub.html"
+                ],
+                "refer" : [],
+                "priority" : 0
+            },
+            "view/framecore/contacts/contact_sub.html" : {
+                "resources" : [
+                    "model/UserModel.js",
+                    "libs/easymob-webim-sdk/jquery-1.11.1.js",
+                    "view/js/common.js",
+                    "libs/require/css.js",
+                    "view/js/framecore/contacts/contact_sub.js",
+                    "service/login.js",
+                    "libs/mui/mui.min.css",
+                    "libs/mui/mui.min.js",
+                    "libs/require/require.js",
+                    "libs/fonts/mui.ttf",
+                    "view/images/yuantiao.jpg"
+                ],
+                "refer" : [ "view/framecore/contacts/lxrDetail.html" ],
+                "priority" : 0
+            },
+            "view/launch.html" : {
+                "resources" : [],
+                "refer" : [ "view/index.html", "view/login.html" ],
+                "priority" : 0
+            },
+            "view/framecore/me/me.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/framecore/me/restPassword.html",
+                    "view/framecore/me/personalInformation.html",
+                    "view/framecore/me/about.html"
+                ],
+                "priority" : 0
+            },
+            "view/problem/addProblemDetail.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/problem/choosePicNum.html",
+                    "view/problem/choosePieceNum.html",
+                    "view/problem/chooseFlights.html",
+                    "view/problem/submitLxr.html",
+                    "view/problem/problemDetailProgress.html"
+                ],
+                "priority" : 0
+            },
+            "view/framecore/me/personalInformation.html" : {
+                "resources" : [],
+                "refer" : [ "view/framecore/me/editInformation.html" ],
+                "priority" : 0
+            },
+            "view/problem/problemList.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/problem/problemDetailProgress.html",
+                    "view/problem/screen.html",
+                    "view/problem/search.html",
+                    "view/problem/addProblemDetail.html"
+                ],
+                "priority" : 0
+            },
+            "view/component/componentScheduleList.html" : {
+                "resources" : [],
+                "refer" : [ "view/component/componentSchedule.html" ],
+                "priority" : 0
+            },
+            "view/component/componentList.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/component/comShipDetail.html",
+                    "view/component/componentDetail.html",
+                    "view/component/pacReceiveDetail.html",
+                    "view/component/problemDetail.html",
+                    "view/component/comOperationDetail.html",
+                    "view/component/LookDetail.html"
+                ],
+                "priority" : 0
+            },
+            "view/component/componentListByOem.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/component/oemShipDetail.html",
+                    "view/component/oemOperationDetail.html",
+                    "view/component/LookDetail.html"
+                ],
+                "priority" : 0
+            },
+            "view/problem/approve.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/problem/search.html",
+                    "view/problem/problemDetail.html",
+                    "view/problem/problemDetailProgress.html",
+                    "view/problem/screen.html"
+                ],
+                "priority" : 0
+            },
+            "view/problem/problemDetailProgress.html" : {
+                "resources" : [],
+                "refer" : [ "view/problem/addProblemDetail.html" ],
+                "priority" : 0
+            },
+            "view/problem/problemDetail.html" : {
+                "resources" : [],
+                "refer" : [ "view/problem/submitLxr.html" ],
+                "priority" : 0
+            },
+            "view/fault/faultList.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/fault/fiveBoxList.html",
+                    "view/fault/fiveDifferentList.html",
+                    "view/fault/shipmentDetail.html"
+                ],
+                "priority" : 0
+            },
+            "view/fault/fiveBoxList.html" : {
+                "resources" : [],
+                "refer" : [ "view/fault/fiveReciveDetail.html" ],
+                "priority" : 0
+            },
+            "view/fault/fiveDifferentList.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/fault/screenDifferentList.html",
+                    "view/fault/fiveReciveDetail.html"
+                ],
+                "priority" : 0
+            },
+            "view/fault/screenDifferentList.html" : {
+                "resources" : [],
+                "refer" : [ "view/fault/fiveReciveDetail.html" ],
+                "priority" : 0
+            },
+            "view/component/allComponentList.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/component/allComponentDetail.html",
+                    "view/component/search.html",
+                    "view/component/screen.html"
+                ],
+                "priority" : 0
+            },
+            "view/problem/toZeroList.html" : {
+                "resources" : [],
+                "refer" : [
+                    "view/problem/problemDetail.html",
+                    "view/problem/search.html",
+                    "view/problem/screen.html"
+                ],
+                "priority" : 0
+            },
+            "view/kit/deliverablesList.html" : {
+                "resources" : [],
+                "refer" : [ "view/kit/deliverablesDetail.html", "view/kit/firstSearchList.html" ],
+                "priority" : 0
+            },
+            "view/kit/deliverablesDetail.html" : {
+                "resources" : [],
+                "refer" : [ "view/kit/deliverablesDetailList.html" ],
+                "priority" : 0
+            },
+            "view/framecore/me/about.html" : {
+                "resources" : [],
+                "refer" : [ "view/framecore/me/agreement.html" ],
+                "priority" : 0
+            },
+            "view/fault/sendBatchList.html" : {
+                "resources" : [],
+                "refer" : [ "view/fault/boxSecondList.html" ],
+                "priority" : 0
+            }
+        },
+        "idle" : {
+            "resources" : [
+                "js/service.js",
+                "libs/easymob-webim-sdk/quickstart.md",
+                "images/user-photo.png",
+                "README.md"
+            ]
+        }
+    },
+    "unpackage" : [ "README.md" ]
+}

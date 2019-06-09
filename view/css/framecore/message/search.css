@@ -1,0 +1,119 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 14px;
+}
+a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+body,.mui-content{
+	background-color: #FFFFFF;
+}
+.search-title{
+	width: 100%;
+	height: 4.8rem;
+	background-color: #333333;
+	position: relative;
+}
+.search-title .search-fh{
+	position: absolute;
+	left: 1rem;
+	bottom: 1rem;
+}
+.search-title .search-xs{
+	position: absolute;
+	left: 44%;
+	bottom: 1rem;
+	font-size: 1.5rem;
+	color: #FFFFFF;
+}
+
+
+.mui-shuru{
+	position: relative;	
+	padding: 0.8rem 0 0 0.8rem;
+	width: 100%;
+	
+}
+.mui-shuru .mui-kuang{
+	width: 80%;
+	padding-left: 35px;
+	margin-bottom: 0;
+}
+.mui-shuru span{
+	position: absolute;
+	top: 1.3rem;
+	left: 1.2rem;
+	}
+.mui-shuru button{
+	color: #739ecd;
+	    width: 18%;
+    	height: 2.8rem;
+}	
+	
+	
+	
+input::-webkit-input-placeholder {
+        /* placeholder颜色  */
+      color: #aab2bd;   
+         /* placeholder位置  */
+         text-align: center;
+     }
+     
+.search-box a{
+	color: #000000;
+}
+.mui-bar{
+	background-color: #000000;
+}
+.mui-title{
+	color: #FFFFFF;
+}
+.mui-bar .mui-icon {
+    color: #FFFFFF;
+    font-size: 18px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.mui-segmented-control{
+	border: none;
+}
+.mui-segmented-control .mui-control-item{
+	display: inline-block;
+	width: auto;
+	border-left: 0px;
+	color: #000000;
+	padding: 0;
+	height: 30px;
+	margin-left: 0.6rem;
+	margin-right: 0.6rem;
+}
+.mui-segmented-control .mui-control-item.mui-active{
+	background-color: rgba(0,0,0,0);
+	color: #000000;
+	border-bottom: 1px solid #007aff;
+}
+.mui-table-view-chevron .mui-table-view-cell{
+	padding-right: 10px;
+}
+.noData{
+	padding: 4rem 0;
+    text-align: center;
+    font-size: 16px;
+    display: none;
+    color: #888888;
+}
+
+
+
+
+
+
+
+
+
+

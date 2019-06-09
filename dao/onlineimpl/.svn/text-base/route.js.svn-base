@@ -1,0 +1,177 @@
+define([], function () {　　　　
+  var route = {};
+  //接口地址
+  route.tokens="tokens";//登录
+  route.outTokens="tokens/";//销毁token
+  /*获取应用*/
+  route.getFuncByUserForApp="linkAndFunWebController/getFuncByUserForApp";
+  /*联系人*/
+  route.getLinkManByUser="linkAndFunWebController/getLinkManByUser";
+  route.getLinkManByUserData="linkAndFunWebController/getLinkManByUserData";
+  /*代办消息列表*/
+ 	//获取消息列表
+	route.getUserMessageList="messageController/getUserMessageList";
+	//获取当前未读条数
+	route.getUnreadCount="messageController/getUnreadCount";
+	//消息已读的接口
+	route.getMessageRead="messageController/getMessageRead";
+	//消息删除的接口
+	route.delMessage="messageController/delMessage";
+  /*问题报告单*/
+ //查询我的代办
+  route.getProblemByCurrentId="problemWebController/getProblemByCurrentId";
+  //查询我的已办
+  route.getProblemHaveDoneList="problemWebController/getProblemHaveDoneList";
+  //查询我发起的
+  route.getProblemByCreateID="problemWebController/getProblemByCreateID";
+  //根据ID获取详细
+  route.getProblemById="problemWebController/getProblemById";
+  //根据状态查询问题报告单
+  route.getProblemByProstats="problemWebController/getProblemByProstats";
+  //保存修改问题报告单
+  route.saveProblem="problemWebController/saveProblem";
+  //保存修改草稿状态的问题报告单
+  route.saveProblemForStatusZero="problemWebController/saveProblemForStatusZero";
+  //在巴工艺提交
+  route.confirmProcess="problemWebController/confirmProcess";
+  //顺序审批
+  route.processComplete = "problemWebController/processComplete";
+  //CMO组员依旧选择CMO组员审批
+  route.processCompleteCmozyToCmozy="problemWebController/processCompleteCmozyToCmozy";
+  //退回给提交人
+  route.rejectToSubmitter = "problemWebController/rejectToSubmitter";
+  //生产管理部发布
+  route.SCGLProcessComplete = "problemWebController/SCGLProcessComplete";
+  //委派
+  route.doEntrust = "problemWebController/doEntrust";
+  //获取委托人的集合
+  route.getEntrustUserList = "problemWebController/getEntrustUserList";
+  //问题报告单驳回的提交
+  route.resubmit = "problemWebController/resubmit";
+  //删除问题报告单
+ 	route.del="problemWebController/del";
+ 	//获取问题报告单的筛选条件
+  route.getProblemScreens="problemWebController/getProblemScreens";
+  //选人的接口（提交）
+  route.getApproverUserList = "problemWebController/getApproverUserList";
+	/**问题报告单进度*/
+	route.problemLogList="problemWebController/problemLogList";
+	/*成品件审核进度*/
+	route.operationLogList="componentWebController/operationLogList";
+	/*获取当前关于页面*/
+	route.getCurrentAbout="aboutController/getCurrentAbout";
+	//获取返修单筛选条件
+	route.getComponentScreens="componentWebController/getComponentScreens";
+	
+	/*成品返修*/
+	/*全部成品列表*/
+	route.allComponentList = "componentWebController/allComponentList";
+	/*成品件各角色代办列表的前端*/
+	route.waitForRole = "componentWebController/waitForRole";
+	/*成品件各角色代办列表的前端（OEM）*/
+	route.waitForOem = "componentWebController/waitForOem";
+	/*获取成品见详情*/
+	route.getComponentDetail="componentWebController/getComponentDetail";
+	/*成品件流程设计-操作接口*/
+	//在巴成品的确认按钮                          (pac待确认列表) pac_com
+	route.reworkOrderConfirmation = "componentWebController/reworkOrderConfirmation";
+	//成品采购部的发运接口                                 (com待发运列表) com_oem
+	route.comShippingComponent = "componentWebController/comShippingComponent" ;
+	//成品供应商的接收接口                                     (oem待接收列表) oem_receive
+	route.oemConfirmComponent = "componentWebController/oemConfirmComponent" ;
+	//成品供应商的置为争议件接口
+	route.modifyDisputeComponent = "componentWebController/modifyDisputeComponent" ;
+	//成品供应商的发运接口                                  (oem待发运列表) oem_send 
+	route.oemShippingComponent = "componentWebController/oemShippingComponent" ;
+	//成品采购部的争议处理的接口                        (争议列表) dispute
+	route.disputeDealComponent = "componentWebController/disputeDealComponent" ;
+	 //成品采购部的置为问题件的接口
+	route.modifyProblemComponent = "componentWebController/modifyProblemComponent";
+	 //成品采购部和产品研制部的问题处理的接口    (问题列表) problem
+	route.problemDealComponent = "componentWebController/problemDealComponent";
+	//在巴成品的接收的接口
+	route.overFlowComponent = "componentWebController/overFlowComponent" ;
+	//50库发运    pac_108
+	route.fiveShipmentRecevied = "componentWebController/fiveShipmentRecevied" ;
+	//108接收  pac_com
+	route.eightShipmentRecevied = "componentWebController/eightShipmentRecevied" ;
+	//获取COM角色下的所有部门
+	route.getDepartByRoleCode="componentWebController/getDepartByRoleCode"
+	
+	
+	/*上传文件*/
+	//转BASE64 后上传
+	route.uploadFile ="uploadImage/oneImageUploadForBase64"; 
+	//放至from表单中
+	route.UploadForFromData = "uploadImage/UploadForFromData"; 
+	
+	/*获取底层数据库以及数据字典的接口*/
+	//获取图号列表
+	route.getMaterialList = "bottomSqlWebController/getMaterialList";
+	//根据图号获取件号列表
+	route.getpieceList = "bottomSqlWebController/getpieceList";
+	//根据图号型号牌号件号列表
+	route.getMarqueList = "bottomSqlWebController/getMarqueList";
+	//获取批次
+	route.getBatchList = "bottomSqlWebController/getBatchList";
+	//获取架次
+	route.getShipList = "bottomSqlWebController/getShipList";
+	//根据字典分组的code获取内容的集合
+	route.getTypeListByCode = "systemController/getTypeListByCode";
+	//根据字典分组内容的code获取详细
+	route.getTypeByCode = "systemController/getTypeByCode";
+	
+	
+	/*用户信息的修改*/
+	//根据token获取当前用户信息
+	route.getUserByToken = "linkAndFunWebController/getUserByToken";
+	//修改用户信息
+	route.UpdateByUserData = "linkAndFunWebController/UpdateByUserData";
+	//修改密码
+	route.updatePasswordByUserApp = "linkAndFunWebController/updatePasswordByUserApp";
+	
+	/**获取所有的OEM厂商数据*/
+	route.selectOEMName="materialController/selectOEMName"
+	
+	
+	//获取关于页面的接口
+	route.getCurrentAbout="aboutController/getCurrentAbout";
+
+	/*包装箱、交付物管理*/
+	//一级列表 
+	route.getPackingBOXList="faultWebController/getPackingBOXList";
+	//交付物列表（二级列表）
+	route.getDeliverablesList="faultWebController/getDeliverablesList";
+	//差异清单列表（二级列表）
+	route.getDifferencefaultList="faultWebController/getDifferencefaultList";
+	//查看包装箱详情  
+	route.getPackingBoxDetails="faultWebController/getPackingBoxDetails";
+	//查看交付物详情   
+	route.getDeliverablesDetails="faultWebController/getDeliverablesDetails";
+	//查看差异清单详情   
+	route.getDifferencefaultDetails="faultWebController/getDifferencefaultDetails";
+	//置为差异件    
+	route.setDifferencefault="faultWebController/setDifferencefault";
+	//差异还原
+	route.restoreDifferencefault="faultWebController/restoreDifferencefault";
+	//全部接收  setAllReceivedFault
+	route.setAllReceivedFault="faultWebController/setAllReceivedFault";
+	
+	//头像上传
+	route.UpdatePortraitByTokenUser="linkAndFunWebController/UpdatePortraitByTokenUser";
+  //获取流程
+  route.getProcess="componentWebController/getProcess";
+  //问题报告单归零列表
+  route.getProblemByZeroOperation = "problemWebController/getProblemByZeroOperation";
+  //问题报告单归零
+  route.setProblemZeroOperation = "problemWebController/setProblemZeroOperation";
+  
+  
+  //雷云交付物列表
+  route.deliverablesList = "deliverables7303/deliverablesList";
+  //交付物二级列表
+  route.deliverablesDetailList = "deliverables7303/deliverablesDetailList";
+  //发运批次列表
+  route.appShipBatchList = "shipBatchController/appShipBatchList";
+  return route;
+});

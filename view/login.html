@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" >
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../libs/mui/mui.min.css" rel="stylesheet" />
+		<link href="css/login.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/problem/layer.css"/>
+		<style type="text/css">
+			.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{
+				opacity: 1;
+			}
+			.readBefore{
+				width: 22px;
+			    height: 22px;
+			    border-radius: 50%; 
+			    border: 1px solid #aaa;
+			    display: inline-block;
+			    vertical-align: middle;
+			    margin-top: -6px;
+			}
+			#readXy{
+				display: none;
+			}
+			#agreement span{
+				text-decoration: underline;
+			}
+            #login{
+            	opacity: 0.8;
+            }
+           .imgContainer{
+           		width: 100%;
+           	}
+           	.imgContainer img{
+           		width: 100%;
+           	}
+           	/*需要修改的背景色*/
+           	/*登录按钮背景色*/
+           	.mui-btn-blue, .mui-btn-primary, input[type=submit]{
+				color: #fff;
+           		background-color: #78a755;
+           		border: 1px solid #78a755;
+           	}
+           	/*记住密码背景色*/
+           	.mui-switch.mui-active{
+           		background: #78a755;
+           		border-color: #78a755;
+				opacity: 0.8;
+           	}
+           	.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{
+           		color: #78a755;
+           	}
+           	.readBefore{
+           		background: #FFFFFF;
+           	}
+			.mui-btn-blue.mui-active:enabled, .mui-btn-blue:enabled:active, .mui-btn-primary.mui-active:enabled, .mui-btn-primary:enabled:active, input[type=submit].mui-active:enabled, input[type=submit]:enabled:active{
+				color: #fff;
+				border: 1px solid #33650e;
+				background-color: #33650e;
+			}
+			
+           	
+		</style>
+	</head>
+	<body>
+		<!--<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">登录</h1>
+		</header>-->
+		<div class = "bgimg">
+		<div class="mui-content">
+			<div class="login-container" style="margin-top: 40px;">
+				<form id='login-form'>
+					<div class="loginInput">
+						<div class="inputParent" style="position: relative;">
+							<span class="userTit">账号</span>
+							<input id='account' type="text" class="mui-input-clear mui-input">
+						</div>
+						<div class="inputParent inputSecond" style="position: relative;">
+							<span class="userTit">密码</span>
+							<input id='password' type="password" class="mui-input-clear mui-input">
+						</div>
+						
+						<form class="mui-input-group">
+						<div class="remember">
+							<!-- <span class="fl  mui-checkbox">
+								<div class="readBefore"></div>
+								<input name="checkbox" id="readXy" value="" type="checkbox" disabled="">
+								<a id="agreement">我已阅读<span>《安全协议》</span></a>
+							</span> -->
+							<span class="fr">
+								<span class="color-aqua">记住密码</span>
+								<div id="autoLogin" class="mui-switch mui-switch-mini">
+									<div class="mui-switch-handle"></div>
+								</div>
+							</span>
+							
+						</div>
+					</form>
+					</div>
+					</form>
+					<div class="mui-content-padded">
+						<button id='login' type="button" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+					</div>
+			</div>
+		</div>
+		<div style="display: none;" id="layui-m-layer0" class="layui-m-layer layui-m-layer2" index="0"><div class="layui-m-layershade"></div><div class="layui-m-layermain"><div class="layui-m-layersection"><div class="layui-m-layerchild  layui-m-anim-scale"><div class="layui-m-layercont"><i></i><i class="layui-m-layerload"></i><i></i><p>登录中...</p></div></div></div></div></div>	
+	</div>
+	</body>
+	<script src="../libs/require/require.js" data-main="js/main" id="current-page" current-page ="login" target-module="login" defer async="true" ></script>
+</html>

@@ -1,0 +1,183 @@
+define(['jquery','common','dao/onlineimpl/route',"model/UserModel"], function ($,common,route) {　　　　
+	var bottomSqlDao = {};
+	
+	/**
+   * 查询图号  getMaterialList
+   * @param {Object} params
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  bottomSqlDao.getMaterialList = function (params,successcallback,errorcallback) {	
+		var url = route.getMaterialList;
+		//获取token
+		common.encryptAjax(url,params,function(data){
+			if(successcallback!=null)
+			{
+				successcallback(data);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  }
+  
+  /**
+   	* 获取OEM厂商数据
+   	* @param {Object} params
+   	* @param {Object} successcallback
+   	* @param {Object} errorcallback
+   	*/
+  bottomSqlDao.selectOEMName = function (params,successcallback,errorcallback) {	
+		var url = route.selectOEMName;
+		//获取token
+		common.encryptAjax(url,params,function(data){
+			if(successcallback!=null)
+			{
+				successcallback(data);
+			}
+		},function(xhr, type, errorThrown){
+			alert("errorThrown"+errorThrown);
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  }
+  
+  /**
+   * 查询件号  getpieceList
+   * @param {Object} No :图号No
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  bottomSqlDao.getpieceList = function (params,successcallback,errorcallback) {	
+		var url = route.getpieceList;
+		//获取token
+		common.encryptAjax(url,params,function(data){
+			if(successcallback!=null)
+			{
+				successcallback(data);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  }
+  
+  /**
+   * 查询型号牌号  getMarqueList
+   * @param {Object} No :图号No
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  bottomSqlDao.getMarqueList = function (params,successcallback,errorcallback) {	
+		var url = route.getMarqueList;
+		//获取token
+		common.encryptAjax(url,params,function(data){
+			if(successcallback!=null)
+			{
+				successcallback(data);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  }
+  
+  /**
+   * 根据数据字典的分组code获取分组的内容  getTypeListByCode
+   * @param {Object} code :字典表的分组code
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  bottomSqlDao.getTypeListByCode = function (params,successcallback,errorcallback) {	
+		var url = route.getTypeListByCode;
+		//获取token
+		common.encryptAjax(url,params,function(data){
+			if(successcallback!=null)
+			{
+				successcallback(data);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  }
+  
+  
+  /**
+   * 根据数据字典分组的内容的code获取详细   getTypeByCode
+   * @param {Object} code :字典表的分组内容的code
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  bottomSqlDao.getTypeByCode = function (params,successcallback,errorcallback) {	
+		var url = route.getTypeListByCode;
+		//获取token
+		common.encryptAjax(url,params,function(data){
+			if(successcallback!=null)
+			{
+				successcallback(data);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  }
+  
+  /**
+   * 获取批次
+   * @param {Object} code :字典表的分组内容的code
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  bottomSqlDao.getBatchList = function (params,successcallback,errorcallback) {	
+		var url = route.getBatchList;
+		//获取token
+		common.encryptAjax(url,params,function(data){
+			if(successcallback!=null)
+			{
+				successcallback(data);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  }
+  
+   /**
+   * 获取架次
+   * @param {Object} 
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  bottomSqlDao.getShipList = function (params,successcallback,errorcallback) {	
+		var url = route.getShipList;
+		//获取token
+		common.encryptAjax(url,params,function(data){
+			if(successcallback!=null)
+			{
+				successcallback(data);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  }
+	
+	return bottomSqlDao;
+});

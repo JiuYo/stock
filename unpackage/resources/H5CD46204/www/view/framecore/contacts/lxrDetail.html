@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../libs/mui/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/framecore/contacts/lxrDetails.css"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">返回</a>
+			<h1 class="mui-title">联系人详情</h1>
+		</header>
+		
+		<div class="lxrdetail-name">
+			<span class="userName"></span>
+			<img src="" alt="" class="lxrdetail-head userPic"/>
+			<p class="userGroup"></p>			
+		</div>
+		
+		<div class="lxrdetail-xinxi">
+				个人信息：
+		</div>
+		<div class="lxrdetail-box">
+			<ul>
+				<li>
+					<h5>手机号：</h5>
+					<div class="lxrdetail-dbox">
+						<a class="lxrdetail-left userPhone"></a>
+						<a class="mui-icon mui-icon-phone lxrdetail-right" href="tel:176113801196"></a>
+					</div>
+				</li>
+				<li>
+					<h5>办公电话：</h5>
+					<div class="lxrdetail-dbox">
+						<a class="lxrdetail-left userTel"></a>
+						<a class="mui-icon mui-icon-phone lxrdetail-right"></a>
+					</div>
+				</li>
+				<li>
+					<h5>邮箱：</h5>
+					<div class="lxrdetail-dbox">
+						<span class="lxrdetail-left userEmail"></span>
+						<span class="mui-icon mui-icon-email lxrdetail-right"></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script src="../../../libs/require/require.js" data-main="../../js/main" id="current-page" current-page="framecore/contacts/lxrDetail" target-module="framecore/contacts/lxrDetail" defer async="true"></script>
+	</body>
+
+</html>

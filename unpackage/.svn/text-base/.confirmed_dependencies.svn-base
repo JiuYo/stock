@@ -1,0 +1,376 @@
+{
+	"view/index.html": {
+		"resources": [
+			"libs/fonts/mui.ttf",
+			"libs/require/css.js",
+			"model/UserModel.js",
+			"view/js/index.js",
+			"view/js/main.js",
+			"view/task.html",
+			"libs/mui/mui.min.css",
+			"service/login.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/mui/mui.min.js",
+			"libs/require/require.js",
+			"view/js/common.js",
+			"libs/mui/mui.update.js",
+			"utils/sysupdate.js",
+			"view/framecore/message/task.html",
+			"view/framecore/message/task_sub.html"
+		],
+		"refer": [
+			"view/me.html",
+			"view/app.html",
+			"view/task.html",
+			"view/maillist.html",
+			"view/framecore/message/task.html",
+			"view/framecore/app/applist.html",
+			"view/framecore/contacts/contact.html",
+			"view/framecore/message/task_sub.html",
+			"view/framecore/contacts/contact_sub.html",
+			"view/framecore/me/me.html"
+		]
+	},
+	"view/me.html": {
+		"resources": [
+			"libs/require/css.js",
+			"view/js/me.js",
+			"model/UserModel.js",
+			"libs/mui/mui.min.css",
+			"service/login.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/mui/mui.min.js",
+			"view/js/common.js",
+			"view/js/main.js",
+			"libs/require/require.js",
+			"view/css/me.css",
+			"view/images/cbd.jpg"
+		],
+		"refer": []
+	},
+	"view/app.html": {
+		"resources": [
+			"libs/require/css.js",
+			"model/UserModel.js",
+			"libs/mui/mui.min.css",
+			"service/login.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/mui/mui.min.js",
+			"view/js/app.js",
+			"view/js/common.js",
+			"view/js/maillist.js",
+			"view/css/app.css",
+			"view/images/yuantiao.jpg"
+		],
+		"refer": []
+	},
+	"view/task.html": {
+		"resources": [
+			"libs/require/css.js",
+			"model/UserModel.js",
+			"libs/mui/mui.min.css",
+			"service/login.js",
+			"view/js/task.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/mui/mui.min.js",
+			"view/js/common.js",
+			"view/js/main.js",
+			"libs/require/require.js",
+			"view/images/shuijiao.jpg",
+			"view/images/yuantiao.jpg",
+			"view/images/cbd.jpg",
+			"view/outpage/page.html"
+		],
+		"refer": [
+			"view/login.html",
+			"view/feedback/feedback.html",
+			"view/outpage/page.html"
+		]
+	},
+	"view/maillist.html": {
+		"resources": [
+			"libs/require/css.js",
+			"model/UserModel.js",
+			"libs/mui/mui.min.css",
+			"service/login.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"view/js/maillist.js",
+			"libs/mui/mui.min.js",
+			"view/js/common.js",
+			"view/images/shuijiao.jpg",
+			"view/images/cbd.jpg",
+			"view/images/yuantiao.jpg",
+			"view/css/maillist.css"
+		],
+		"refer": []
+	},
+	"view/login.html": {
+		"resources": [
+			"libs/require/css.js",
+			"model/UserModel.js",
+			"view/js/login.js",
+			"view/js/main.js",
+			"libs/mui/mui.min.css",
+			"service/login.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/mui/mui.min.js",
+			"libs/require/require.js",
+			"view/js/common.js",
+			"view/css/login.css",
+			"libs/fonts/mui.ttf",
+			"dao/unlineimpl/sqlitetools.js",
+			"dao/unlineimpl/login.js",
+			"dao/onlineimpl/login.js",
+			"dao/onlineimpl/route.js"
+		],
+		"refer": [
+			"view/index.html"
+		]
+	},
+	"view/testhtml.html": {
+		"resources": [
+			"libs/mui/mui.min.js",
+			"libs/mui/mui.min.css"
+		],
+		"refer": []
+	},
+	"view/feedback/feedback.html": {
+		"resources": [
+			"view/js/feedback/feedback.js",
+			"libs/require/css.js",
+			"model/UserModel.js",
+			"view/css/feedback/feedback.css",
+			"libs/mui/mui.min.css",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/mui/mui.min.js",
+			"view/js/common.js"
+		]
+	},
+	"view/outpage/page.html": {
+		"resources": [
+			"model/UserModel.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"view/js/common.js",
+			"libs/require/css.js",
+			"libs/mui/mui.min.css",
+			"libs/mui/mui.min.js",
+			"view/js/outpage/page.js",
+			"libs/require/require.js"
+		]
+	},
+	"view/framecore/message/task.html": {
+		"resources": [
+			"libs/require/css.js",
+			"view/js/framecore/message/task.js",
+			"model/UserModel.js",
+			"view/framecore/message/task_sub.html",
+			"service/login.js",
+			"libs/mui/mui.min.css",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/mui/mui.min.js",
+			"view/css/framecore/message/task.css",
+			"view/js/common.js",
+			"view/framecore/message/search.html",
+			"libs/fonts/mui.ttf",
+			"libs/require/require.js"
+		],
+		"refer": [
+			"view/framecore/message/task_sub.html",
+			"view/framecore/message/search.html"
+		]
+	},
+	"view/framecore/message/task_sub.html": {
+		"resources": [
+			"libs/mui/mui.min.js",
+			"libs/fonts/mui.ttf",
+			"libs/mui/mui.min.css",
+			"view/css/framecore/message/task.css",
+			"view/images/shuijiao.jpg",
+			"view/images/yuantiao.jpg",
+			"view/images/cbd.jpg",
+			"libs/require/css.js",
+			"model/UserModel.js",
+			"service/login.js",
+			"view/js/framecore/message/task_sub.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"view/js/common.js",
+			"dao/onlineimpl/framecore/message.js"
+		],
+		"refer": [
+			"view/framecore/message/search.html",
+			"view/component/LookDetail.html",
+			"view/component/comShipDetail.html",
+			"view/problem/problemDetail.html",
+			"view/problem/problemDetailProgress.html"
+		]
+	},
+	"view/framecore/message/search.html": {
+		"resources": [
+			"view/css/framecore/message/search.css",
+			"view/framecore/message/task.html",
+			"libs/fonts/mui.ttf",
+			"libs/require/css.js",
+			"view/js/framecore/message/task.js",
+			"model/UserModel.js",
+			"service/login.js",
+			"libs/mui/mui.min.css",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/mui/mui.min.js",
+			"libs/require/require.js",
+			"view/js/common.js",
+			"view/js/framecore/message/search.js"
+		],
+		"refer": [
+			"view/framecore/message/task.html",
+			"view/component/allComponentDetail.html"
+		]
+	},
+	"view/framecore/app/applist.html": {
+		"resources": [
+			"libs/require/css.js",
+			"view/js/framecore/app/applist.js",
+			"model/UserModel.js",
+			"libs/mui/mui.min.css",
+			"service/login.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"libs/mui/mui.min.js",
+			"view/js/common.js",
+			"view/css/framecore/app/applist.css",
+			"libs/require/require.js",
+			"view/images/shuijiao.jpg",
+			"view/images/yuantiao.jpg",
+			"view/images/cbd.jpg",
+			"dao/onlineimpl/framecore/app.js",
+			"service/framecore/app.js",
+			"dao/onlineimpl/route.js"
+		],
+		"refer": [
+			"view/component/disputePoolList.html",
+			"view/problem/problemList.html",
+			"view/component/confirmComponentList.html",
+			"view/component/componentReceiveList.html",
+			"view/component/questionPoolList.html",
+			"view/component/allComponentList.html",
+			"view/problem/addProblemDetail.html",
+			"view/problem/approve.html",
+			"view/component/componentListByOem.html",
+			"view/component/componentList.html",
+			"view/component/componentScheduleList.html"
+		]
+	},
+	"view/framecore/contacts/contact.html": {
+		"resources": [
+			"model/UserModel.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"view/js/common.js",
+			"libs/fonts/mui.ttf",
+			"libs/require/css.js",
+			"view/js/framecore/contacts/contact.js",
+			"service/login.js",
+			"libs/mui/mui.min.css",
+			"libs/mui/mui.min.js",
+			"libs/require/require.js",
+			"view/framecore/contacts/contact_sub.html"
+		],
+		"refer": [
+			"view/framecore/contacts/contact_sub.html"
+		]
+	},
+	"view/framecore/contacts/contact_sub.html": {
+		"resources": [
+			"model/UserModel.js",
+			"libs/easymob-webim-sdk/jquery-1.11.1.js",
+			"view/js/common.js",
+			"libs/require/css.js",
+			"view/js/framecore/contacts/contact_sub.js",
+			"service/login.js",
+			"libs/mui/mui.min.css",
+			"libs/mui/mui.min.js",
+			"libs/require/require.js",
+			"libs/fonts/mui.ttf",
+			"view/images/yuantiao.jpg"
+		],
+		"refer": [
+			"view/framecore/contacts/lxrDetail.html"
+		]
+	},
+	"view/component/disputePoolList.html": {
+		"refer": [
+			"view/component/screen.html"
+		]
+	},
+	"view/problem/problemList.html": {
+		"refer": [
+			"view/problem/screen.html",
+			"view/problem/problemDetailProgress.html",
+			"view/problem/search.html",
+			"view/problem/addProblemDetail.html"
+		]
+	},
+	"view/component/confirmComponentList.html": {
+		"refer": [
+			"view/component/screen.html"
+		]
+	},
+	"view/component/questionPoolList.html": {
+		"refer": [
+			"view/component/screen.html"
+		]
+	},
+	"view/component/screen.html": {
+		"refer": [
+			"view/component/questionPoolList.html"
+		]
+	},
+	"view/launch.html": {
+		"refer": [
+			"view/index.html",
+			"view/login.html"
+		]
+	},
+	"view/framecore/me/me.html": {
+		"refer": [
+			"view/framecore/me/restPassword.html",
+			"view/framecore/me/personalInformation.html",
+			"view/framecore/me/about.html"
+		]
+	},
+	"view/problem/addProblemDetail.html": {
+		"refer": [
+			"view/problem/choosePicNum.html",
+			"view/problem/choosePieceNum.html",
+			"view/problem/chooseFlights.html",
+			"view/problem/submitLxr.html"
+		]
+	},
+	"view/framecore/me/personalInformation.html": {
+		"refer": [
+			"view/framecore/me/editInformation.html"
+		]
+	},
+	"view/component/componentScheduleList.html": {
+		"refer": [
+			"view/component/componentSchedule.html"
+		]
+	},
+	"view/component/componentList.html": {
+		"refer": [
+			"view/component/comShipDetail.html"
+		]
+	},
+	"view/component/componentListByOem.html": {
+		"refer": [
+			"view/component/oemShipDetail.html"
+		]
+	},
+	"view/problem/approve.html": {
+		"refer": [
+			"view/problem/search.html"
+		]
+	},
+	"view/problem/problemDetailProgress.html": {
+		"refer": [
+			"view/problem/addProblemDetail.html"
+		]
+	}
+}

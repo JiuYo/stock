@@ -1,0 +1,88 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 14px;
+}
+a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.me-top{
+	width: 100%;
+	height: 5rem;
+	background-color: #333333;
+	text-align: center;
+	line-height: 5rem;
+}
+.me-top .me-wo{
+	font-size: 2rem;
+	color: #FFFFFF;
+}
+
+.me-list1{
+	width: 100%;
+	background-color: #FFFFFF;
+	height: 6rem;
+	position: relative;
+	margin-top: 2rem;
+}
+.me-list1 a{
+	width: 100%;
+	display: block;
+}
+.me-list1 img{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	left: 8%;
+	top: 10%;
+}
+
+.me-left{
+	float: left;
+}
+
+.me-center{
+	
+	position: absolute;
+	left: 30%;
+}
+.me-center p:nth-child(1){
+	margin-top: 15%;
+}
+.me-right{
+	float: right;
+	position: absolute;
+	right: 1%;
+	top: 5%;
+}
+
+.mui-table-view-cell{
+	margin-top: 7%;
+	
+}
+
+.mui-table-view-cell{
+	background-color: #FFFFFF;
+	height: 48px;
+}
+
+.me-list .mui-table-view{
+	background-color: #F2f2f2;
+}
+
+.mui-table-view-cell a span{
+	margin-left: 5%;
+}
+
+.me-list .mui-table-view .mui-table-view-cell .me-tuichu{
+	margin-left: 40%;
+}
+
+.me-list li:nth-child(5){
+	margin-top: 12%;
+}
