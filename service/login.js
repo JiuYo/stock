@@ -25,6 +25,18 @@ define(['jquery','common',"model/UserModel"], function ($,common) {　　　　
           });
     });
   };
+	//系统注册接口
+	 loginService.enrolLogin = function (usermode,successcallback,errorcallback) {
+		var dao = common.getDao("login");
+		require([dao], function (dao) {
+	        dao.enrolLogin(usermode,function(usermode){
+	        	successcallback(usermode);
+	        },function(errorinfo){
+	        	errorcallback(errorinfo);
+	        });
+	  });
+	};
+	
   
   return loginService;
 });

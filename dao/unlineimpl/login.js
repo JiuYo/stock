@@ -14,5 +14,16 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
   	})
   };
   
+  // 系统注册
+  loginDao.login = function (usermode,successcallback,errorcallback) {
+  	//查询数据
+  	sqlitetools.insertTable('t_s_base_user',usermode,function(tx, rs){
+  		console.log("注册成功！！！");
+		common.setUserInfo(usermode);
+  	},function(tx,err){
+  		alert("获取数据失败!"+err.message);
+  	})
+  };
+  
   return loginDao;
 });

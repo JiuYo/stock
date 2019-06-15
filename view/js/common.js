@@ -62,9 +62,17 @@ define(['jquery', 'model/UserModel', 'utils/systemutil'], function($, usermodel,
 	 */
 	common.setUserInfo = function(usermodel) {
 		//用户名
-		plus.storage.setItem("userName", usermodel.userName);
+		if(systemutil.isNotBlank(usermodel.userName)){
+			plus.storage.setItem("userName", usermodel.userName);
+		}else{
+			plus.storage.setItem("userName", usermodel.username);
+		}
 		//用户密码
-		plus.storage.setItem("userPwd", usermodel.userPwd);
+		if(systemutil.isNotBlank(usermodel.userPwd)){
+			plus.storage.setItem("userPwd", usermodel.userPwd);
+		}else{
+			plus.storage.setItem("userPwd", usermodel.password);
+		}
 		//是否在线  true为在线模式，false为离线模式
 		plus.storage.setItem("isOnLine", usermodel.isOnLine);
 

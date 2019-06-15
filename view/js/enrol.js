@@ -43,7 +43,9 @@ define(['jquery',"mui","common","service/enrol","model/UserModel",'utils/systemu
 				var password = $("#password").val();
 				var nickname = $("#nickname").val();
 				var umodel = {};
-				
+				umodel.username=username;
+				umodel.password=password;
+				umodel.realname=nickname;
 		  	slogin.enrolLogin(umodel,function(){
 		  		//成功处理
 		  		$('#layui-m-layer0').hide();
