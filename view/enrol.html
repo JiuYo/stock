@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>注册页</title>
 		<link rel="stylesheet" type="text/css" href="../libs/mui/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
     <style type="text/css">
         .mui-content{margin-top: 12px;}
         .mui-btn{width: 95%;}
@@ -36,54 +37,6 @@
             <button type="button" class="mui-btn mui-btn-blue" id="reg">注册</button>
         </div>
     </div>
-
-<script src="../js/mui.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        mui.init();
-        mui.plusReady(function(){
-            var username=document.getElementById("username");
-            var password=document.getElementById("password");
-            var nickname=document.getElementById("nickname");
-            var reg=document.getElementById("reg");
-            reg.addEventListener('tap',function(){
-                if(username.value.length==0){
-                    plus.ui.toast("用户名不能为空");
-                    return;
-                }
-                if(password.value.length==0){
-                    plus.ui.toast("密码不能为空");
-                    return;
-                }
-                if(nickname.value.length==0){
-                    plus.ui.toast("昵称不能为空");
-                    return;
-                }
-                mui.ajax('http://192.168.0.7/newssystem/index.php/Home/User/reg',{
-                    data:{
-                        username:username.value,
-                        password:password.value,
-                        nickname:nickname.value
-                    },
-                    dataType:'json',//数据格式类型
-                    type:'POST',//http请求类型
-                    timeout:10000,//超时设置
-                    success:function(data){
-                        //处理成功返回的数据
-                        //{'result':1,'data':"注册成功"}
-                        if(data.result==1){
-                            plus.ui.toast(data.data);
-                            mui.back();
-                        }else{
-                            plus.ui.toast(data.data);
-                        }
-                    },
-                    error:function(){
-
-                    }
-                })
-            })
-        })
-    </script>
 </body>
 </html>
 <script src="../libs/require/require.js" data-main="js/main" id="current-page" current-page ="enrol" target-module="enrol" defer async="true" ></script>

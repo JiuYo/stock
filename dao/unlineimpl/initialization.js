@@ -15,8 +15,6 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools"], function ($,common,sqli
 	}
 	
 	initialization.insertsql = function(){
-		insertDatasqlArr.push("INSERT INTO t_s_base_user(`ID`,  `password`, `realname`,  `status`,  `username`) VALUES ('2c95808b697ee4b101697f0fd6c60031',  '123456', '张三',  null,'zs')");
-		insertDatasqlArr.push("INSERT INTO t_s_inventory(`ID`,  `qty`, `name`,  `outqty`,  `outtime`) VALUES ('2c95808b697ee4b101697f0fd6c60031',  '99', '物料1',  11,datetime('now'))");
 		
 	}
 	

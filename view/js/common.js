@@ -45,6 +45,7 @@ define(['jquery', 'model/UserModel', 'utils/systemutil'], function($, usermodel,
 	}
 
 	common.getDao = function(daoname) {
+		return "dao/unlineimpl/"+daoname;
 		//获取当前在线还是离线,可以是数据库或者是localstory内
 		if(!(plus.networkinfo.getCurrentType() == plus.networkinfo.CONNECTION_NONE)) {
 			return "dao/onlineimpl/" + daoname;
