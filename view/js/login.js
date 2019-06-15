@@ -94,7 +94,15 @@ define(['jquery',"mui","common","service/login","model/UserModel",'utils/systemu
 	    }
   	})
   })
-  
+  $('#enrol').on('tap',function(){
+	  mui.openWindow({
+		  url:"enrol.html",
+			id:'framecore/me/agreement.html',
+		  show: {
+          autoShow: true //页面loaded事件发生后自动显示，默认为true
+	    }
+	  })
+  })
   
   //安全协议跳转
   //预加载相关操作//
@@ -173,6 +181,7 @@ define(['jquery',"mui","common","service/login","model/UserModel",'utils/systemu
   // }
   };
   	
+	
   
   return login;
 });
