@@ -19,7 +19,7 @@ define(['jquery','common',"model/UserModel",'utils/systemutil'], function ($,com
 	 }
 	 console.log(deleteSql);
   	db.transaction(function (tx){
-            tx.executeSql(deleteSql,params,function(tx,res){
+            tx.executeSql(deleteSql,null,function(tx,res){
   					if(success)
   					{
   						success(tx,res);
@@ -38,21 +38,22 @@ define(['jquery','common',"model/UserModel",'utils/systemutil'], function ($,com
   	 var insertSql = "INSERT INTO " + tableName;
 	 var valueSql = "";
   	 if(null != params){
-  		 insertSql +=  " ( ";
-		 valueSql +=  " ( ";
+  		 insertSql +=  " ( id,";
+			var id = sqlite.uuidGenerator();
+		 valueSql +=  " ('"+id+"',";
   		 for(var index in params){
   			 if(systemutil.isNotBlank(params[index])){
-  				 insertSql += " "+index +", ";
-				 valueSql += " '"+params[index]+"', ";
+  				 insertSql += " "+index +",";
+				 valueSql += " '"+params[index]+"',";
   			 }
   		 }
-		 insertSql = insertSql.substring(0,insertSql.length-1));
-		 valueSql = valueSql.substring(0,valueSql.length-1));
-		 insertSql +=  " ） VALUES "+valueSql;
+		 insertSql = insertSql.substring(0,insertSql.length-1);
+		 valueSql = valueSql.substring(0,valueSql.length-1);
+		 insertSql +=  " ) VALUES "+valueSql+")";
   	 }
   	 console.log(insertSql);
   	db.transaction(function (tx){
-            tx.executeSql(insertSql,params,function(tx,res){
+            tx.executeSql(insertSql,null,function(tx,res){
   					if(success)
   					{
   						success(tx,res);
@@ -91,8 +92,14 @@ define(['jquery','common',"model/UserModel",'utils/systemutil'], function ($,com
         });
   }
   
-  
-  
+  sqlite.uuidGenerator = function() {
+	var originStr = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+		originChar = '0123456789abcdef',
+		len = originChar.length;
+	return originStr.replace(/x/g, function(match) {
+		return originChar.charAt(Math.floor(Math.random() * len))
+	})
+}
   //默认加载对象时,执行创建数据库的语句
 
   return sqlite;

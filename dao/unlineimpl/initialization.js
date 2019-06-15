@@ -28,9 +28,7 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools"], function ($,common,sqli
 				console.log(err.message)
 			})
 		}
-		if(isflag){
-			initialization.deleteTabledata();
-		}
+	
 	}
 	initialization.insertData = function(){
 		for(var i=0;i<insertDatasqlArr.length;i++){
