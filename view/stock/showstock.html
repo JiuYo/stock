@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../libs/mui/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/problem/problemList.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		<style type="text/css">
+			[v-cloak]{
+				display:none;
+			}
+			.mui-bar-nav~.mui-content{
+				margin-top: 41px;
+			}
+			.mui-table-view-chevron .mui-table-view-cell{
+				padding-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+	
+			
+			
+			<!--<div class="mui-content">-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+		<div>
+			<div id="item1" class="mui-control-content mui-active">
+				<ul class="mui-table-view mui-table-view-chevron appendUL">
+					<div class="search-container mui-table-view-cell gray-border">
+					    <div class="mui-pull-left mui-text-center search-link">
+					    	<span class="mui-icon mui-icon-search"></span>
+					    	<span class="icon-tit">搜索</span>
+					    </div>
+					    <div class="mui-pull-right mui-text-center filter-link">
+					    	<span class="mui-icon-extra mui-icon-extra-filter"></span>
+					    	<span class="icon-tit">筛选</span>
+					    </div>
+					</div>
+					
+					<li class="mui-table-view-cell mui-media liVue" v-cloak v-for="item in items" :data-id="item.id" :data-version="item.version">
+						<div class="mui-slider-right mui-disabled">
+							 <a class="mui-btn mui-btn-blue">确认归零</a>
+						</div>
+						<div class="mui-slider-handle mui-table">
+							<a class="mui-navigate-right">
+								<img class="mui-media-object mui-pull-left" :src="item.imgSrc">
+							<div class="mui-media-body mui-clearfix">
+								<p class="order-list mui-clearfix">
+									<span class="order-con mui-ellipsis mui-pull-left">报告单号:<span class="order-num">{{item.problemListNum}}</span></span>
+									<span class="right-time mui-pull-right">{{item.createTime}}</span>
+								</p>
+								<p class="order-list mui-ellipsis"><span>图号:</span><span class="pic-num">{{item.drawingNo}}</span></p>
+								<p class="order-list mui-ellipsis"><span>型号/牌号:</span><span class="pic-num">{{item.marque}}</span></p>
+								<p class="order-list mui-ellipsis"><span>数量:</span><span class="apply-reason">{{item.qty}}{{item.unitName}}</span></p>
+								<p class="order-list mui-ellipsis"><span>问题分类:</span><span class="apply-reason">{{item.reasonName}}</span></p>
+								<p class="order-list mui-ellipsis"><span>状态:</span><span class="audit-pass">{{item.proStatusName}}</span></p>
+							</div>
+							</a>
+						</div>
+					 </li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</div>
+	</body>
+
+</html>

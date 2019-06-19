@@ -3,7 +3,7 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
   
   loginDao.login = function (usermode,successcallback,errorcallback) {
   	//查询数据
-  	var sql = "select * from t_s_base_user where username = '"+usermode.userName+"' and password = '"+usermode.userPwd+"'";
+  	var sql = "select * from tab_user where username = '"+usermode.userName+"' and password = '"+usermode.userPwd+"'";
   	sqlitetools.executeSql(sql,[],function(tx, rs){
 		console.log(rs.rows.length);
 		if(rs.rows.length == 1){
@@ -19,7 +19,7 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
   // 系统注册
   loginDao.enrolLogin = function (usermode,successcallback,errorcallback) {
   	//查询数据
-  	sqlitetools.insertTable('t_s_base_user',usermode,function(tx, rs){
+  	sqlitetools.insertTable('tab_user',usermode,function(tx, rs){
   		console.log("注册成功！！！");
 		common.setUserInfo(usermode);
 		successcallback(usermode);

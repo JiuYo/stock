@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../libs/mui/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/problem/problemList.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/problem/layer.css"/>
+	</head>
+	<body>
+		<!--提示搜索信息-->
+		<div class="hide mui-ellipsis">
+			您的查询条件是：
+			<span class="reciveMess"></span>
+		</div>
+				<!--下拉刷新容器-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<!--数据列表-->
+				<ul class="mui-table-view mui-table-view-chevron appendUL">
+					<div class="search-container mui-table-view-cell gray-border">
+					    <div class="mui-pull-left mui-text-center search-link">
+					    	<span class="mui-icon mui-icon-search"></span>
+					    	<span class="icon-tit">搜索</span>
+					    </div>
+					    <div class="mui-pull-right mui-text-center filter-link">
+					    	<span class="mui-icon-extra mui-icon-extra-filter"></span>
+					    	<span class="icon-tit">筛选</span>
+					    </div>
+					</div>
+				<!--<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+						<div class="mui-media-body mui-clearfix">
+							<p class="order-list mui-clearfix">
+								<span class="order-con mui-ellipsis mui-pull-left" style="width: 70%;">报告单号:<span class="order-num">7897986556790789798655679078979865567907897986556790789798655679078979865567907897986556790</span></span>
+								<span class="right-time mui-pull-right">2018.10.20</span>
+							</p>
+							<p class='order-list mui-ellipsis'><span>图号:</span><span class="pic-num">DSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDS</span></p>
+							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
+							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
+							<p class='order-list'><span>状态:</span><span class="audit-pass">审批通过</span></p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+						<div class="mui-media-body mui-clearfix">
+							<span class="order-con mui-ellipsis">报告单号:<span class="order-num">7897986556790</span></span>
+							<span class="right-time mui-pull-right">2018.10.20</span>
+							<p class='order-list'><span>图号:</span><span class="pic-num">DSFGDGDS</span></p>
+							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
+							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
+							<p class='order-list'><span>状态:</span><span class="audit-loading">审批中</span></p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+						<div class="mui-media-body mui-clearfix">
+							<span class="order-con">报告单号:<span class="order-num">7897986556790</span></span>
+							<span class="right-time mui-pull-right">2018.10.20</span>
+							<p class='order-list'><span>图号:</span><span class="pic-num">DSFGDGDS</span></p>
+							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
+							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
+							<p class='order-list'><span>状态:</span><span class="audit-return">审批驳回</span></p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+						<div class="mui-media-body mui-clearfix">
+							<span class="order-con">报告单号:<span class="order-num">7897986556790</span></span>
+							<span class="right-time mui-pull-right">2018.10.20</span>
+							<p class='order-list'><span>图号:</span><span class="pic-num">DSFGDGDS</span></p>
+							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
+							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
+							<p class='order-list'><span>状态:</span><span class="audit-pass">审批通过</span></p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a class="mui-navigate-right">
+						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
+						<div class="mui-media-body mui-clearfix">
+							<span class="order-con">报告单号:<span class="order-num">7897986556790</span></span>
+							<span class="right-time mui-pull-right">2018.10.20</span>
+							<p class='order-list'><span>图号:</span><span class="pic-num">DSFGDGDS</span></p>
+							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
+							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
+							<p class='order-list'><span>状态:</span><span class="audit-pass">审批通过</span></p>
+						</div>
+					</a>
+				</li>-->
+			</ul>
+			</div>
+		</div> 
+	</body>
+
+</html>
+<div style="display: none;" id="defaultSubmit" class="layui-m-layer layui-m-layer2" index="0">
+		<div class="layui-m-layershade"></div>
+		<div class="layui-m-layermain">
+			<div class="layui-m-layersection">
+				<div class="layui-m-layerchild  layui-m-anim-scale">
+					<div class="layui-m-layercont">
+						<i></i>
+						<i class="layui-m-layerload"></i>
+						<i></i>
+						<p>正在处理...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>

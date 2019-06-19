@@ -35,8 +35,8 @@ define(['jquery',"mui","common","service/login","model/UserModel","utils/sysupda
 		mui.currentWebview.addEventListener("show",function () {
 			plus.navigator.setStatusBarBackground("#000000");
 			plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
-	    var pages = ["framecore/message/task_sub.html","framecore/contacts/contact_sub.html","framecore/me/me.html"];
-	    var pagenames =  ["编辑货品","盘点明细","个人中心"];
+	    var pages = ["stock/showstock.html","stock/stocklist.html","framecore/me/me.html"];
+	    var pagenames =  ["商品展示","盘点明细","个人中心"];
 	    var arr = document.getElementsByClassName("mui-tab-item")
 	    var styles = {
 	        top:"45px",
@@ -72,7 +72,6 @@ define(['jquery',"mui","common","service/login","model/UserModel","utils/sysupda
 				$('.xiaoxiButton').addClass('mui-active')
 			 	$('.wodeButton').removeClass('mui-active')
 			 	$('.applistButton').removeClass('mui-active')
-			 	$('.lxrButton').removeClass('mui-active')
 		})
 	});
 
