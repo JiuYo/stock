@@ -18,6 +18,9 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools"], function ($,common,sqli
 							"`cdk` VARCHAR ( 255 ) DEFAULT NULL, "+
 							"`realname` VARCHAR ( 50 ) DEFAULT NULL, "+
 							"`status` INT ( 6 ) DEFAULT NULL, "+
+							"`imei` VARCHAR ( 255 ) DEFAULT NULL, "+
+							"`count` INT ( 11 ) DEFAULT NULL, "+
+							"`imeix` VARCHAR ( 255 ) DEFAULT NULL, "+
 							"`isDelete` INT ( 1 ) DEFAULT NULL, "+
 							"`create_time` INT ( 6 ) DEFAULT NULL "+
 							");");

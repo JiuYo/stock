@@ -77,6 +77,16 @@ define(['jquery',"mui","common","service/login","model/UserModel","utils/sysupda
 
   };
 	
+	$("#addstock").on('tap',function(){
+		// 跳转到新增页面
+		mui.openWindow({
+			url:"stock/addStock.html",
+			id:'stock/addStock.html',
+			  show: {
+	        autoShow: true //页面loaded事件发生后自动显示，默认为true
+		    }
+		})
+	})
 	
   return index;
 });

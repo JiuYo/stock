@@ -1,0 +1,114 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+html{
+	font-size: 14px;
+}
+html,body{
+	background-color: #ffffff;
+}
+.mui-content{
+	background-color: #FFFFFF;
+}
+a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.search-title{
+	width: 100%;
+	height: 4.8rem;
+	background-color: #333333;
+	position: relative;
+}
+.search-title .search-fh{
+	position: absolute;
+	left: 1rem;
+	bottom: 1rem;
+}
+.search-title .search-xs{
+	position: absolute;
+	left: 44%;
+	bottom: 1rem;
+	font-size: 1.5rem;
+	color: #FFFFFF;
+}
+.mui-shuru{
+	position: relative;	
+	width: 100%;
+	padding: 0.6rem 0 0.6rem 0;
+	background-color: #f4f4f4;
+}
+.mui-shuru .mui-kuang{
+	width: 77%;
+    padding-left: 35px;
+    margin-left: 3%;
+    font-size: 14px;
+}
+.mui-shuru span {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+}
+.mui-shuru button{
+	color: #739ecd;
+    width: 15%;
+    height: 2.8rem;
+    font-size: 14px;
+    padding: 0;
+    border: 1px solid #cccccc;
+}	
+	
+	
+	
+input::-webkit-input-placeholder {
+        /* placeholder颜色  */
+      color: #aab2bd;   
+         /* placeholder位置  */
+         text-align: center;
+     }
+     
+.search-box a{
+	color: #000000;
+}
+.mui-shuru input{
+	margin-bottom: 0;
+}
+.search-container{
+	width: 90%;
+	margin: 0 auto;
+	min-height: 200px;
+	background-color: #ffffff;
+}
+.search-tit{
+	border-bottom: 1px solid #CCCCCC;
+	height: 30px;
+}
+.search-tit p{
+	padding: 0;
+	color: #CCCCCC;
+	position: relative;
+	top: 18px;
+	width: 140px;
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 2rem;
+}
+.search-icon li{
+	float: left;
+	width: 25%;
+	text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.search-icon li span{
+	color: #CCCCCC;
+}
+.search-icon{
+	margin-top: 2rem;
+	overflow: hidden;
+}

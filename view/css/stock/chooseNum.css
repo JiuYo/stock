@@ -1,0 +1,36 @@
+.mui-bar{
+	background-color: #000000;
+}
+.mui-title{
+	color: #FFFFFF;
+}
+
+.mui-bar .mui-icon{
+	color: #FFFFFF;
+	font-size: 18px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+#pullrefresh{
+	top: 79px;
+}
+.mui-table-view-cell.mui-checkbox.mui-left, .mui-table-view-cell.mui-radio.mui-left{
+	padding-left: 42px;
+}
+.mui-search input[type=search]{
+	margin-bottom: 0;
+}
+.mui-search:before{
+	top: 70%;
+}
+.ts-message{
+	text-align: center;
+	padding-top: 6rem;
+}
+.PicNum .mui-table-view-cell{
+	border-bottom: 1px solid #c8c7cc;
+	box-sizing: border-box;
+}
+.PicNum .mui-table-view-cell:after{
+	height: 0px;
+}
