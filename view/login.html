@@ -115,7 +115,6 @@
 											<div class="mui-switch-handle"></div>
 										</div>
 									</span>
-									<button id='imei' type="button" class="mui-btn mui-btn-block mui-btn-primary" onclick="aimei();">注册母码</button>
 								</div>
 							</form>
 						</div>
@@ -142,14 +141,7 @@
 	<script src="../libs/require/require.js" data-main="js/main" id="current-page" current-page="login" target-module="login"
 	 defer async="true"></script>
 	<script type="text/javascript">
-		
-		
-		//获得唯一UUID
-		function aimei() {
-			var uuida = plus.device.uuid;
-			alert("uuid: " + uuida);
-		}
-		
+
 		//uuid 的加密解密方法调用
 		function addval(){
 			var a = mui("#uuid")[0].value;
