@@ -62,7 +62,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 			$('#defaultSubmit').hide();
 			mui.toast('货品保存成功！');
 			var view = plus.webview.currentWebview();
-			view.opener('reload');
+			view.opener().reload(true);
 			view.close();
 		},function(errorinfo){
 			$('#defaultSubmit').hide();
@@ -76,8 +76,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		var countVal = $("#count").val();//获取商品进货数量
 		if(systemutil.isNotBlank(totalVal) && systemutil.isNotBlank(countVal) ){
 			var priceVal = totalVal/countVal;
-			priceVal = (priceVal.toFixed(2)) ;
-			$("#price").val(priceVal);
+			$("#price").val(priceVal.toFixed(2));
 		}
 	}
  
