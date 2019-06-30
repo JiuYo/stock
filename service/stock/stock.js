@@ -58,6 +58,24 @@ define(['jquery','common',"model/UserModel"], function ($,common) {　　
           });
     });
   };
+  
+  // 删除货品  gdelStockById
+    stockService.delStockById = function (params,successcallback,errorcallback) {
+	var dao = common.getDao("stock/stock");
+	require([dao], function (dao) {
+	  dao.delStockById(params,function(data){
+			if(successcallback != null)
+			{
+					successcallback(data);
+			}
+	  },function(errorInfo){
+			if(errorcallback != null)
+			{
+					errorcallback(errorInfo);
+			}
+	  });
+	});
+	};
 	
 	return stockService;
 })
