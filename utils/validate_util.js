@@ -16,7 +16,7 @@
  *
  *
  */
-define(['jquery', 'common','mui','utils/systemutil'], function($, common,mui,systemutil) {　　　　
+define(['jquery', 'common','mui','utils/systemutil','layer/layer'], function($, common,mui,systemutil,layer) {　　　　
 	var validate_util = {};
 	var number_reg = /^[0-9]+([.]{1}[0-9]+){0,1}$/;//数值正则
 	var int_reg = /^[0-9]+([.]{1}[0-9]+){0,1}$/;//正整数正则
@@ -173,6 +173,24 @@ define(['jquery', 'common','mui','utils/systemutil'], function($, common,mui,sys
         error_info.result = result;
         error_info.result_msg = result_msg;
         return error_info;
+	}
+	
+	
+	//页面的必填校验
+	validate_util.validateData = function(className){
+		var resultDatatype = validate_util.validate(className);
+		if(!resultDatatype.result) {
+			resultDatatype = JSON.stringify(resultDatatype.result_msg);
+			resultDatatype = resultDatatype.substring(1, resultDatatype.length - 1);
+			layer.open({
+				content: resultDatatype,
+				skin: 'msg',
+				time: 2
+			})
+			return false;
+		}else{
+			return true;
+		}
 	}
             
             

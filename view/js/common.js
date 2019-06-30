@@ -16,7 +16,7 @@ define(['jquery', 'model/UserModel', 'utils/systemutil'], function($, usermodel,
 	
 	//版本号
 	common.getVersion = function() {
-		return "V1.2.0.R"
+		return "V1.0.0.R"
 	}
 	
 	//版本号

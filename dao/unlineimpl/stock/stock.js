@@ -13,6 +13,18 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
   		errorcallback("获取数据失败!"+err.message);
   	})
   };
+	
+	// 新增货品
+	stockDao.saveStock = function (usermode,successcallback,errorcallback) {
+		//查询数据
+		sqlitetools.insertTable('tab_inventory',usermode,function(tx, rs){
+			console.log("增加成功！！！");
+		common.setUserInfo(usermode);
+		successcallback(usermode);
+		},function(tx,err){
+			errorcallback("获取数据失败!"+err.message);
+		})
+	};
   
   return stockDao;
 });

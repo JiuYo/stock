@@ -1,0 +1,27 @@
+define(['jquery','common','dao/onlineimpl/route',"model/UserModel"], function ($,common,route) {　　　　
+	var currentAbout = {};
+
+  /**
+   * 获取关于页面的信息
+   * @param {Object} No :图号No
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  currentAbout.getCurrentAbout = function (params,successcallback,errorcallback) {	
+		var url = route.getCurrentAbout;
+		//获取token
+		common.encryptAjax(url,params,function(data){
+			if(successcallback!=null)
+			{
+				successcallback(data);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  }
+  	
+	return currentAbout;
+});
