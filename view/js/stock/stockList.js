@@ -95,9 +95,11 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 				createTime: systemutil.parsestr(item.create_time),
 				total: systemutil.parsestr(item.total),
 				count: systemutil.parsestr(item.count),
-				stock1: systemutil.parsestr(item.stock),
-				sale1: systemutil.parsestr(item.sale),
+				stocka: systemutil.parsestr(item.stock),
+				saleb: systemutil.parsestr(item.sale),
 				unit: systemutil.parsestr(item.unit ),
+				unita: systemutil.parsestr(item.unit ),
+				unitb: systemutil.parsestr(item.unit ),
 				price: systemutil.parsestr(item.price),
 				date: systemutil.parsestr(item.date)
 			});

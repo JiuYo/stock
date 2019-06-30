@@ -4,6 +4,7 @@ define(function(){
     var UserModel = {};
 	//用户名
 	UserModel.userName = "";
+	UserModel.realname="";
 	//用户密码
 	UserModel.userPwd = "";
 	

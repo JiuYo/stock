@@ -67,6 +67,11 @@ define(['jquery', 'model/UserModel', 'utils/systemutil'], function($, usermodel,
 		}else{
 			plus.storage.setItem("userName", usermodel.username);
 		}
+		if(systemutil.isNotBlank(usermodel.nickname)){
+			plus.storage.setItem("realname", usermodel.nickname);
+		}else{
+			plus.storage.setItem("realname", usermodel.realname);
+		}
 		//用户密码
 		if(systemutil.isNotBlank(usermodel.userPwd)){
 			plus.storage.setItem("userPwd", usermodel.userPwd);
@@ -95,6 +100,7 @@ define(['jquery', 'model/UserModel', 'utils/systemutil'], function($, usermodel,
 	common.getUserInfo = function() {
 		usermodel.userName = plus.storage.getItem("userName");
 		usermodel.userPwd = plus.storage.getItem("userPwd");
+		usermodel.realname = plus.storage.getItem("realname");
 		usermodel.isOnLine = plus.storage.getItem("isOnLine");
 		usermodel.remember = plus.storage.getItem("remember");
 		usermodel.isAutoLogin = plus.storage.getItem("isAutoLogin");

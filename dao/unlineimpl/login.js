@@ -7,7 +7,8 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
   	sqlitetools.executeSql(sql,[],function(tx, rs){
 		console.log(rs.rows.length);
 		if(rs.rows.length == 1){
-			successcallback(usermode);
+			common.setUserInfo(rs.rows[0]);
+			successcallback(rs.rows[0]);
 		}else{
 			errorcallback('用户名密码错误！');
 		}

@@ -129,56 +129,36 @@ define(['jquery',"mui","common","service/login","service/system/userInfor","mode
 	
 	//获取用户信息
 	me.getUserByToken = function(){
-		var params = {};
-		
-		userInforService.getUserByToken(params,function(data){
-			console.log(JSON.stringify(data.obj));
-			var userData = data.obj;
-			if(data.obj.portrait){
-				var serverPath = common.getServerurl();
-				var headImg = serverPath + data.obj.portrait;
-				console.log(headImg);
-				$('#head-img').attr('src',headImg);
-			}else{
-				$('#head-img').attr('src','../../images/cbd.jpg');
-			}
-//					$("#titleName").text(userData.realName);
-//					$("#titleName").find("#titleUserName").text("账号 : "+userData.userName);
-						$("#titleName").html(userData.realName+"<div class='mui-ellipsis' id='titleUserName'>"+"账号 : "+userData.userName+"</div>")
-		},function(errorInfo){
-			if(typeof(errorInfo) == Object)
-				mui.alert("失败!"+errorInfo.msg);
-			else
-				mui.alert("失败!"+errorInfo);
-		})
+		umodel = common.getUserInfo();
+		$("#titleName").html(umodel.realname+"<div class='mui-ellipsis' id='titleUserName'>"+"账号 : "+umodel.userName+"</div>")
 	}
 	
 	//修改头像
-	$("#head-img").on("tap",function(){
-		var params = {};
-		loadImage.isconfirme(function(imagedata){
-			console.log(imagedata);
-			if(imagedata){
-				params.portrait = imagedata;
-				userInforService.UpdatePortraitByTokenUser(params,function(data){
-					console.log(JSON.stringify(data.obj));
-					var serverPath = common.getServerurl();
-					var imgageUrl = serverPath+imagedata;
-					console.log(imgageUrl);
-					$("#head-img").attr('src',imgageUrl);
-	
-				},function(errorInfo){
-					if(typeof(errorInfo) == Object)
-						mui.alert("失败!"+errorInfo.msg);
-					else
-						mui.alert("失败!"+errorInfo);
-				})
-				
-				
-				
-			}
-		});
-	})
+	// $("#head-img").on("tap",function(){
+	// 	var params = {};
+	// 	loadImage.isconfirme(function(imagedata){
+	// 		console.log(imagedata);
+	// 		if(imagedata){
+	// 			params.portrait = imagedata;
+	// 			userInforService.UpdatePortraitByTokenUser(params,function(data){
+	// 				console.log(JSON.stringify(data.obj));
+	// 				var serverPath = common.getServerurl();
+	// 				var imgageUrl = serverPath+imagedata;
+	// 				console.log(imgageUrl);
+	// 				$("#head-img").attr('src',imgageUrl);
+	// 
+	// 			},function(errorInfo){
+	// 				if(typeof(errorInfo) == Object)
+	// 					mui.alert("失败!"+errorInfo.msg);
+	// 				else
+	// 					mui.alert("失败!"+errorInfo);
+	// 			})
+	// 			
+	// 			
+	// 			
+	// 		}
+	// 	});
+	// })
   
   
   return me;
