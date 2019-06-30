@@ -1,4 +1,4 @@
-define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/systemutil',"muipicker","utils/validate_util"], function ($,mui,common,stock,umodel,systemutil,muipicker,validateUtil) {　　　　
+define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/systemutil',"muipicker","utils/validate_util","utils/dateutil"], function ($,mui,common,stock,umodel,systemutil,muipicker,validateUtil,dateutil) {　　　　
 	var addstock = {};
 	addstock.init = function (page) {
 		mui.init();
@@ -49,6 +49,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		// 进货时间
 		var dateVal = $('#date').html();
 		params.date = dateVal;
+		params.create_time = dateutil.timestampToTime(new Date);
 		//调用service保存货品的方法
 		if(validateUtil.validateData("add-container")){
 			addstock.saveStock(params);
@@ -75,6 +76,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		var countVal = $("#count").val();
 		if(systemutil.isNotBlank(totalVal) && systemutil.isNotBlank(countVal) ){
 			var priceVal = totalVal/countVal;
+			priceVal.
 			priceVal = (priceVal.toFixed(2) *100) +1;
 			$("#price").val(priceVal/100);
 		}

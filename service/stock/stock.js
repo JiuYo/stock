@@ -41,6 +41,23 @@ define(['jquery','common',"model/UserModel"], function ($,common) {　　
     });
   };
 
+// 获取货品列表
+    stockService.getStockList = function (params,successcallback,errorcallback) {
+  	var dao = common.getDao("stock/stock");
+  	require([dao], function (dao) {
+          dao.getStockList(params,function(data){
+  	          	if(successcallback != null)
+  	          	{
+  	          			successcallback(data);
+  	          	}
+          },function(errorInfo){
+  	          	if(errorcallback != null)
+  	          	{
+  	          			errorcallback(errorInfo);
+  	          	}
+          });
+    });
+  };
 	
 	return stockService;
 })

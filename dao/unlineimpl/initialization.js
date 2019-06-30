@@ -22,7 +22,7 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools"], function ($,common,sqli
 							"`count` INT ( 11 ) DEFAULT NULL, "+
 							"`imeix` VARCHAR ( 255 ) DEFAULT NULL, "+
 							"`isDelete` INT ( 1 ) DEFAULT NULL, "+
-							"`create_time` INT ( 6 ) DEFAULT NULL "+
+							"`create_time` datetime DEFAULT NULL "+
 							");");
 		tableSqlArr.push("CREATE TABLE IF NOT EXISTS tab_inventory ( "+
 							"`ID` VARCHAR ( 32 ) PRIMARY KEY NOT NULL, "+
@@ -35,7 +35,7 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools"], function ($,common,sqli
 							"`sale` REAL DEFAULT NULL, "+
 							"`uid` VARCHAR ( 100 ) DEFAULT NULL, "+
 							"`isDelete` INT ( 1 ) DEFAULT NULL, "+
-							"`create_time` INT ( 6 ) DEFAULT NULL , "+
+							"`create_time` datetime DEFAULT NULL , "+
 							"`date` datetime NOT NULL  "+
 							");");
 		tableSqlArr.push("	CREATE TABLE IF NOT EXISTS tab_outinfo ( "+
@@ -43,6 +43,7 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools"], function ($,common,sqli
 							"`pid` VARCHAR ( 100 ) DEFAULT NULL, "+
 							"`uid` VARCHAR ( 100 ) DEFAULT NULL, "+
 							"`outqty` REAL DEFAULT NULL, "+
+							"`create_time` datetime DEFAULT NULL, "+
 							"`outtime` datetime NOT NULL  "+
 							");");
 	}

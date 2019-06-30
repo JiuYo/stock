@@ -92,6 +92,53 @@ define(['jquery','common',"model/UserModel",'utils/systemutil'], function ($,com
         });
   }
   
+  
+  // 获取数据库列表
+  sqlite.getTableList = function(tablename,params,success,error){
+	  var sql = " select * from "+ tablename +" where 1=1 ";
+	  // limit 15 offset 20 跳过20条选择15条
+	  var pageSql = "";
+	   if(null != params){
+		   if(systemutil.isNotBlank(params.page) && systemutil.isNotBlank(params.rows) ){
+			   var rows = "";
+			   if(params.page == 1){
+				   rows = 0;
+			   }else{
+				   rows = page*params.rows;
+			   }
+			   pageSql = " limit "+rows+" , "+params.rows+ " ";
+		   }
+		 for(var index in params){
+			 if(systemutil.isNotBlank(params[index])){
+				 if(index == 'page'){
+					 continue;
+				 }
+				 if(index == 'rows'){
+				 		continue;			 
+				 }
+				 sql += " and "+index.split('_')[0]+" "+index.split('_')[1]+" "+params[index]+" ";
+			 }
+		 }
+	  }
+	  sql = sql+pageSql;
+	  console.log(sql);
+  	db.transaction(function (tx){
+		tx.executeSql(sql,null,function(tx,res){
+				//alert("创建表成功");
+				if(success)
+				{
+					success(tx,res);
+				}
+			},function(tx,err){
+				//alert(err.message)
+				if(error)
+				{
+					error(tx,err);
+				}
+			});
+	});
+  }
+  
   sqlite.uuidGenerator = function() {
 	var originStr = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
 		originChar = '0123456789abcdef',
