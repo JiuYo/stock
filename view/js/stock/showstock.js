@@ -148,6 +148,21 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		});
 	});
 	
+	// 搜索事件
+	$("#searchBtn").on('tap',function(){
+		var searchVal = $("#searchValue").val();
+		console.log(searchVal);
+		if(systemutil.isNotBlank(searchVal)){
+			params.pname_like = "%"+searchVal+"%";
+			list.items = [];
+			showstock.isGetByFun(null);
+		}else{
+			delete params.pname_like;
+			list.items = [];
+			showstock.isGetByFun(null);
+		}
+	})
+	
 
   return showstock;
 });

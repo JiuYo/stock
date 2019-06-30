@@ -10,116 +10,66 @@
 		<link href="../../libs/mui/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../css/stock/problemList.css" />
 		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/problem/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/stock/search.css"/>
+		<style type="text/css">
+			[v-cloak]{
+				display:none;
+			}
+			.mui-bar-nav~.mui-content{
+				margin-top: 41px;
+			}
+			.mui-table-view-chevron .mui-table-view-cell{
+				padding-right: 10px;
+			}
+		</style>
 	</head>
 	<body>
-		<!--提示搜索信息-->
-		<div class="hide mui-ellipsis">
-			您的查询条件是：
-			<span class="reciveMess"></span>
-		</div>
-				<!--下拉刷新容器-->
+	
+			
+			
+			<!--<div class="mui-content">-->
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
-				<!--数据列表-->
+		<div>
+			<div id="item1" class="mui-control-content mui-active">
 				<ul class="mui-table-view mui-table-view-chevron appendUL">
-					<div class="search-container mui-table-view-cell gray-border">
-					    <div class="mui-pull-left mui-text-center search-link">
+					<div class="mui-shuru">			
+						<input type="text" id="searchValue" class="mui-kuang" placeholder="请输入搜索内容" maxlength="50">
+						<span class="mui-icon mui-icon-search"></span>
+						<button id="searchBtn">搜索</button>
+					</div>
+					<!-- <div class="search-container mui-table-view-cell gray-border">
+					    <div class="mui-pull-left mui-text-center ">
 					    	<span class="mui-icon mui-icon-search"></span>
 					    	<span class="icon-tit">搜索</span>
 					    </div>
-					    <div class="mui-pull-right mui-text-center filter-link">
-					    	<span class="mui-icon-extra mui-icon-extra-filter"></span>
-					    	<span class="icon-tit">筛选</span>
-					    </div>
-					</div>
-				<!--<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
-						<div class="mui-media-body mui-clearfix">
-							<p class="order-list mui-clearfix">
-								<span class="order-con mui-ellipsis mui-pull-left" style="width: 70%;">报告单号:<span class="order-num">7897986556790789798655679078979865567907897986556790789798655679078979865567907897986556790</span></span>
-								<span class="right-time mui-pull-right">2018.10.20</span>
-							</p>
-							<p class='order-list mui-ellipsis'><span>图号:</span><span class="pic-num">DSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDSDSFGDGDS</span></p>
-							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
-							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
-							<p class='order-list'><span>状态:</span><span class="audit-pass">审批通过</span></p>
+					</div> -->
+					
+					<li class="mui-table-view-cell mui-media liVue" v-cloak v-for="item in items" :data-id="item.id" >
+						<div class="mui-slider-handle mui-table">
+							<a class="mui-navigate-right">
+								<img class="mui-media-object mui-pull-left" :src="item.imgSrc">
+							<div class="mui-media-body mui-clearfix">
+								<p class="order-list mui-clearfix">
+									<span class="order-con mui-ellipsis mui-pull-left">货品名称:<span class="order-num">{{item.pname}}</span></span>
+									<span class="right-time mui-pull-right">{{item.createTime}}</span>
+								</p>
+								<p class="order-list mui-ellipsis"><span>总进价:</span><span class="pic-num">{{item.total}}</span></p>
+								<p class="order-list mui-ellipsis"><span>进货量:</span><span class="pic-num">{{item.count}}{{item.unit}}</span></p>
+								<p class="order-list mui-ellipsis"><span>单价:</span><span class="pic-num">{{item.price}}</span></p>
+								<p class="order-list mui-ellipsis"><span>剩余数量:</span><span class="pic-num">{{item.stock1}}{{item.unit}}</span></p>
+								<p class="order-list mui-ellipsis"><span>售出数量:</span><span class="pic-num">{{item.sale1}}{{item.unit}}</span></p>
+								<p class="order-list mui-ellipsis"><span>进货日期:</span><span class="apply-reason">{{item.date}}</span></p>
+							</div>
+							</a>
 						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
-						<div class="mui-media-body mui-clearfix">
-							<span class="order-con mui-ellipsis">报告单号:<span class="order-num">7897986556790</span></span>
-							<span class="right-time mui-pull-right">2018.10.20</span>
-							<p class='order-list'><span>图号:</span><span class="pic-num">DSFGDGDS</span></p>
-							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
-							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
-							<p class='order-list'><span>状态:</span><span class="audit-loading">审批中</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
-						<div class="mui-media-body mui-clearfix">
-							<span class="order-con">报告单号:<span class="order-num">7897986556790</span></span>
-							<span class="right-time mui-pull-right">2018.10.20</span>
-							<p class='order-list'><span>图号:</span><span class="pic-num">DSFGDGDS</span></p>
-							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
-							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
-							<p class='order-list'><span>状态:</span><span class="audit-return">审批驳回</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
-						<div class="mui-media-body mui-clearfix">
-							<span class="order-con">报告单号:<span class="order-num">7897986556790</span></span>
-							<span class="right-time mui-pull-right">2018.10.20</span>
-							<p class='order-list'><span>图号:</span><span class="pic-num">DSFGDGDS</span></p>
-							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
-							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
-							<p class='order-list'><span>状态:</span><span class="audit-pass">审批通过</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a class="mui-navigate-right">
-						<img class="mui-media-object mui-pull-left" src="../images/cbd.jpg">
-						<div class="mui-media-body mui-clearfix">
-							<span class="order-con">报告单号:<span class="order-num">7897986556790</span></span>
-							<span class="right-time mui-pull-right">2018.10.20</span>
-							<p class='order-list'><span>图号:</span><span class="pic-num">DSFGDGDS</span></p>
-							<p class='order-list'><span>数量:</span><span class="pro-num">2个</span></p>
-							<p class='order-list'><span>原因:</span><span class="apply-reason">暂无</span></p>
-							<p class='order-list'><span>状态:</span><span class="audit-pass">审批通过</span></p>
-						</div>
-					</a>
-				</li>-->
-			</ul>
+					 </li>
+				</ul>
 			</div>
-		</div> 
+		</div>
+		</div>
+	</div>
 	</body>
 
 </html>
-<div style="display: none;" id="defaultSubmit" class="layui-m-layer layui-m-layer2" index="0">
-		<div class="layui-m-layershade"></div>
-		<div class="layui-m-layermain">
-			<div class="layui-m-layersection">
-				<div class="layui-m-layerchild  layui-m-anim-scale">
-					<div class="layui-m-layercont">
-						<i></i>
-						<i class="layui-m-layerload"></i>
-						<i></i>
-						<p>正在处理...</p>
-					</div>
-				</div>
-			</div>
-		</div>
-</div>
-
-<script src="../libs/require/require.js" data-main="js/main" id="current-page" current-page ="stock/stockList" target-module="stock/stockList" defer async="true" ></script>
+<script src="../../libs/require/require.js" data-main="../js/main" id="current-page" current-page ="stock/showstock" target-module="stock/showstock" defer async="true" ></script>

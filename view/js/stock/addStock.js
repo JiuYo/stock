@@ -50,6 +50,8 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		var dateVal = $('#date').html();
 		params.date = dateVal;
 		params.create_time = dateutil.getNewDate();
+		params.stock = countVal;
+		params.sale = 0;
 		//调用service保存货品的方法
 		if(validateUtil.validateData("add-container")){
 			addstock.saveStock(params);

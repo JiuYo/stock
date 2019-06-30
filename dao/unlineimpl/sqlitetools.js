@@ -117,7 +117,7 @@ define(['jquery','common',"model/UserModel",'utils/systemutil'], function ($,com
 				 if(index == 'rows'){
 				 		continue;			 
 				 }
-				 sql += " and "+index.split('_')[0]+" "+index.split('_')[1]+" "+params[index]+" ";
+				 sql += " and "+index.split('_')[0]+" "+index.split('_')[1]+" '"+params[index]+"' ";
 			 }
 		 }
 	  }
