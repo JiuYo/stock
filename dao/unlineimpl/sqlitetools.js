@@ -9,6 +9,7 @@ define(['jquery','common',"model/UserModel",'utils/systemutil'], function ($,com
   /* 删除数据库数据调用的方法，传入表名，条件等*/
   sqlite.deleteTable = function(tableName,params,success,error){
 	 var deleteSql = "delete from " + tableName;
+	 console.log(JSON.stringify(params));
 	 if(null != params){
 		 deleteSql +=  " where 1=1 ";
 		 for(var index in params){

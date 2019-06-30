@@ -85,9 +85,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 	}
 	
 	 function convert(items) {
-		 // console.log(JSON.stringify(items));
 		var newItems = [];
-		// items.forEach(function(item) {
 			for(var i=0;i<items.length;i++){
 				item = items[i];
 			newItems.push({
@@ -101,10 +99,54 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 				price: systemutil.parsestr(item.price),
 				date: systemutil.parsestr(item.date)
 			});
-		// });
 		}
 		return newItems;
 	}
+	
+		//  列表点击事件
+		$('.appendUL').on('tap',"li", function() {
+				var listId = $(this).attr('data-id');
+				console.log(listId);
+					mui.openWindow({
+						url: 'updatestock.html?id='+listId,
+						id:  'updatestock.html?id='+listId,
+						//参数
+						extras:{
+							id: listId,
+							pageType : "look"
+						},
+						show:{
+							//页面loaded事件发生后自动显示，默认为true
+							autoShow:  true  
+						}
+					});
+		})
+		
+		// 删除事件
+		$('.appendUL').on('tap', '.mui-btn', function(event) {
+		event.stopPropagation();
+		var elem = this;
+		var li = elem.parentNode.parentNode;
+		var listId = $(li).attr('data-id');
+		console.log(listId);
+		var param = {};
+		param.id = listId;
+		var btn = ["确认","取消"];
+		mui.confirm('是否确认删除?',btn,function(e){
+		    if(e.index==0){
+		    	$('#uploadMask').show();
+					stock.delStockById(param,function(data){
+						$('#uploadMask').hide();
+						console.log(JSON.stringify(data));
+						var currView = plus.webview.currentWebview();
+	  				currView.reload(true);
+					},function(errorinfo){
+						$('#uploadMask').hide();
+						mui.alert("请求失败!" + systemutil.parsestr(errorinfo));
+					});
+				}
+		});
+	});
 	
 
   return showstock;

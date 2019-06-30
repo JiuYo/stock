@@ -36,6 +36,18 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
 			errorcallback("获取数据失败!"+err.message);
 		})
 	};
+	
+	// 删除货品
+	stockDao.delStockById = function (params,successcallback,errorcallback) {
+		console.log(JSON.stringify(params));
+		sqlitetools.deleteTable('tab_inventory',params,function(tx, rs){
+			console.log("删除成功！！！");
+			successcallback(rs);
+		},function(tx,err){
+			console.error(err.message);
+			errorcallback("删除数据失败!"+err.message);
+		})
+	};
 	  
   
   return stockDao;
