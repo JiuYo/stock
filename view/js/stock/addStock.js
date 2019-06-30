@@ -49,7 +49,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		// 进货时间
 		var dateVal = $('#date').html();
 		params.date = dateVal;
-		params.create_time = dateutil.timestampToTime(new Date);
+		params.create_time = dateutil.getNewDate();
 		//调用service保存货品的方法
 		if(validateUtil.validateData("add-container")){
 			addstock.saveStock(params);
@@ -61,9 +61,13 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		stock.saveStock(params,function(){
 			$('#defaultSubmit').hide();
 			mui.toast('货品保存成功！');
-			var view = plus.webview.currentWebview();
-			view.opener().reload(true);
-			view.close();
+			setTimeout(function(){
+				var currView = plus.webview.currentWebview();
+				var parentview = currView.opener();
+				mui.fire(parentview, 'refresh');
+				currView.close();
+				// parentview.reload(true);
+			})
 		},function(errorinfo){
 			$('#defaultSubmit').hide();
 			mui.alert("请求失败!" + systemutil.parsestr(errorinfo));

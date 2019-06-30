@@ -25,6 +25,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 	
 	//刷新页面
   	showstock.getNewType = function(){
+			plus.webview.currentWebview().parent().evalJS("$('.mui-title').html('商品展示');");
   		params.page = "";
   		setTimeout(function() {
   				list.items = [];
@@ -69,7 +70,6 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 	
 	// 获取列表的方法
 	showstock.getStockList= function(filter){
-		
 		stock.getStockList(params,function(data){
 			console.log(JSON.stringify(data));
 					mui('#pullrefresh').pullRefresh().refresh(true);
@@ -89,7 +89,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 			for(var i=0;i<items.length;i++){
 				item = items[i];
 			newItems.push({
-				id: systemutil.parsestr(item.id),
+				id: systemutil.parsestr(item.ID),
 				imgSrc: "../images/huo.png",
 				pname: systemutil.parsestr(item.pname),
 				createTime: systemutil.parsestr(item.create_time),
