@@ -72,13 +72,12 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 	
 	// 获取货品单价的方法
 	addstock.getDrawingNoList = function(){
-		var totalVal = $("#total").val();
-		var countVal = $("#count").val();
+		var totalVal = $("#total").val();//获取商品总价
+		var countVal = $("#count").val();//获取商品进货数量
 		if(systemutil.isNotBlank(totalVal) && systemutil.isNotBlank(countVal) ){
 			var priceVal = totalVal/countVal;
-			priceVal.
-			priceVal = (priceVal.toFixed(2) *100) +1;
-			$("#price").val(priceVal/100);
+			priceVal = (priceVal.toFixed(2)) ;
+			$("#price").val(priceVal);
 		}
 	}
  
