@@ -2,90 +2,105 @@
 <html>
 
 	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link href="../../libs/mui/mui.min.css" rel="stylesheet" />
-		<link href="../../libs/mui/mui.picker.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/stock/problemList.css" />
+		<link rel="stylesheet" type="text/css" href="../css/stock/problemDetail.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
 		<link href="../css/feedback/feedback.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../css/stock/addProblemDetail.css"/>
-		<link rel="stylesheet" href="../../libs/layer/layer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/stock/problemDetails.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/stock/layer.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/component/progress.css"/>
+		<style>
+			.currentQty{
+				display: none;
+			}
+		</style>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" id="back">返回</a>
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">返回</a>
 			<h1 class="mui-title">编辑盘货明细</h1>
-			<a id="delProblem" class="mui-icon mui-pull-right" style="display: none;">删除</a>
-			<a id="progressBtn" class="mui-icon mui-pull-right" style="display: none;font-size: 16px;margin-top: 3px;">查看进度</a>
 		</header>
-		<div id="pullrefresh" class="add-container mui-content mui-scroll-wrapper">
+		<!--列表数据-->
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
-			<div class="mui-input-row">
-				<input readonly="readonly" label="图号" id="picNum" type="text" datatype="*" placeholder="请选择图号（必填）">
-				<span class="mui-icon mui-icon-clear"></span>
-			</div>
-			<div class="mui-input-row double-input">
-				<input type="number" label="数量" id = "qty" datatype="n" step="0.01"  placeholder="请输入数量（必填）">
-				<button style="height: 40px;" label="计量单位" id="unit" data-selected=""  datatype="*"  class="mui-btn mui-btn-block" type="button">请选择计量单位</button>
-			</div>
-			<div class="mui-input-row">
-				<input readonly="readonly" label="件号"  id="pieceNum"  label="件号"   placeholder="请选择件号" type="text">
-				<span class="mui-icon mui-icon-clear"></span>
-			</div>
-			<div class="mui-input-row">
-				<input readonly="readonly" label="型号/牌号"  id="brandNum"  label="型号/牌号"   placeholder="请选择型号/牌号" type="text">
-				<span class="mui-icon mui-icon-clear"></span>
-			</div>
-			<div class="mui-input-row batchButton">
-				<button id="batch" label="批次" data-selected="" datatype="*" class="mui-btn mui-btn-block" type="button">请选择批次（必填）</button>
-				<button class="more" id="batchAll">更多</button>
-			</div>
-			<div class="mui-input-row">
-				<button id="shipQty" label="架次" data-selected="" datatype="*"  class="mui-btn mui-btn-block" type="button">请选择架次（必填）</button>
-				<button class="more" id="shipQtyAll">更多</button>
-			</div>
-			<div class="mui-input-row">
-				<button id="reaDict" label="问题分类" data-selected="" datatype="*" class="mui-btn mui-btn-block" type="button">请选择问题分类（必填）</button>
-			</div>
-			<div class="mui-input-row">
-				<button id="resDict" label="责任方" data-selected="" datatype="*" class="mui-btn mui-btn-block" type="button">请选择责任方（必填）</button>
-			</div>
-			<div class="mui-input-row">
-				<button id="WorkShop" label="车间" data-selected="" datatype="*" class="mui-btn mui-btn-block" type="button">请选择车间（必填）</button>
-			</div>
-			<div class="mui-input-row">
-				<button id="matDict"  label="物料类型" data-selected="" datatype="*" class="mui-btn mui-btn-block" type="button">请选择物料类型（必填）
-				
-				</button>
-			</div>
-			<div class="feedback">
-				<p>图片(选填,提供问题截图)</p>
-				<div id='image-list' class="row image-list"></div>
-			</div>
-			<div class="mui-input-row">
-				<textarea label="故障单号" id ="problemNo" autoHeight="true" placeholder="故障单号（50个字）" maxlength="50"></textarea>
-			</div>
-			<div class="mui-input-row">
-				<textarea label="意见" id="suggestion" autoHeight="true" placeholder="意见（50个字）" maxlength="50"></textarea>
-			</div>
-			<div class="mui-input-row">
-				<textarea label="分析结论" id="conclusion" autoHeight="true" placeholder="分析结论（100个字）" maxlength="100"></textarea>
-			</div>
-			<div class="mui-input-row">
-				<textarea id='reasonSupply'  label="问题描述" autoHeight="true" class="mui-input-clear question" maxlength="200" placeholder="问题描述（200个字）"></textarea>
-			</div>
-			<div class="double-btn">
-				<div class="btn-left">
-					<button type="button" id="saveProblem" class="mui-btn mui-btn-primary">保存</button>
-				</div>
-				<div class="btn-left">
-					<button type="button" id="submitProblem" class="mui-btn mui-btn-warning">提交</button>
+			<div style="padding: 10px 10px;">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">
+						盘货单详情
+					</a>
+					<a class="mui-control-item" href="#item2">
+						盘货明细
+					</a>
 				</div>
 			</div>
+		
+		<div>
+			<div id="item1" class="mui-control-content mui-active">
+				<div class="add-container mui-content">
+		            <div class="mui-input-row">
+		                <label>货品名称:</label>
+		                <span id = "pname"></span>
+		            </div>
+					<div class="mui-input-row">
+		                <label>货品数量:</label>
+		                <span id ="count" ></span>
+		            </div>
+					<div class="mui-input-row">
+					    <label>库存数量:</label>
+					    <span id ="stock" ></span>
+					</div>
+					<div class="mui-input-row">
+		                <label>进货总价:</label>
+		                <span class="numstyle" id="total"></span>
+		            </div>
+		            <div class="mui-input-row">
+		                <label>货品单价:</label>
+		                <span id ="price"></span>
+		            </div>
+		            <div class="mui-input-row currentQty">
+		                <label>当前数量:</label>
+						<input type="number" label="当前数量" id = "currentQty" datatype="n" step="0.01"  placeholder="当前数量（必填）">
+		            </div>
+		            <div class="mui-input-row">
+		                <label>总卖出量:</label>
+		                <span id="sale"></span>
+		            </div>
+		            <div class="mui-input-row">
+		                <label>进货时间:</label>
+		                <span id="date"></span>
+		            </div>
+				<div class="double-btn currentQty">
+					<div class="btn-left">
+						<button type="button" id="subButton"  class="mui-btn mui-btn-primary"  >确认</button>
+					</div>
+				</div>
+				<p></p>
 			</div>
+			
+			
+			
+			<div id="item2" class="mui-control-content">
+					<div class="add-container mui-content">
+	                <div class="package-status">
+	                    <div class="status-box">
+						<ul class="status-list">
+		                  
+		                </ul>
+                	</div>
+				</div>
+			</div>
+			</div>
+			
 		</div>
-		<!--加载中-->
-		<div style="display: none;" id="defaultSubmit" class="layui-m-layer layui-m-layer2" index="0"><div class="layui-m-layershade"></div><div class="layui-m-layermain"><div class="layui-m-layersection"><div class="layui-m-layerchild  layui-m-anim-scale"><div class="layui-m-layercont"><i></i><i class="layui-m-layerload"></i><i></i><p>正在处理...</p></div></div></div></div></div>  
+		</div>
+	</div>
 	</body>
+	<div style="display: none;" id="layui-m-layer0" class="layui-m-layer layui-m-layer2" index="0"><div class="layui-m-layershade"></div><div class="layui-m-layermain"><div class="layui-m-layersection"><div class="layui-m-layerchild  layui-m-anim-scale"><div class="layui-m-layercont"><i></i><i class="layui-m-layerload"></i><i></i><p>正在处理...</p></div></div></div></div></div>  
 </html>
 <script src="../../libs/require/require.js" data-main="../js/main" id="current-page" current-page ="stock/updatestock" target-module="stock/updatestock" defer async="true" ></script>

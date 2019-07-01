@@ -108,11 +108,11 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 				var listId = $(this).attr('data-id');
 				console.log(listId);
 					mui.openWindow({
-						url: 'updatestock.html?id='+listId,
-						id:  'updatestock.html?id='+listId,
+						url: 'updatestock.html',
+						id:  'updatestock.html?',
 						//参数
 						extras:{
-							id: listId,
+							listId: listId,
 							pageType : "look"
 						},
 						show:{
