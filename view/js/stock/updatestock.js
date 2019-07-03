@@ -104,7 +104,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		// 修改货品表数据；stock：之前-当日；sale：之前+当日
 		var paramss = {};
 		paramss.ID = id;
-		paramss.stock = stockVal-currentQty;
+		paramss.stock = currentQty;
 		paramss.sale = saleVal+stockVal-currentQty;
 		var param= {};
 		param.pid = id;
