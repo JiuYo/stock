@@ -2,6 +2,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
   var updatestock = {};
 	var id = "";
 	var pageType = "";
+	var ad = {};
   updatestock.init = function (page) {
   	mui.init();
 	};
@@ -22,7 +23,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		params.ID = id;
 		stock.getStockById(params,function(data){
 			console.log(JSON.stringify(data));
-				var ad = data[0];
+				ad = data[0];
 				for(var index in ad){
 					$("#"+index).html(ad[index]);
 				}
@@ -92,22 +93,27 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		var stockVal = $("#stock").html();
 		var currentQty = $("#currentQty").val();
 		var saleVal = $("#sale").html();
-		var currSale = stockVal-currentQty;
-		var newSaleVal = saleVal+currSale;
+		// var stockVal = ad.stock;
+		// var currentQty = $("#currentQty").val();
+		// var saleVal = ad.sale;
+		stockVal = parseInt(stockVal.trim());
+		currentQty = parseInt(currentQty.trim());
+		saleVal = parseInt(saleVal.trim());
+		// var currSale = eval(stockVal-currentQty);
+		// var newSaleVal = eval(saleVal+currSale);
 		// 修改货品表数据；stock：之前-当日；sale：之前+当日
-		var params = {};
-		params.ID = id;
-		params.stock = currentQty;
-		params.sale = newSaleVal;
-		stock.updatestockById(params,function(data){
-			console.log(JSON.stringify(data));
+		var paramss = {};
+		paramss.ID = id;
+		paramss.stock = stockVal-currentQty;
+		paramss.sale = saleVal+stockVal-currentQty;
+		var param= {};
+		param.pid = id;
+		param.outtime = dateutil.getNewDate();
+		// param.create_time = dateutil.getNewDate();
+		param.outqty = stockVal-currentQty;
+		console.log(JSON.stringify(paramss));
+		stock.updatestockById(paramss,function(data){
 				// 保存售出明细；pid：货品id；date：当前日期；outqty：当日卖出
-				var param= {};
-				param.pid = id;
-				param.outtime = dateutil.getNewDate();
-				// param.create_time = dateutil.getNewDate();
-				param.outqty = currSale;
-				
 				stock.insertStockDetailes(param,function(data){
 					$('#layui-m-layer0').hide();
 					
