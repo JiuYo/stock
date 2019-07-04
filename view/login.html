@@ -99,10 +99,9 @@
 								<span class="userTit">密码</span>
 								<input id='password' type="password" class="mui-input-clear mui-input">
 							</div>
-
-							<div class="inputParent" style="position: relative;">
+							<!-- <div class="inputParent" style="position: relative;">
 								<input id="auuid" type="text" class="mui-input-clear mui-input" placeholder="" onclick="addval();">
-							</div>
+							</div> -->
 							<form class="mui-input-group">
 								<div class="remember">
 									<span class="fl  mui-checkbox">
@@ -139,41 +138,4 @@
 	</body>
 	<script src="../libs/require/require.js" data-main="js/main" id="current-page" current-page="login" target-module="login"
 	 defer async="true"></script>
-	<script type="text/javascript" defer=true>
-		//uuid 的加密解密方法调用
-		function addval() {
-			//获得唯一的uuid
-			var a = plus.device.uuid;
-			//把唯一的uuid赋值给输入框显示到界面
-			$("#auuid").val(a);
-			//加密方法
-		/* 	var b = compileStr(a);
-			解密方法
-			var c = uncompileStr(b);
-		 */
-		}
-
-
-
-		function compileStr(code) { //对UUID字符串进行加密  
-			alert("加密方法")
-			var c = String.fromCharCode(code.charCodeAt(0) + code.length);
-			for (var i = 1; i < code.length; i++) {
-				c += String.fromCharCode(code.charCodeAt(i) + code.charCodeAt(i - 1));
-			}
-			return escape(c);
-		}
-
-
-		function uncompileStr(code) { //对uuid进行解密   解密用不上.
-			code = unescape(code);
-			var c = String.fromCharCode(code.charCodeAt(0) - code.length);
-			for (var i = 1; i < code.length; i++) {
-				c += String.fromCharCode(code.charCodeAt(i) - c.charCodeAt(i - 1));
-			}
-			return c;
-		}
-	</script>
-
-
 </html>
