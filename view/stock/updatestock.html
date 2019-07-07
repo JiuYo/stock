@@ -19,6 +19,14 @@
 			.currentQty{
 				display: none;
 			}
+			.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+				width: 70%;
+			}
+			.double-btn .subBth{
+				display: block;
+				width: 80%;
+				margin: 0 auto;
+			}
 		</style>
 	</head>
 	<body>
@@ -75,12 +83,11 @@
 		                <label>进货时间:</label>
 		                <span id="date"></span>
 		            </div>
-				<div class="double-btn currentQty">
-					<div class="btn-left">
-						<button type="button" id="subButton"  class="mui-btn mui-btn-primary"  >确认</button>
-					</div>
+				<div class="double-btn currentQty1">
+					<!-- <div class="btn-left"> -->
+						<button type="button" id="subButton"  class="mui-btn mui-btn-primary subBth">确认</button>
+					<!-- </div> -->
 				</div>
-				<p></p>
 			</div>
 			</div>
 			

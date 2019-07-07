@@ -66,10 +66,14 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 			setTimeout(function(){
 				var currView = plus.webview.currentWebview();
 				var parentview = currView.opener();
-				mui.fire(parentview, 'refresh');
+				console.log(JSON.stringify(parentview));
+				// mui.fire(parentview, 'refresh');
 				currView.close();
-				// parentview.reload(true);
-			})
+				parentview.reload(true);
+				// mui.fire(parentview,'search',{
+				//     searchData:'value'
+				// });
+			},1000)
 		},function(errorinfo){
 			$('#defaultSubmit').hide();
 			mui.alert("请求失败!" + systemutil.parsestr(errorinfo));

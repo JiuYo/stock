@@ -9,6 +9,18 @@
 		<link rel="stylesheet" type="text/css" href="../../libs/mui/mui.picker.min.css" />
 		<link href="../css/feedback/feedback.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../css/stock/addProblemDetail.css"/>
+		<style type="text/css">
+		   .mui-scroll p{
+			color: #000000;
+			margin-top: 10px;
+			padding-left: 15px;
+		   }
+		   .double-btn .subBth{
+			display: block;
+			width: 80%;
+			margin: 0 auto;
+		   }
+		  </style>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav">
@@ -19,8 +31,8 @@
 		</header>
 		<div id="pullrefresh" class="add-container mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
+				<p>货品名称:</p>
 			<div class="mui-input-row">
-				<span>货品名称:</span>
 				<input  label="货品名称" id="pname" type="text" datatype="*" placeholder="货品名称（必填）">
 			</div>
 			<div class="mui-input-row ">
@@ -29,22 +41,22 @@
 			<div class="mui-input-row ">
 				<input type="text" label="单位" id = "unit" datatype="*"   placeholder="请输入单位（必填）">
 			</div>
+			<p>进货总价:</p>
 			<div class="mui-input-row">
-				<span>进货总价:</span>
 				<input  label="进货总价"  id="total"  label="进货总价"   placeholder="进货总价" type="text">
 			</div>
+			<p>货品单价:</p>
 			<div class="mui-input-row">
-				<span>货品单价:</span>
 				<input readonly="readonly"   id="price"   readonly="readonly"  placeholder="货品单价" type="text">
 			</div>
+			<p>进货时间:</p>
 			<div class="mui-input-row batchButton">
-				<span>进货时间:</span>
 				<button id="date" label="进货时间" data-selected="" datatype="*" class="mui-btn mui-btn-block" type="button">进货时间</button>
 			</div>
 			<div class="double-btn">
-				<div class="btn-left">
-					<button type="button" id="saveStock" class="mui-btn mui-btn-primary">保存</button>
-				</div>
+				<!-- <div class="btn-left"> -->
+					<button type="button" id="saveStock" class="mui-btn mui-btn-primary subBth">保存</button>
+				<!-- </div> -->
 			</div>
 			
 			</div>
