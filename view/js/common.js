@@ -92,6 +92,11 @@ define(['jquery', 'model/UserModel', 'utils/systemutil'], function($, usermodel,
 		plus.storage.setItem("pageSize", usermodel.pageSize);
 		plus.storage.setItem("roles", usermodel.roles);
 	}
+	
+	common.setIsEnrol = function() {
+		plus.storage.setItem("isenrol", "1");
+		// plus.storage.getItem("isenrol");
+	}
 
 	/**
 	 * 获取用户信息

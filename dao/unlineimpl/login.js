@@ -34,7 +34,7 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
   	//查询数据
   	sqlitetools.insertTable('tab_user',usermode,function(tx, rs){
   		console.log("注册成功！！！");
-		common.setUserInfo(usermode);
+		plus.storage.setItem("isenrol", "1");
 		successcallback(usermode);
   	},function(tx,err){
   		errorcallback("获取数据失败!"+err.message);

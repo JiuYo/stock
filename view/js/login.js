@@ -24,6 +24,13 @@ define(['jquery',"mui","common","service/login","model/UserModel",'utils/systemu
   		}
   	});
   	mui.plusReady(function() {
+		var isenrol = plus.storage.getItem("isenrol");
+		console.log("isenrol========================"+isenrol);
+		if(systemutil.isNotBlank(isenrol)){
+			$("#activation").show();
+		}else{
+			$("#enrol").show();
+		}
   		plus.navigator.setStatusBarBackground("#000000");
 			plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
   		//退出应用
@@ -95,6 +102,15 @@ define(['jquery',"mui","common","service/login","model/UserModel",'utils/systemu
   	})
   })
   $('#enrol').on('tap',function(){
+	  mui.openWindow({
+		  url:"enrol.html",
+			id:'framecore/me/agreement.html',
+		  show: {
+          autoShow: true //页面loaded事件发生后自动显示，默认为true
+	    }
+	  })
+  })
+  $("#activation").on('tap',function(){
 	  mui.openWindow({
 		  url:"enrol.html",
 			id:'framecore/me/agreement.html',

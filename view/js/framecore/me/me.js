@@ -58,7 +58,6 @@ define(['jquery',"mui","common","service/login","service/system/userInfor","mode
 //		me.loginOut();
 		if (mui.os.ios) {
 			common.clearUserInfo();
-			me.loginOut();
 			for (var i = 0, len = wvs.length; i < len; i++) {
 				if (wvs[i].getURL().indexOf("/launch.html") != -1){
 					plus.webview.open('../../launch.html','../../launch.html');
