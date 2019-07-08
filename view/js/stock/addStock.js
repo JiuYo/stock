@@ -63,21 +63,33 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		stock.saveStock(params,function(){
 			$('#defaultSubmit').hide();
 			mui.toast('货品保存成功！');
-			setTimeout(function(){
-				var currView = plus.webview.currentWebview();
+		      setTimeout(function(){
+				/* var currView = plus.webview.currentWebview();
 				var parentview = currView.opener();
-				console.log(JSON.stringify(parentview));
+				console.log(JSON.stringify(parentview)); */
 				// mui.fire(parentview, 'refresh');
-				currView.close();
-				parentview.reload(true);
+				//currView.close();
+				//parentview.reload(true);   //如果添加这个下拉刷新，界面会固定死
+				
 				// mui.fire(parentview,'search',{
 				//     searchData:'value'
 				// });
+				
+				//监听事件开始
+							var self = plus.webview.currentWebview();
+					　　　　 var opener = self.opener();
+							mui.fire(opener,'refresh',{}); 
+				　　　　        self.close();
+				　　　　        opener.show();
+					　　　　mui.fire(opener,'selectfiles',{"fileurl":entry.toLocalURL()});
+						   self.close();
+					　　　　opener.show(); 
+								//监听事件结束 
 			},1000)
 		},function(errorinfo){
 			$('#defaultSubmit').hide();
 			mui.alert("请求失败!" + systemutil.parsestr(errorinfo));
-		});
+		}); 
 	}
 	
 	// 获取货品单价的方法

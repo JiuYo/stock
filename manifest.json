@@ -1,6 +1,6 @@
 {
     "@platforms" : [ "android", "iPhone", "iPad" ],
-    "id" : "H5CD46204", /*应用的标识，创建应用时自动生成，勿手动修改*/
+    "id" : "H5F4B560A", /*应用的标识，创建应用时自动生成，勿手动修改*/
     "name" : "stock", /*应用名称，程序桌面图标名称*/
     "version" : {
         "name" : "1.0", /*应用版本名称*/
@@ -133,14 +133,14 @@
 
                         /*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
                         "settings-normal" : "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
-                        "app@2x" : "unpackage/res/icons/120x120.png",
-                        "app@3x" : "unpackage/res/icons/180x180.png",
-                        "settings@3x" : "unpackage/res/icons/87x87.png",
-                        "settings@2x" : "unpackage/res/icons/58x58.png",
-                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
-                        "spotlight@3x" : "unpackage/res/icons/120x120.png",
-                        "notification@3x" : "unpackage/res/icons/60x60.png",
-                        "notification@2x" : "unpackage/res/icons/40x40.png"
+                        "app@2x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "app@3x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "settings@3x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "settings@2x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "spotlight@2x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "spotlight@3x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "notification@3x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "notification@2x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png"
                     },
                     "ipad" : {
                         "normal" : "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
@@ -151,25 +151,25 @@
                         "spotlight-retina" : "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
 
                         /*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*//*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*//*iPad设置页面程序图标，分辨率：29x29*/
-                        "app" : "unpackage/res/icons/76x76.png",
-                        "app@2x" : "unpackage/res/icons/152x152.png",
-                        "settings" : "unpackage/res/icons/29x29.png",
-                        "proapp@2x" : "unpackage/res/icons/167x167.png",
-                        "spotlight" : "unpackage/res/icons/40x40.png",
-                        "settings@2x" : "unpackage/res/icons/58x58.png",
-                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
-                        "notification" : "unpackage/res/icons/20x20.png",
-                        "notification@2x" : "unpackage/res/icons/40x40.png"
+                        "app" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "app@2x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "settings" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "proapp@2x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "spotlight" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "settings@2x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "spotlight@2x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "notification" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                        "notification@2x" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png"
                     },
-                    "appstore" : "unpackage/res/icons/1024x1024.png"
+                    "appstore" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png"
                 },
                 "android" : {
-                    "mdpi" : "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
-                    "ldpi" : "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
-                    "hdpi" : "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
-                    "xhdpi" : "unpackage/res/icons/96x96.png", /*720P高分屏程序图标，分辨率：96x96*/
-                    "xxhdpi" : "unpackage/res/icons/144x144.png",
-                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                    "mdpi" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png", /*普通屏程序图标，分辨率：48x48*/
+                    "ldpi" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png", /*大屏程序图标，分辨率：48x48*/
+                    "hdpi" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png", /*高分屏程序图标，分辨率：72x72*/
+                    "xhdpi" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png", /*720P高分屏程序图标，分辨率：96x96*/
+                    "xxhdpi" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png",
+                    "xxxhdpi" : "unpackage/res/icons/52767a11d6c4fc1af51a7974f702799.png"
                 }
             },
             "splashscreen" : {
@@ -190,7 +190,8 @@
                 },
                 "android" : {
                     "mdpi" : "", /*普通屏启动图片，分辨率：240x282*/
-                    "ldpi" : ""
+                    "ldpi" : "",
+                    "hdpi" : "unpackage/res/icons/b6566897248fa0ebb1464dc7cec1a6d.png"
                 }
             }
         }

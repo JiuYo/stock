@@ -101,6 +101,44 @@ define(['jquery','common',"model/UserModel",'utils/systemutil'], function ($,com
         });
   }
   
+  // 修改语句  通过stock  id修改数据  
+   sqlite.updatestockById = function(tableName,params,success,error){
+  	 var updateSql = " UPDATE " + tableName +" SET ";
+  	 var whereSql = "";
+  	 if(null != params){
+  		for(var index in params){
+  			 if(systemutil.isNotBlank(params[index])){
+  				 if(index.toLowerCase() == 'id'){
+  				  	whereSql +=  " WHERE ID ='"+params[index]+"'";
+  				 	continue;
+  				  }
+  				 updateSql += " "+index +" = '"+params[index]+"', ";
+  			 }
+  		 } 
+  		 updateSql = updateSql.substring(0,updateSql.length-2);
+  	 }
+  	 updateSql = updateSql+whereSql;
+  	 console.log(updateSql);
+  	db.transaction(function (tx){
+            tx.executeSql(updateSql,null,function(tx,res){
+  					if(success)
+  					{
+  						success(tx,res);
+  					}
+                },function(tx,err){
+                    if(error)
+                    {
+                    	error(tx,err);
+                    }
+                });
+        });
+  }
+  
+  
+  
+  
+  
+  
    /**
    * 执行sql
    * @param {Object} sql sql语句

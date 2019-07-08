@@ -88,5 +88,15 @@ define(['jquery',"mui","common","service/login","model/UserModel","utils/sysupda
 		})
 	})
 	
+	//监听上一个页面fire返回  addstock和updatestock界面的数据监听
+ window.addEventListener('selectfiles', function(e){
+		    alert("dsfsdf");
+		    console.log(e.detail.fileurl);
+		    } );
+window.addEventListener('updates', function(e){
+			    alert("dsfsdf");
+			    console.log(e.detail.fileurl);
+			    } );
+	
   return index;
 });

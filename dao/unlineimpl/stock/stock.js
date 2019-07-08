@@ -63,13 +63,20 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
 	// 修改货品详情
 	stockDao.updatestockById = function (params,successcallback,errorcallback) {
 		console.log(JSON.stringify(params));
-		sqlitetools.updateTableByid('tab_inventory',params,function(tx, rs){
+		sqlitetools.updatestockById('tab_inventory',params,function(tx, rs){
 			console.log("修改成功！！！");
 			successcallback(rs.rows);
 		},function(tx,err){
 			console.error(err.message);
 			errorcallback("修改数据失败!"+err.message);
 		})
+		/* sqlitetools.updateTableByid('tab_inventory',params,function(tx, rs){
+			console.log("修改成功！！！");
+			successcallback(rs.rows);
+		},function(tx,err){
+			console.error(err.message);
+			errorcallback("修改数据失败!"+err.message);
+		}) */
 	};
 	// 新增售出明细
 	stockDao.insertStockDetailes = function (params,successcallback,errorcallback) {

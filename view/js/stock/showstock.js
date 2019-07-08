@@ -161,8 +161,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 			list.items = [];
 			showstock.isGetByFun(null);
 		}
-	})
+	});
 	
-
   return showstock;
 });

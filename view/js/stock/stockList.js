@@ -140,8 +140,5 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 			stockList.isGetByFun(null);
 		}
 	})
-	
-	
- 
   return stockList;
 });

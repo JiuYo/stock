@@ -56,6 +56,13 @@ define(['jquery',"mui","common","service/login","model/UserModel",'utils/systemu
   	var userInfo = common.getUserInfo();
   	//点击赋值
 	  var remember = userInfo.remember;
+	  console.log(remember)
+	 if(remember == null){
+		  remember = true;
+	  }else{
+		  remeber == false;
+	  }
+	  
 	 	var rememberXy = userInfo.rememberXy;
 	 	if(rememberXy == "true"){
 	 		$('.readBefore').hide();
@@ -63,13 +70,15 @@ define(['jquery',"mui","common","service/login","model/UserModel",'utils/systemu
 	 		$('#readXy').attr("checked","checked");
 	 	}
   	//判断是否记住密码
-  	if(remember == "true"){
+  	if(remember){
   		$('#account').val(userInfo.userName);
   		$('#password').val(userInfo.userPwd);
   		$('.mui-switch').addClass('mui-active');
+		console.log("记住密码")
   	}else{
 //		$('#account').val(); //取消记住密码后,仅清空密码
 			$('#account').val(userInfo.userName);
+			console.log("取消记住密码")
   		$('.mui-switch').removeClass('mui-active');
   	}
   	
@@ -196,8 +205,5 @@ define(['jquery',"mui","common","service/login","model/UserModel",'utils/systemu
   // 	mui.toast("请阅读安全协议!");
   // }
   };
-  	
-	
-  
   return login;
 });

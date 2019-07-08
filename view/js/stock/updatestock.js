@@ -102,11 +102,11 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 					$('#layui-m-layer0').hide();			
 					// 返回上一页、刷新列表、关闭当前页
 					setTimeout(function(){
-						var currView = plus.webview.currentWebview();
-						var parentview = currView.opener();
+						 var currView = plus.webview.currentWebview();
+						var parentview = currView.opener(); 
 						currView.close();
 						parentview.reload(true);
-					},500);
+					},1000);
 				},function(errorinfo){
 					$('#layui-m-layer0').hide();
 					mui.alert("请求失败!" + systemutil.parsestr(errorinfo));
