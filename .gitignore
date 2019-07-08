@@ -2,3 +2,4 @@
 *.html
 view/addstock.html
 view/js/stock/addStock.js
+manifest.json
