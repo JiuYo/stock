@@ -9,7 +9,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		// activate.getStockList();
 	});
 		//uuid 的加密解密方法调用
-	function getUuid() {
+	$("#auuid").on('tap',function () {
 		//随机获得一串字符串
 		var b = Math.random().toString(36).substr(2);
 		//把唯一的uuid赋值给输入框显示到界面
@@ -20,9 +20,8 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		//解密方法
 		var d = uncompileStr(c);
 		alert(d); */
-	}
-	//写点无用的句子
-	
+	});
+
 	
 	//判断验证激活方法   两个参数,一个是随机参数,一个是加密后的参数 
 	function  activate(){
