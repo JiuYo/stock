@@ -2,15 +2,13 @@ define(['jquery',"mui","common","service/system/userInfor","model/UserModel","mu
   var launch = {};
 	
  	launch.init = function (page) {
-		initialization.init();
  		mui.plusReady(function() {
-			initialization.createTable();
  			launch.getCurrentAbout();	
 	 		mui.currentWebview.addEventListener("show",function () {
 	 			launch.toView();	
 	 		});
 		});
- 	};
+	};
  	
  	/**
 	 * 判断是否更新
@@ -77,6 +75,21 @@ define(['jquery',"mui","common","service/system/userInfor","model/UserModel","mu
  	}
  	
  	launch.toView = function(){
+		plus.sqlite.openDatabase({
+			name:'stock',
+			path: '_doc/stock.db',
+			success: function(e){
+				console.log('openDatabase success!');
+				initialization.init();
+				initialization.createTable();
+			},
+			fail: function(e){
+				console.log('openDatabase failed: '+JSON.stringify(e));
+				var db=openDatabase("stock",'1.0.0','',65536); 
+				initialization.init();
+				initialization.createTable();
+			}
+		});
  		if(systemutil.isBlank(plus.storage.getItem("token"))){
  			launch.toLogin();
  		}else{

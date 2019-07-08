@@ -53,7 +53,6 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools"], function ($,common,sqli
 	}
 	
 	initialization.createTable = function(){
-		var isflag = true;
 		for(var i=0;i<tableSqlArr.length;i++){
 			sqlitetools.executeSql(tableSqlArr[i],[],function(tx, rs){
 				console.log("插入成功");
