@@ -1,0 +1,82 @@
+.mui-bar{
+	background-color: #000000;
+}
+.mui-title{
+	color: #FFFFFF;
+}
+.mui-bar .mui-icon {
+    color: #FFFFFF;
+    font-size: 18px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.filter-tit{
+	height: 21px;
+	line-height: 21px;
+	margin-bottom: 0;
+	margin-top: 4px;
+}
+.tit-circle-blue{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background-color: blue;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin: 0 6px;
+}
+.tit-circle-green{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin: 0 6px;
+	background-color: green;
+}
+.font-style{
+	color: #333;
+}
+.font-style div{
+	font-size: 12px;
+    line-height: 12px;
+    padding: 12px 0;
+    border-radius: 10px;
+}
+.color-gray{
+	background-color: #e7e7e7;
+}
+
+.color-aqua{
+	background-color: #007aff;
+	color: #FFFFFF;
+}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	padding: 7px 10px;
+}
+.mui-scroll-wrapper{
+	bottom: 40px;
+}
+.bottom-btn{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin-bottom: 0;
+	height: 40px;
+	line-height: 15px;
+	font-size: 16px;
+	border-radius: 0;
+}
+.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+	border-right: 0;
+	border-bottom: 0;
+}
+.mui-table-view p{
+	margin-bottom: 0px;
+	margin-top: 4px;
+	color: #000000;
+	padding-left: 15px;
+}
+.mui-grid-view.mui-grid-9 .mui-media{
+	color: #656464;
+}

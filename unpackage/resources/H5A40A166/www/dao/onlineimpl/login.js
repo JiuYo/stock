@@ -1,0 +1,58 @@
+define(['jquery','common','dao/onlineimpl/route',"model/UserModel"], function ($,common,route) {　　　　
+  var loginDao = {};
+  /**
+   * 系统登录接口
+   * @param {Object} usermode
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  loginDao.login = function (usermode,successcallback,errorcallback) {
+  	var reqparams = {};
+		reqparams.username = usermode.userName;
+		reqparams.password = usermode.userPwd;
+	
+		var url = route.tokens;
+		//获取token
+		common.loginAjax(url,reqparams,function(token){
+			if(successcallback!=null)
+			{
+				var tokenAndRole = token.split("tokenAndRoles");
+				usermode.token = tokenAndRole[0];
+				usermode.roles = tokenAndRole[1];
+				successcallback(usermode);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  };
+  
+  
+  
+  /**
+   * 系统退出接口
+   * @param {Object} usermode
+   * @param {Object} successcallback
+   * @param {Object} errorcallback
+   */
+  loginDao.outTokens = function (userName,successcallback,errorcallback) {
+		var params = {};
+		var url = route.outTokens+userName;
+		//获取token
+		common.deleteAjax(url,params,function(token){
+			if(successcallback!=null)
+			{
+				successcallback(token);
+			}
+		},function(xhr, type, errorThrown){
+			if(errorcallback != null)
+			{
+				errorcallback(xhr.responseText);	
+			}
+		});
+  };
+  
+  return loginDao;
+});

@@ -1,0 +1,43 @@
+.lxr-name img {
+    line-height: 42px;
+    max-width: 42px;
+    height: 42px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.mui-scroll ul p{
+	margin-bottom: 0;
+	background-color: #f2f2f2;
+	color: #000000;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 8px;
+	font-size: 13px;
+}
+.lxr-name span{
+	font-size: 16px;
+	padding-left: 15px;
+}
+/*.relative{
+	position: relative;
+}*/
+#pullrefresh{
+	top: 34px;
+}
+.img_header{
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}
+.img_header img{
+	width: 100%;
+}
+.mui-search input[type=search]{
+	margin-bottom: 0;
+}
+.mui-search.mui-active:before{
+	top: 70%;
+}

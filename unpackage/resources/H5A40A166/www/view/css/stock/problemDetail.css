@@ -1,0 +1,92 @@
+.mui-bar{
+	background-color: #000000;
+}
+.mui-title{
+	color: #FFFFFF;
+}
+
+.mui-bar .mui-icon{
+	color: #FFFFFF;
+	font-size: 18px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+.add-container input{
+	margin-bottom: 0;
+}
+.double-input {
+	overflow: hidden;
+}
+.double-input input{
+	width: 50%;
+	float: left;
+}
+.add-container .mui-input-row button{
+	width: 100%;
+	float: left;
+	font-size: 13px;
+	margin-bottom: 0;
+	text-align: left;
+}
+.add-container .double-input button{
+	width: 50%;
+	float: left;
+	font-size: 13px;
+	margin-bottom: 0;
+	text-align: left;
+	
+}
+.feedback{
+	margin-bottom: 10px;
+}
+.double-btn{
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.double-btn .btn-left{
+	width: 33%;
+	float: left;
+}
+.double-btn button{
+	left: 50px;
+	width: 70%;
+}
+.mui-input-row input{
+	font-size: 13px;
+}
+.feedback p{
+	font-size: 13px;
+}
+input::-webkit-input-placeholder {
+	font-size: 13px;
+}
+.mui-input-row input{
+	border-bottom: 1px solid #cccccc;
+	border-radius: 0;
+	border-top: none;
+}
+.mui-input-row button{
+	border-bottom: 1px solid #cccccc;
+	border-radius: 0;
+	border-top: none;
+}
+.mui-input-row textarea{
+	border-bottom: 1px solid #cccccc;
+	border-radius: 0;
+	border-top: none;
+	font-size: 13px;
+}
+/*.feedback .image-list{
+	height: 220px;
+}*/
+.feedback .image-item{
+	width: 45px;
+	height: 45px;
+}
+.feedback .image-list{
+	height: 65px;
+}
+#qty a{
+	color: #000000;
+}

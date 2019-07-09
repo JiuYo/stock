@@ -1,0 +1,348 @@
+	html,body{
+		width: 100%;
+		height: 100%;
+	}
+	
+	.ui-page-login,
+	body {
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		/* background-image: url(../images/bg1.jpg); */
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position-y: bottom;
+	}
+	.bgimg{
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position-y: bottom;
+		position: relative;
+		z-index: 1;
+	}
+	.bgimg:after{
+		content: '';
+		width: 100%;
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+		background-image: url(../images/bg1.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position-y: bottom;
+		-webkit-filter:blur(2px);
+		-moz-filter:blur(2px);
+		-o-filter:blur(2px);
+		-ms-filter:blur(2px);
+		filter: blur(2px);
+		position: absolute;
+		z-index: 2;
+	}
+	.mui-content {
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translate(0,-50%);
+		-ms-transform:translate(0,-50%); 	
+		-moz-transform:translate(0,-50%); 	
+		-webkit-transform:translate(0,-50%); 
+		-o-transform:translate(0,-50%); 	
+		background: rgba(0, 0, 0, 0);
+		z-index:12;
+	}
+	
+	.area {
+		margin: 20px auto 0px auto;
+	}
+	
+	.mui-input-group {
+		margin-top: 10px;
+	}
+	
+	.mui-input-group:first-child {
+		margin-top: 20px;
+	}
+	
+	.mui-input-group label {
+		width: 22%;
+	}
+	
+	.mui-input-row label~input,
+	.mui-input-row label~select,
+	.mui-input-row label~textarea {
+		width: 78%;
+	}
+	
+	.mui-checkbox input[type=checkbox],
+	.mui-radio input[type=radio] {
+		top: 6px;
+	}
+	
+	.mui-content-padded {
+		margin-top: 25px;
+	}
+	
+	.mui-btn {
+		padding: 10px;
+		border-radius: 25px;
+		width: 80%;
+		margin: 0 auto;
+	}
+	
+	.link-area {
+		display: block;
+		margin-top: 25px;
+		text-align: center;
+	}
+	
+	.spliter {
+		color: #bbb;
+		padding: 0px 8px;
+	}
+	
+	.oauth-area {
+		position: absolute;
+		bottom: 20px;
+		left: 0px;
+		text-align: center;
+		width: 100%;
+		padding: 0px;
+		margin: 0px;
+	}
+	
+	.oauth-area .oauth-btn {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		background-size: 30px 30px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		margin: 0px 20px;
+		/*-webkit-filter: grayscale(100%); */
+		border: solid 1px #ddd;
+		border-radius: 25px;
+	}
+	
+	.oauth-area .oauth-btn:active {
+		border: solid 1px #aaa;
+	}
+	
+	.oauth-area .oauth-btn.disabled {
+		background-color: #ddd;
+	}
+	
+	.loginPrompt {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		text-align: center;
+		font-size: 26px;
+	}
+	
+	.loginInput .mui-input {
+		width: 94%;
+		/*margin: 0 auto 20px auto;*/
+		background-color: #ffffff;
+		border: 1px solid #cccccc;
+		border-radius: 20px;
+		margin-left: 3%;
+		text-indent: 10px;
+		margin-bottom: 40px;
+		opacity: 0.8;
+	}
+	
+	.readDeal {
+		width: 90%;
+		margin-left: 5%;
+		line-height: 22px;
+	}
+	
+	.readDeal a {
+		font-size: 14px;
+	}
+	
+	.readDeal input {
+		vertical-align: middle;
+	}
+	/*记住密码*/
+	
+	.mui-switch {
+		width: 40px;
+		height: 25px;
+		line-height: 17px;
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 3px;
+	}
+	
+	.mui-switch .mui-switch-handle {
+		top: 0px;
+		left: -1px;
+		width: 20px;
+		height: 20px;
+	}
+	
+	.remember {
+		width: 90%;
+		margin: 0 auto;
+		text-align: right;
+		line-height: 30px;
+		vertical-align: middle;
+		font-size: 14px;
+	}
+	
+	.fl {
+		float: left;
+	}
+	
+	.mui-switch.mui-active {
+		border-color: #007aff;
+		background-color: #007aff;
+	}
+	
+	.loginPrompt {
+		/*color: #626262;*/
+		color: #FFFFFF;
+		font-family: "微软雅黑";
+	}
+	
+	.color-aqua {
+		color: #007aff;
+	}
+	
+	.userTit {
+		position: absolute;
+		top: 0.55rem;
+		left: 7%;
+		z-index: 999;
+		padding: 0 0.4rem;
+		/*background-color: #efeff4;*/
+	}
+	
+	.myfirst {
+		animation: myfirst 0.5s forwards;
+		-webkit-animation: myfirst 0.5s forwards;
+	}
+	
+	.myfirstback {
+		animation: myfirstback 0.5s forwards;
+		-webkit-animation: myfirstback 0.5s forwards;
+	}
+	
+	.borderblue {
+		animation: borderblue 0.5s forwards;
+		-webkit-animation: borderblue 0.5s forwards;
+	}
+	
+	.borderblueback {
+		animation: borderblueback 0.5s forwards;
+		-webkit-animation: borderblueback 0.5s forwards;
+	}
+	/*border 动画*/
+	/*@keyframes borderblue
+{
+	from {
+		border: 1px solid #cccccc;
+		}
+	to {
+		border: 1px solid blue;
+		}
+}
+@-webkit-keyframes borderblue
+{
+	from {
+		border: 1px solid #cccccc;
+		}
+	to {
+		border: 1px solid blue;
+		}
+}
+@keyframes borderblueback
+{
+	from {
+		border: 1px solid blue;
+		}
+	to {
+		border: 1px solid #cccccc;
+		}
+}
+@-webkit-keyframes borderblueback
+{
+	from {
+		border: 1px solid blue;
+		}
+	to {
+		border: 1px solid #cccccc;
+		}
+}*/
+	/*标题动画*/
+	
+	@keyframes myfirst {
+		from {
+			top: 0.55rem;
+			color: #000000;
+		}
+		to {
+			top: -1.55rem;
+			color: #FFFFFF;
+		}
+	}
+	
+	@-webkit-keyframes myfirst
+	/* Safari and Chrome */
+	
+	{
+		from {
+			top: 0.55rem;
+			color: #000000;
+		}
+		to {
+			top: -1.55rem;
+			color: #FFFFFF;
+		}
+	}
+	
+	@keyframes myfirstback {
+		from {
+			top: -1.55rem;
+			color: #ffffff;
+		}
+		to {
+			top: 0.55rem;
+			color: #000000;
+		}
+	}
+	
+	@-webkit-keyframes myfirstback {
+		from {
+			top: -1.55rem;
+			color: #fffff;
+		}
+		to {
+			top: 0.55rem;
+			color: #000000;
+		}
+	}
+	
+	.fl a {
+    color: #f4f4f4;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    vertical-align: top;
+	}
+	
+	.remember .color-aqua {
+		color: #f4f4f4;
+	}
+	.mui-checkbox input[type=checkbox], .mui-radio input[type=radio] {
+	    position: initial;
+	}
+	.loginInput .inputSecond .mui-input{
+		margin-bottom: 20px;
+	}
+	

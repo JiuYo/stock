@@ -1,0 +1,19 @@
+.mui-scroll .mui-table-view-chevron .mui-table-view-cell{
+	padding-right: 15px;
+}
+.mui-scroll .mui-navigate-right:after, .mui-push-right:after{
+	content: "";
+}
+.mui-scroll .mui-table-view-chevron .mui-table-view-cell>a:not(.mui-btn){
+	margin-right: -15px;
+}
+.mui-navigate-right img{
+	border-radius: 0.4rem;
+}
+input[type=search]{
+	background: #CCCCCC;
+	opacity: 1;
+}
+.mui-content .mui-pull-top-pocket{
+top:34px !important;
+}
