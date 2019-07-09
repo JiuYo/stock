@@ -140,5 +140,32 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 			stockList.isGetByFun(null);
 		}
 	})
+	
+	
+		// 删除事件
+		$('.appendUL').on('tap', '.mui-btn', function(event) {
+		event.stopPropagation();
+		var elem = this;
+		var li = elem.parentNode.parentNode;
+		var listId = $(li).attr('data-id');
+		console.log(listId);
+		var param = {};
+		param.id = listId;
+		var btn = ["确认","取消"];
+		mui.confirm('是否确认删除?',btn,function(e){
+		    if(e.index==0){
+		    	$('#uploadMask').show();
+					stock.delStockById(param,function(data){
+						$('#uploadMask').hide();
+						console.log(JSON.stringify(data));
+						var currView = plus.webview.currentWebview();
+	  				currView.reload(true);
+					},function(errorinfo){
+						$('#uploadMask').hide();
+						mui.alert("请求失败!" + systemutil.parsestr(errorinfo));
+					});
+				}
+		});
+	});
   return stockList;
 });

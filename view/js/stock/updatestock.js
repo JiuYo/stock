@@ -5,7 +5,6 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 	var ad = {};
   updatestock.init = function (page) {
   	mui.init();
-		mui.previewImage();
 		mui(".mui-scroll-wrapper").scroll();
 	};
 	mui.plusReady(function(){
@@ -16,7 +15,6 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 			$(".currentQty").show();
 		}
 		updatestock.getStockDetail();
-		updatestock.getOutDetails();
 	});
 	
 	// 获取货品详情
@@ -31,16 +29,6 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 				}
 		},function(errorinfo){
 			
-			mui.alert("请求失败!" + systemutil.parsestr(errorinfo));
-		});
-	}
-	// 获取售出明细
-	updatestock.getOutDetails = function(){
-		var params = {};
-		params.pid = id;
-		stock.getOutDetailsByPId(params,function(data){
-			$('.status-list').append(updatestock.progress(data));
-		},function(errorinfo){	
 			mui.alert("请求失败!" + systemutil.parsestr(errorinfo));
 		});
 	}
@@ -90,27 +78,9 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		paramss.ID = id;
 		paramss.stock = currentQty;
 		paramss.sale = saleVal+stockVal-currentQty;
-		var param= {};
-		param.pid = id;
-		param.outtime = dateutil.getNewDate();
-		// param.create_time = dateutil.getNewDate();
-		param.outqty = stockVal-currentQty;
 		console.log(JSON.stringify(paramss));
 		stock.updatestockById(paramss,function(data){
-				// 保存售出明细；pid：货品id；date：当前日期；outqty：当日卖出
-				stock.insertStockDetailes(param,function(data){
-					$('#layui-m-layer0').hide();			
-					// 返回上一页、刷新列表、关闭当前页
-					setTimeout(function(){
-						 var currView = plus.webview.currentWebview();
-						var parentview = currView.opener(); 
-						currView.close();
-						parentview.reload(true);
-					},1000);
-				},function(errorinfo){
-					$('#layui-m-layer0').hide();
-					mui.alert("请求失败!" + systemutil.parsestr(errorinfo));
-				}); 
+			mui.toast("保存成功！");
 				
 		},function(errorinfo){
 			$('#layui-m-layer0').hide();
