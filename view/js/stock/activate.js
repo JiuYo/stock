@@ -1,4 +1,4 @@
-define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/systemutil','vue'], function ($,mui,common,stock,umodel,systemutil,vue) {　　　　
+define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/systemutil','vue',"service/login",], function ($,mui,common,stock,umodel,systemutil,vue,slogin) {　　　　
   var activate = {};
 	var params = {};
   params.page = '';
@@ -41,7 +41,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 	}
 	
 	//自动算码方法
-	$("#suanma").on('tap',function(){
+	$("#auuid").on('tap',function(){
 		var yuanma = $("#auuid").val();
 		var sma = compileStr(yuanma);
 		$("#suanma").val(sma);
@@ -76,10 +76,21 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		var jiamima =$("#mima").val();
 		//把加密码转换成源码
 		var zyuanma = uncompileStr(jiamima);
+		console.log(yuanma);
+		console.log(jiamima);
+		console.log(zyuanma);
 		//判断转换后的源码是否与自动生成的源码一致,然后进行判断
 		if(zyuanma == yuanma){
 			//调用后台方法,把后台字段的时间限制去掉
+			slogin.activateUser(umodel,function(){
+				//成功处理
+				$('#layui-m-layer0').hide();
+			},function(errorinfo){
+				$('#layui-m-layer0').hide();
+				mui.alert("登录失败!" + systemutil.parsestr(errorinfo));
+			});
 			alert("激活成功了！")
+			
 		}else{
 			alert("激活码错误，请重新输入！！！")
 		}

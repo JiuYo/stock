@@ -7,7 +7,7 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
   	sqlitetools.executeSql(sql,[],function(tx, rs){
 		console.log(rs.rows.length);
 		if(rs.rows.length == 1){
-			if(rs.rows[0].count > 0 ){
+			if(rs.rows[0].count > 0){
 				common.setUserInfo(rs.rows[0]);
 				console.log(JSON.stringify(rs.rows[0]));
 				// 减少登录次数
@@ -15,8 +15,11 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
 				sqlitetools.executeSql(sql,[],function(tx, rs){
 					console.log("当前登录用户次数减1成功！！！！")
 				},function(tx,err){
-						errorcallback('用户名密码错误！');
+						console.log('用户名密码错误！');
 				})
+				successcallback(rs.rows[0]);
+			}else if(rs.rows[0].count == -1){
+				console.log(JSON.stringify(rs.rows[0]));
 				successcallback(rs.rows[0]);
 			}else{
 				errorcallback("登录次数已经用完，请激活后使用！");
@@ -36,6 +39,19 @@ define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], funct
   		console.log("注册成功！！！");
 		plus.storage.setItem("isenrol", "1");
 		successcallback(usermode);
+  	},function(tx,err){
+  		errorcallback("获取数据失败!"+err.message);
+  	})
+  };
+  
+   // 修改用户
+  loginDao.activateUser = function (usermode,successcallback,errorcallback) {
+  	//查询数据
+	var sql = "update tab_user set count = -1";
+  	sqlitetools.executeSql(sql,[],function(tx, rs){
+  		console.log("注册成功！！！");
+  		plus.storage.setItem("isenrol", "1");
+  		successcallback(usermode);
   	},function(tx,err){
   		errorcallback("获取数据失败!"+err.message);
   	})

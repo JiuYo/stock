@@ -86,7 +86,7 @@ define(['jquery',"mui","common","service/login","service/system/userInfor","mode
 					case 1:
 						//注销账号
 						common.clearUserInfo();//清除前端本身的缓存
-						me.loginOut();//销毁token
+						// me.loginOut();//销毁token
 				//循环关闭页面
 						for (var i = 0, len = wvs.length; i < len; i++) {
 							if (wvs[i].getURL().indexOf("/launch.html") != -1){

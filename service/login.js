@@ -37,6 +37,19 @@ define(['jquery','common',"model/UserModel"], function ($,common) {　　　　
 	  });
 	};
 	
+	//修改用户的接口
+	 loginService.activateUser = function (usermode,successcallback,errorcallback) {
+		var dao = common.getDao("login");
+		require([dao], function (dao) {
+	        dao.activateUser(usermode,function(usermode){
+	        	successcallback(usermode);
+	        },function(errorinfo){
+	        	errorcallback(errorinfo);
+	        });
+	  });
+	};
+	
+	
   
   return loginService;
 });
