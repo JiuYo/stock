@@ -49,7 +49,7 @@ define(['jquery', "mui", "common", "service/login", "model/UserModel", 'utils/sy
 			umodel.username = username;
 			umodel.password = password;
 			umodel.realname = nickname;
-			umodel.count = 999;
+			umodel.count = 10;
 			slogin.enrolLogin(umodel, function() {
 				//成功处理
 				$('#layui-m-layer0').hide();
