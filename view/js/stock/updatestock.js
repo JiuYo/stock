@@ -4,7 +4,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 	var pageType = "";
 	var ad = {};
   updatestock.init = function (page) {
-  	mui.init();
+		mui.init();
 		mui(".mui-scroll-wrapper").scroll();
 	};
 	mui.plusReady(function(){
