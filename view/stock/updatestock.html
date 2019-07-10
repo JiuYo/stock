@@ -9,12 +9,12 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link href="../../libs/mui/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../css/stock/problemList.css" />
-		<link rel="stylesheet" type="text/css" href="../css/stock/problemDetail.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/stock/problemDetail.css" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
 		<link href="../css/stock/feedback.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../css/stock/problemDetails.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/stock/layer.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/stock/progress.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/stock/problemDetails.css" />
+		<link rel="stylesheet" type="text/css" href="../css/stock/layer.css" />
+		<link rel="stylesheet" type="text/css" href="../css/stock/progress.css" />
 		<style>
 			.currentQty{
 				display: none;
@@ -29,78 +29,125 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body id="saleandcome">
 		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">返回</a>
+			<a  id="isa"  class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">返回</a>
 			<h1 class="mui-title">编辑盘货明细</h1>
 		</header>
 		<!--列表数据-->
 		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
-		
-		<div>
-			<div id="item1" class="mui-control-content mui-active">
-				<div class="add-container mui-content">
-		            <div class="mui-input-row">
-		                <label>货品名称:</label>
-		                <span id = "pname"></span>
-		            </div>
-					<div class="mui-input-row">
-		                <label>货品数量:</label>
-		                <span id ="count" ></span>
-		            </div>
-					<div class="mui-input-row">
-					    <label>库存数量:</label>
-					    <span id ="stock" ></span>
+				<div>
+					<div id="item1" class="mui-control-content mui-active">
+						<div class="add-container mui-content">
+							<div class="mui-input-row">
+								<label>货品名称:</label>
+								<span id="pname"></span>
+							</div>
+							<div class="mui-input-row">
+								<label>货品数量:</label>
+								<span id="count"></span>
+							</div>
+							<div class="mui-input-row">
+								<label>库存数量:</label>
+								<span id="stock"></span>
+							</div>
+							<div class="mui-input-row">
+								<label>进货总价:</label>
+								<span class="numstyle" id="total"></span>
+							</div>
+							<div class="mui-input-row">
+								<label>货品单价:</label>
+								<span id="price"></span>
+							</div>
+							<div class="mui-input-row currentQty">
+								<label>当前数量:</label>
+								<input type="number" label="当前数量" id="currentQty" datatype="n" step="0.01" placeholder="当前数量（必填）">
+							</div>
+							<div  id="cale">
+							<label>卖出数量:</label>
+							<div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='100'>
+								<!-- "-"按钮，点击可减小当前数值 -->
+								<button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+								<input class="mui-numbox-input" type="number"  id='sale'/>
+								<!-- "+"按钮，点击可增大当前数值 -->
+								<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+							</div>
+							</br><label>进货数量:</label>
+							<div class="mui-numbox" data-numbox-min='1' data-numbox-max='100'>
+								<!-- "-"按钮，点击可减小当前数值 -->
+								<button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+								<input class="mui-numbox-input" id='come' type="number" />
+								<!-- "+"按钮，点击可增大当前数值 -->
+								<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+							</div>
+							</div>
+							<div class="mui-input-row">
+								<label>总卖出量:</label>
+								<span id="sale"></span>
+							</div>
+							<div class="mui-input-row">
+								<label>进货时间:</label>
+								<span id="date"></span>
+							</div>
+							<div class="double-btn currentQty">
+								<!-- <div class="btn-left"> -->
+								<button type="button" id="comeandsale " disabled="disabled" class="mui-btn  mui-btn-danger subBth">左滑是卖出，右滑是进货</button>
+								<!-- </div> -->
+							</div>
+						</div>
 					</div>
-					<div class="mui-input-row">
-		                <label>进货总价:</label>
-		                <span class="numstyle" id="total"></span>
-		            </div>
-		            <div class="mui-input-row">
-		                <label>货品单价:</label>
-		                <span id ="price"></span>
-		            </div>
-		            <div class="mui-input-row currentQty">
-		                <label>当前数量:</label>
-						<input type="number" label="当前数量" id = "currentQty" datatype="n" step="0.01"  placeholder="当前数量（必填）">
-		            </div>
-					<label>卖出数量:</label>
-					<div class="mui-numbox">
-					  <!-- "-"按钮，点击可减小当前数值 -->
-					  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
-					  <input class="mui-numbox-input" type="number" />
-					  <!-- "+"按钮，点击可增大当前数值 -->
-					  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
-					</div>
-						</br><label>进货数量:</label>
-					<div class="mui-numbox">
-					  <!-- "-"按钮，点击可减小当前数值 -->
-					  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
-					  <input class="mui-numbox-input" type="number" />
-					  <!-- "+"按钮，点击可增大当前数值 -->
-					  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
-					</div>
-		            <div class="mui-input-row">
-		                <label>总卖出量:</label>
-		                <span id="sale"></span>
-		            </div>
-		            <div class="mui-input-row">
-		                <label>进货时间:</label>
-		                <span id="date"></span>
-		            </div>
-				<div class="double-btn currentQty">
-					<!-- <div class="btn-left"> -->
-						<button type="button" id="subButton"  class="mui-btn mui-btn-primary subBth">确认</button>
-					<!-- </div> -->
+
 				</div>
 			</div>
-			</div>
-			
 		</div>
+	</body>
+	
+	
+	
+	<div style="display: none;" id="layui-m-layer0" class="layui-m-layer layui-m-layer2" index="0">
+		<div class="layui-m-layershade"></div>
+		<div class="layui-m-layermain">
+			<div class="layui-m-layersection">
+				<div class="layui-m-layerchild  layui-m-anim-scale">
+					<div class="layui-m-layercont"><i></i><i class="layui-m-layerload"></i><i></i>
+						<p>正在处理...</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	</body>
-	<div style="display: none;" id="layui-m-layer0" class="layui-m-layer layui-m-layer2" index="0"><div class="layui-m-layershade"></div><div class="layui-m-layermain"><div class="layui-m-layersection"><div class="layui-m-layerchild  layui-m-anim-scale"><div class="layui-m-layercont"><i></i><i class="layui-m-layerload"></i><i></i><p>正在处理...</p></div></div></div></div></div>  
 </html>
-<script src="../../libs/require/require.js" data-main="../js/main" id="current-page" current-page ="stock/updatestock" target-module="stock/updatestock" defer async="true" ></script>
+<script src="../../libs/require/require.js" data-main="../js/main" id="current-page" current-page="stock/updatestock"
+ target-module="stock/updatestock" defer async="true"></script>
+<script type="text/javascript">
+	//左滑是卖出事件,
+	document.getElementById("saleandcome").addEventListener("swipeleft", function() {
+		console.log("你正在向左滑动");
+		var sale = document.getElementById("sale").value;
+		//调用数据库操作,进行减法计算
+
+		//获得当前窗口对象
+		var ws=plus.webview.currentWebview();
+		//刷新当前窗口
+		ws.reload(true);
+	});
+	//右滑是进货事件
+	document.getElementById("saleandcome").addEventListener("swiperight", function() {
+		console.log("你正在向右滑动");
+		var come = document.getElementById("come").value;
+		console.log(come);
+		//调用数据库操作,进行加法计算
+		
+		//获得当前窗口对象
+		var ws=plus.webview.currentWebview();
+		//刷新当前窗口
+		ws.reload(true);
+	});
+	//监听左上角返回事件,当返回后,刷新stocklist.html页面数据
+	document.getElementById("isa").addEventListener('tap',function(){
+		var ws = plus.webview.getWebviewById("stock/stocklist.html");
+		ws.reload(true);
+});
+	
+</script>
