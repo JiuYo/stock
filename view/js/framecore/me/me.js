@@ -129,7 +129,7 @@ define(['jquery',"mui","common","service/login","service/system/userInfor","mode
 	//获取用户信息
 	me.getUserByToken = function(){
 		umodel = common.getUserInfo();
-		$("#titleName").html(umodel.realname+"<div class='mui-ellipsis' id='titleUserName'>"+"账号 : "+umodel.userName+"</div>")
+		$("#titleName").html("<div class='mui-media-body'  id='titleName'>"+"昵称:"+umodel.realname+"</div>"+"</br><div class='mui-ellipsis' id='titleUserName'>"+"账号 : "+umodel.userName+"</div>")
 	}
 	
 	//修改头像
