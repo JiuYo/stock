@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/stock/problemDetails.css" />
 		<link rel="stylesheet" type="text/css" href="../css/stock/layer.css" />
 		<link rel="stylesheet" type="text/css" href="../css/stock/progress.css" />
+		<!-- <script src="../js/mui.min.js"></script> -->
 		<style>
 			.currentQty{
 				display: none;
@@ -49,10 +50,6 @@
 								<span id="count"></span>
 							</div>
 							<div class="mui-input-row">
-								<label>库存数量:</label>
-								<span id="stock"></span>
-							</div>
-							<div class="mui-input-row">
 								<label>进货总价:</label>
 								<span class="numstyle" id="total"></span>
 							</div>
@@ -60,11 +57,6 @@
 								<label>货品单价:</label>
 								<span id="price"></span>
 							</div>
-							<div class="mui-input-row currentQty">
-								<label>当前数量:</label>
-								<input type="number" label="当前数量" id="currentQty" datatype="n" step="0.01" placeholder="当前数量（必填）">
-							</div>
-							<div  id="cale">
 							<label>卖出数量:</label>
 							<div class="mui-numbox" data-numbox-step='1' data-numbox-min='1' data-numbox-max='100'>
 								<!-- "-"按钮，点击可减小当前数值 -->
@@ -74,18 +66,25 @@
 								<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
 							</div>
 							</br><label>进货数量:</label>
-							<div class="mui-numbox" data-numbox-min='1' data-numbox-max='100'>
+							<div class="mui-numbox" data-numbox-min='0' data-numbox-max='100'>
 								<!-- "-"按钮，点击可减小当前数值 -->
 								<button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
 								<input class="mui-numbox-input" id='come' type="number" />
 								<!-- "+"按钮，点击可增大当前数值 -->
 								<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
 							</div>
-							</div>
-							<div class="mui-input-row">
+						<!-- 	<div class="mui-input-row">
 								<label>总卖出量:</label>
 								<span id="sale"></span>
-							</div>
+							</div> -->
+						<div class="mui-input-row">
+							<label>库存数量:</label>
+							<span id="stock"></span>
+						</div>
+						<div class="mui-input-row">
+							<label>总卖出量:</label>
+							<span id="salecount"></span>
+						</div>
 							<div class="mui-input-row">
 								<label>进货时间:</label>
 								<span id="date"></span>
@@ -123,26 +122,49 @@
 <script type="text/javascript">
 	//左滑是卖出事件,
 	document.getElementById("saleandcome").addEventListener("swipeleft", function() {
-		console.log("你正在向左滑动");
+		//获得数字输入框的数量
 		var sale = document.getElementById("sale").value;
-		//调用数据库操作,进行减法计算
-
-		//获得当前窗口对象
-		var ws=plus.webview.currentWebview();
-		//刷新当前窗口
-		ws.reload(true);
+		//弹窗确认是否卖出
+		mui.confirm('是否卖出'+sale+'商品？','卖出确认',['取消','确认'],function (e) {
+			if(e.index == 1){
+				//调用数据库操作,进行减法计算
+				
+				//提示卖出成功信息
+				mui.toast("😀恭喜您卖出"+sale+"商品😀");
+				//获得当前窗口对象
+				var ws=plus.webview.currentWebview();
+				//刷新当前窗口
+				ws.reload(true);
+			}else{
+				mui.toast("取消操作");
+			}
+		},'div');
 	});
 	//右滑是进货事件
 	document.getElementById("saleandcome").addEventListener("swiperight", function() {
 		console.log("你正在向右滑动");
+		//获得数字输入框的数量
 		var come = document.getElementById("come").value;
-		console.log(come);
-		//调用数据库操作,进行加法计算
+		//弹窗确认是否进货
+		mui.confirm('是否进货'+come+'商品？','进货确认',['取消','确认'],function (e) {
+			if(e.index == 1){
+				//调用数据库操作,进行加法计算
+				
+				//提示卖出成功信息
+				mui.toast("😀恭喜您进货"+come+"商品😀");
+				//获得当前窗口对象
+				var ws=plus.webview.currentWebview();
+				//刷新当前窗口
+				ws.reload(true);
+			}else{
+				mui.toast("取消操作");
+			}
+		},'div');
 		
 		//获得当前窗口对象
 		var ws=plus.webview.currentWebview();
 		//刷新当前窗口
-		ws.reload(true);
+		//ws.reload(true);
 	});
 	//监听左上角返回事件,当返回后,刷新stocklist.html页面数据
 	document.getElementById("isa").addEventListener('tap',function(){
