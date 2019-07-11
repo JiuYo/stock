@@ -57,7 +57,7 @@ define(['jquery',"mui","common","service/system/userInfor","model/UserModel","ut
 						common.clearUserInfo();
 						plus.storage.setItem("userPwd", "");
 						common.getLoginView();
-				},500);
+				},1000);
 			}
 		},function(errorInfo){
 			$('#layui-m-layer0').hide();

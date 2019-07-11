@@ -1,4 +1,4 @@
-define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], function ($,common,sqlitetools) {　　　　
+define(['jquery','common',"dao/unlineimpl/sqlitetools","model/UserModel"], function ($,common,sqlitetools,UserModel) {　　　　
   var stockDao = {};
   
   

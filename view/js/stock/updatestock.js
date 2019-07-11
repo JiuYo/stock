@@ -101,6 +101,88 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 	    
 	})
 	
+		//左滑是卖出事件,
+		document.getElementById("saleandcome").addEventListener("swipeleft", function() {
+			//获得数字输入框的数量
+			var sale = document.getElementById("saleout").value;
+			//弹窗确认是否卖出
+			mui.confirm('是否卖出'+sale+'商品？','卖出确认',['取消','确认'],function (e) {
+				if(e.index == 1){
+					//调用数据库操作,进行减法计算
+					var stockVal = $("#stock").html();		
+					var saleVal = $("#sale").html();
+					stockVal = parseInt(stockVal.trim());
+					saleVal = parseInt(saleVal.trim());
+					sale = parseInt(sale.trim());
+					// 修改货品表数据；stock：之前-当日；sale：之前+当日
+					var paramss = {};
+					paramss.ID = id;
+					paramss.stock = stockVal-sale;
+					paramss.sale = saleVal+sale;
+					console.log(JSON.stringify(paramss));
+					stock.updatestockById(paramss,function(data){
+						//提示卖出成功信息
+						mui.toast("😀恭喜您卖出"+sale+"商品😀");
+						//获得当前窗口对象
+						var ws=plus.webview.currentWebview();
+						//刷新当前窗口
+						ws.reload(true);
+					},function(errorinfo){
+						$('#layui-m-layer0').hide();
+						mui.alert("请求失败!" + systemutil.parsestr(errorinfo));
+					}); 	
+				}else{
+					mui.toast("取消操作");
+				}
+			},'div');
+		});
+		//右滑是进货事件
+		document.getElementById("saleandcome").addEventListener("swiperight", function() {
+			console.log("你正在向右滑动");
+			//获得数字输入框的数量
+			var come = document.getElementById("come").value;
+			//弹窗确认是否进货
+			mui.confirm('是否进货'+come+'商品？','进货确认',['取消','确认'],function (e) {
+				if(e.index == 1){
+					//调用数据库操作,进行加法计算，come+
+					var stockVal = $("#stock").html();	
+					var countVal = $("#count").html();
+					stockVal = parseInt(stockVal.trim());
+					countVal = parseInt(countVal.trim());
+					come = parseInt(come.trim());
+					// 修改货品表数据；stock：之前-当日；sale：之前+当日
+					var paramss = {};
+					paramss.ID = id;
+					paramss.stock = stockVal+come;
+					paramss.count = countVal+come;
+					console.log(JSON.stringify(paramss));
+					stock.updatestockById(paramss,function(data){
+						//提示卖出成功信息
+						mui.toast("😀恭喜您进货"+come+"商品😀");
+						//获得当前窗口对象
+						var ws=plus.webview.currentWebview();
+						//刷新当前窗口
+						ws.reload(true);
+					},function(errorinfo){
+						$('#layui-m-layer0').hide();
+						mui.alert("请求失败!" + systemutil.parsestr(errorinfo));
+					}); 	
+				}else{
+					mui.toast("取消操作");
+				}
+			},'div');
+			
+			//获得当前窗口对象
+			var ws=plus.webview.currentWebview();
+			//刷新当前窗口
+			//ws.reload(true);
+		});
+		//监听左上角返回事件,当返回后,刷新stocklist.html页面数据
+		document.getElementById("isa").addEventListener('tap',function(){
+			var ws = plus.webview.getWebviewById("stock/stocklist.html");
+			ws.reload(true);
+	});
+	
 
   return updatestock;
 });

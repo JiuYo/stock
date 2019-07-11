@@ -1,4 +1,4 @@
-define(['jquery','common','dao/onlineimpl/route',"model/UserModel"], function ($,common,route) {　　　　
+define(['jquery','common','dao/onlineimpl/route',"dao/unlineimpl/sqlitetools","model/UserModel"], function ($,common,route,sqlitetools) {　　　　
 	var userInforDao = {};
 	
 	/**
@@ -54,21 +54,16 @@ define(['jquery','common','dao/onlineimpl/route',"model/UserModel"], function ($
    * @param {Object} errorcallback
    */
   userInforDao.updatePasswordByUserApp = function (params,successcallback,errorcallback) {	
-		var url = route.updatePasswordByUserApp;
+		var sql = "update tab_user SET password = '"+params.newPassword+"' where password = '"+params.lastPassword+"'";
 		//获取token
-		common.encryptAjax(url,params,function(data){
-
-			if(successcallback!=null)
-			{
-				successcallback(data);
-			}
-		},function(xhr, type, errorThrown){
-			if(errorcallback != null)
-			{
-				
-				errorcallback(xhr.responseText);	
-			}
-		});
+		sqlitetools.executeSql(sql,[],function(tx, rs){
+			var data ={};
+			data.msg = "修改密码成功！";
+			console.log("修改密码成功！！！！")
+			successcallback(data);
+		},function(tx,err){
+				errorcallback('修改密码失败！');
+		})
   }
   
     /**

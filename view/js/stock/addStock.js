@@ -5,14 +5,14 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 	};
 	mui.plusReady(function(){
 			// 添加货品单价的计算方法,对货品单价和数量增加监听
-			var totalData = document.getElementById("total");
-			totalData.addEventListener('input',function(){
-		  		addstock.getDrawingNoList();
-			});
-			var countData = document.getElementById("count");
-			countData.addEventListener('input',function(){
-				addstock.getDrawingNoList();
-			});
+			// var totalData = document.getElementById("total");
+			// totalData.addEventListener('input',function(){
+		 //  		addstock.getDrawingNoList();
+			// });
+			// var countData = document.getElementById("count");
+			// countData.addEventListener('input',function(){
+			// 	addstock.getDrawingNoList();
+			// });
 		
 	});
 	$('#date').on('tap',function(){
@@ -41,8 +41,8 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		var unitVal = $("#unit").val();
 		params.unit = unitVal;
 		// 进货总价
-		var totalVal = $("#total").val();
-		params.total = totalVal;
+		// var totalVal = $("#total").val();
+		// params.total = totalVal;
 		// 货品单价
 		var priceVal = $("#price").val();
 		params.price = priceVal;
