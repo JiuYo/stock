@@ -1,57 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
+<!-- 激活界面 -->
 <html>
-
 	<head>
-		<meta charset="utf-8">
-		<title>Hello MUI</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<link rel="stylesheet" href="../../../libs/mui/mui.min.css">
-		<link rel="stylesheet" type="text/css" href="../../css/framecore/me/personalInformation.css"/>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../libs/mui/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../../libs/mui/mui.picker.min.css" />
+		<link href="../../css/feedback/feedback.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/stock/addProblemDetail.css"/>
 	</head>
-
-	<body class="mui-fullscreen">
-			<div class="mui-navbar-inner mui-bar mui-bar-nav">
-				<button type="button" class="mui-left mui-action-back mui-btn  mui-btn-link mui-btn-nav mui-pull-left">
-					<span class="mui-icon mui-icon-left-nav"></span>设置
-				</button>
-				<h1 class="mui-center mui-title">用户信息</h1>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" id ="backa">返回</a>
+			<h1 class="mui-title">激活界面</h1>
+		</header>
+		<div id="pullrefresh" class="add-container mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+			<div class="mui-input-row">
+				<span>激活源码:</span>
+				<input  label="激活源码" id="auuid" type="text"  placeholder="点击获取源码" readonly="readonly">
 			</div>
-			<div class="mui-page-content">
-				<div class="mui-scroll-wrapper">
-					<div class="mui-scroll">
-						
-						<ul class="mui-table-view">
-							<!--<li class="mui-table-view-cell">
-								<a id="head">头像
-									<span class="mui-pull-right head">
-									<img class="head-img mui-action-preview" id="head-img1" src=""/>
-								</span>
-								</a>
-							</li>-->
-							<li class="mui-table-view-cell">
-								<a>部门<span class="mui-pull-right" id="department"></span></a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a>姓名<span class="mui-pull-right" id="userName"></span></a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a>手机号<span class="mui-pull-right" id="userPhone"></span></a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a>办公电话<span class="mui-pull-right" id="userTel"></span></a>
-							</li>
-							<li class="mui-table-view-cell">
-								<a>邮箱<span class="mui-pull-right" id="userEmail"></span></a>
-							</li>
-						</ul>
-						<button type="button" id="btn" class="mui-btn mui-btn-primary mui-btn-block editBtn">编辑</button>
+			<div class="mui-input-row">
+				<span>激活密码:</span>
+				<input  label="激活密码"  id="mima"     placeholder="请输入激活密码" type="text">
+			</div>
+			<div class="mui-input-row">
+				<span>自动算码:</span>
+				<input  label="自动算码"  id="suanma"     type="text"  readonly="readonly" >
+			</div>
+			<button type="submit" id = "buttonActivate">激活</button>
+			</br></br><a  class="mui-icon mui-icon-phone"  href="tel:13910716406">电话联系</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;<p  style="color: #0062CC;" class="mui-icon mui-icon-weixin"  href="javascript(0);" ></p><input value="13910716406"  readonly="readonly"/>
+		
+		</div>
+		
+		<div style="display: none;" id="layui-m-layer0" class="layui-m-layer layui-m-layer2" index="0">
+			<div class="layui-m-layershade"></div>
+			<div class="layui-m-layermain">
+				<div class="layui-m-layersection">
+					<div class="layui-m-layerchild  layui-m-anim-scale">
+						<div class="layui-m-layercont"><i></i><i class="layui-m-layerload"></i><i></i>
+							<p>登录中...</p>
+						</div>
 					</div>
 				</div>
-				<!--页面主内容区结束-->
 			</div>
+		</div>
+		<!--加载中-->
 	</body>
-	<script src="../../../libs/require/require.js" data-main="../../js/main" id="current-page" current-page="framecore/me/personalInformation" target-module="framecore/me/personalInformation" defer async="true"></script>
-
+	<script src="../../../libs/require/require.js" data-main="../../js/main" id="current-page" current-page ="stock/activate" target-module="stock/activate" defer async="true" ></script>
 </html>
