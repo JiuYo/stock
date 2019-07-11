@@ -32,6 +32,14 @@ define(['jquery',"mui","common","service/system/userInfor","model/UserModel"], f
 			});
   })
   
+		document.getElementById("gongneng").addEventListener('tap',function(){
+		mui.alert("点货郎APP是一款提供新增货品、展示货品、盘点货品的产品，目的是方便商家清点库存，让商家省去纸笔点货的烦恼","功能介绍")
+	});
+	document.getElementById("guanyu").addEventListener('tap',function(){
+		mui.toast('点货郎APP由Miss.Yang、Mr.Wang共同开发');
+	})
+	
+	
   
   return about;
 });
