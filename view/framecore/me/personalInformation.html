@@ -7,8 +7,45 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../../libs/mui/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../../libs/mui/mui.picker.min.css" />
-		<link href="../../css/feedback/feedback.css" rel="stylesheet" />
+		<link href="../css/feedback/feedback.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/stock/addProblemDetail.css"/>
+		<style type="text/css">
+			.grxx_but{
+				width: 60%;
+				margin-top: 20px;
+			}
+			.search-tit {
+				border-bottom: 1px solid #000000;
+				height: 30px;
+				width: 90%;
+				margin: 0 auto;
+			}
+			.search-tit p {
+				padding: 0;
+				color: #000000;
+				position: relative;
+				top: 18px;
+				width: 140px;
+				background-color: #efeff4;
+				margin: 0 auto;
+				text-align: center;
+				margin-top: 2rem;
+			}
+			.mt20{
+				margin-top: 20px;
+				width: 90%;
+				margin: 0 auto;
+			}
+			.mt20 p{
+				text-align: left;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				font-size: 18px;
+			}
+			.mt20 p a{
+				color: #000000;
+			}
+		</style>
 	</head>
 	<body>
 		<header class="mui-bar mui-bar-nav">
@@ -17,21 +54,51 @@
 		</header>
 		<div id="pullrefresh" class="add-container mui-content mui-scroll-wrapper">
 			<div class="mui-scroll">
-			<div class="mui-input-row">
-				<span>激活源码:</span>
-				<input  label="激活源码" id="auuid" type="text"  placeholder="点击获取源码" readonly="readonly" >
+				
+				<div style="background-color: #FFFFFF;margin: 10px;border-radius: 5px;margin-top: 30px;">							
+					<div class="mui-input-row">
+						<label>激活源码:</label>
+						<input  label="激活源码" id="auuid" type="text"  readonly="readonly" placeholder="点击获取激活源码"  >
+					</div>
+					<div class="mui-input-row">
+						<label>激活密码:</label>
+						<input  label="激活密码"  id="mima"     placeholder="请输入激活密码" type="text">
+					</div>
+				</div>
+				
+				<center>
+					<button id="buttonActivate" type="button" class="mui-btn mui-btn-primary grxx_but">激活</button>
+				</center>
+				
+			<!-- <div class="mui-input-row">
+				<span>:</span>
+				<input  label="激活源码" id="auuid" type="text"  readonly="readonly" placeholder="输入获取源码"  >
 			</div>
 			<div class="mui-input-row">
 				<span>激活密码:</span>
 				<input  label="激活密码"  id="mima"     placeholder="请输入激活密码" type="text">
-			</div>
-			<!-- <div class="mui-input-row">
+			</div> -->
+	<!-- 		<div class="mui-input-row">
 				<span>自动算码:</span>
 				<input  label="自动算码"  id="suanma"     type="text"  readonly="readonly" >
 			</div> -->
-			<button type="submit" id = "buttonActivate">激活</button>
-			</br></br><a  class="mui-icon mui-icon-phone"  href="tel:13146810155">电话联系</a>
-			&nbsp;&nbsp;&nbsp;&nbsp;<p  style="color: #0062CC;" class="mui-icon mui-icon-weixin"  href="javascript(0);" ></p><input value="13146810155"  readonly="readonly"/>
+			<!-- <button type="submit" id = "buttonActivate">激活</button> -->
+			<div class="search-tit">
+				<p>联系我们</p>
+			</div>
+			<div class="mt20">
+				<p style="margin-top: 40px;">
+					<span  class="mui-icon mui-icon-phone" style="color: #78a755;"></span>
+					<a href="tel:13146810155">电话:13146810155</a>
+				</p>
+				<p>
+					<span  class="mui-icon mui-icon-weixin" style="color: #78a755;"></span>
+					<a>微信:13146810155</a>
+				</p>
+			</div>
+			
+<!-- 			</br></br><a  class="mui-icon mui-icon-phone"  href="tel:13146810155">电话联系</a>
+			<p style="color: #0062CC;" class="mui-icon mui-icon-weixin"  href="javascript(0);" ></p><input value="13146810155"  readonly="readonly"/> -->
 		
 		</div>
 		
