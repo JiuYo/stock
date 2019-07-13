@@ -8,8 +8,360 @@
 		<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
     <style type="text/css">
+		html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.mui-views,
+			.mui-view,
+			.mui-pages,
+			.mui-page,
+			.mui-page-content {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #efeff4;
+			}
+			
+			.mui-pages {
+				top: 46px;
+				height: auto;
+			}
+			
+			.mui-scroll-wrapper,
+			.mui-scroll {
+				background-color: #efeff4;
+			}
+			
+			.mui-page.mui-transitioning {
+				-webkit-transition: -webkit-transform 300ms ease;
+				transition: transform 300ms ease;
+			}
+			
+			.mui-page-left {
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+			
+			.mui-ios .mui-page-left {
+				-webkit-transform: translate3d(-20%, 0, 0);
+				transform: translate3d(-20%, 0, 0);
+			}
+			
+			.mui-navbar {
+				position: fixed;
+				right: 0;
+				left: 0;
+				z-index: 10;
+				height: 44px;
+				background-color: #f7f7f8;
+			}
+			
+			.mui-navbar .mui-bar {
+				position: absolute;
+				background: transparent;
+				text-align: center;
+			}
+			
+			.mui-android .mui-navbar-inner.mui-navbar-left {
+				opacity: 0;
+			}
+			
+			.mui-ios .mui-navbar-left .mui-left,
+			.mui-ios .mui-navbar-left .mui-center,
+			.mui-ios .mui-navbar-left .mui-right {
+				opacity: 0;
+			}
+			
+			.mui-navbar .mui-btn-nav {
+				-webkit-transition: none;
+				transition: none;
+				-webkit-transition-duration: .0s;
+				transition-duration: .0s;
+			}
+			
+			.mui-navbar .mui-bar .mui-title {
+				display: inline-block;
+				width: auto;
+			}
+			
+			.mui-page-shadow {
+				position: absolute;
+				right: 100%;
+				top: 0;
+				width: 16px;
+				height: 100%;
+				z-index: -1;
+				content: '';
+			}
+			
+			.mui-page-shadow {
+				background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+				background: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, .01) 50%, rgba(0, 0, 0, .2) 100%);
+			}
+			
+			.mui-navbar-inner.mui-transitioning,
+			.mui-navbar-inner .mui-transitioning {
+				-webkit-transition: opacity 300ms ease, -webkit-transform 300ms ease;
+				transition: opacity 300ms ease, transform 300ms ease;
+			}
+			
+			.mui-page {
+				display: none;
+			}
+			
+			.mui-pages .mui-page {
+				display: block;
+			}
+			
+			.mui-page .mui-table-view:first-child {
+				margin-top: 15px;
+			}
+			
+			.mui-page .mui-table-view:last-child {
+				margin-bottom: 30px;
+			}
+			
+			.mui-table-view {
+				margin-top: 20px;
+			}
+			
+			.mui-table-view span.mui-pull-right {
+				color: #999;
+			}
+			
+			.mui-table-view-divider {
+				background-color: #efeff4;
+				font-size: 14px;
+			}
+			
+			.mui-table-view-divider:before,
+			.mui-table-view-divider:after {
+				height: 0;
+			}
+			
+			.head {
+				height: 40px;
+			}
+			
+			#head {
+				line-height: 40px;
+			}
+			
+			.head-img {
+				width: 40px;
+				height: 40px;
+			}
+			
+			#head-img1 {
+				position: absolute;
+				bottom: 10px;
+				right: 16px;
+				width: 40px;
+				height: 40px;
+			}
+			
+			.update {
+				font-style: normal;
+				color: #999999;
+				margin-right: -25px;
+				font-size: 15px
+			}
+			
+			.mui-fullscreen {
+				position: fixed;
+				z-index: 20;
+			}
+			
+			.mui-ios .mui-navbar .mui-bar .mui-title {
+				position: static;
+			}
+			
+			.feedback body {
+				background-color: #EFEFF4;
+			}
+			
+			.feedback input,
+			.feedback textarea {
+				border: none !important;
+			}
+			
+			.feedback textarea {
+				height: 100px;
+				margin-bottom: 0 !important;
+				padding-bottom: 0 !important;
+			}
+			
+			.feedback .row {
+				width: 100%;
+				background-color: #fff;
+			}
+			
+			.feedback p {
+				padding: 10px 15px 0;
+			}
+			
+			.feedback button {
+				width: 90%;
+				height: 46px;
+				left: 50%;
+				-webkit-transform: translate(-50%);
+			}
+			
+			.feedback .hidden {
+				display: none;
+			}
+			
+			.feedback .image-list {
+				width: 100%;
+				height: 85px;
+				background-size: cover;
+				padding: 10px 10px;
+				overflow: hidden;
+			}
+			
+			.feedback .image-item {
+				width: 65px;
+				height: 65px;
+				background-image: url(../images/iconfont-tianjia.png);
+				background-size: 100% 100%;
+				display: inline-block;
+				position: relative;
+				border-radius: 5px;
+				margin-right: 10px;
+				margin-bottom: 10px;
+				border: solid 1px #e8e8e8;
+			}
+			
+			.feedback .image-item input[type="file"] {
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				cursor: pointer;
+				z-index: 0;
+			}
+			
+			.feedback .image-item.space {
+				border: none;
+			}
+			
+			.feedback .image-item .image-close {
+				position: absolute;
+				display: inline-block;
+				right: -6px;
+				top: -6px;
+				width: 20px;
+				height: 20px;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 12px;
+				background-color: #FF5053;
+				color: #f3f3f3;
+				border: solid 1px #FF5053;
+				font-size: 9px;
+				font-weight: 200;
+				z-index: 1;
+			}
+			
+			.feedback .image-item.space .image-close {
+				display: none;
+			}
+			
+			.mui-navbar {
+				display: none;
+			}
+			
+			.mui-pages {
+				top: 0px;
+			}
+			.mui-page-content{
+				margin-top: 44px;
+			}
+			.editBtn{
+				margin: 20px auto;
+				padding: 5px 0;
+				width: 80%;
+			}
+			.mui-table-view-cell input{
+				text-align: left;
+				border: none;
+				padding-right: 10px;
+				box-sizing: border-box;
+				width: 200px;
+			}
+			.saveBtn{
+				margin: 20px auto;
+				padding: 5px 0;
+				width: 80%;
+			}
+			.webkitaaaa{
+				-webkit-user-select: text !important;
+			}
+			
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	font-size: 14px;
+	height: 46px;
+	line-height: 46px;
+}
+.mui-table-view-cell{
+	padding: 6px 15px;
+}
+.mui-bar {
+    background-color: #000000;
+}
+.mui-bar .mui-icon {
+    color: #FFFFFF;
+    font-size: 18px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.mui-bar .mui-title {
+    right: 40px;
+    left: 40px;
+    display: inline-block;
+    overflow: hidden;
+    width: auto;
+    margin: 0;
+    text-overflow: ellipsis;
+    color: #ffffff;
+}
+.mui-table-view-cell:after{
+	left: 15px;
+	right: 15px;
+}
+.mui-table-view-cell:last-child:after, .mui-table-view-cell:last-child:before{
+	height: 1px;
+}
+.mui-input-row label{
+	height: 25px;
+	line-height: 25px;
+}
         .mui-content{margin-top: 12px;}
         .mui-btn{width: 95%;}
+		.addUser{
+			width: 95%;
+			margin: 0 auto;
+		}
+		.addUser .mui-input-row{
+			padding: 20px 0;
+		}
+		.mui-input-group .mui-input-row{
+			height: 60px;
+		}
+		.mui-content-padded{
+			margin-top: 30px;
+		}
+		.mui-input-row .mui-input-clear~.mui-icon-clear, .mui-input-row .mui-input-password~.mui-icon-eye, .mui-input-row .mui-input-speech~.mui-icon-speech{
+			top: 30px;
+		}
     </style>
 </head>
 <body>
@@ -21,15 +373,15 @@
         <form class="mui-input-group addUser">
             <div class="mui-input-row">
               <label><span class="mui-icon mui-icon-contact"></span>账户：</label>
-                <input type="text" class="mui-input-clear  mui-input-speech" placeholder="请输入账号" id="username">
+                <input type="text" class="mui-input-speech" placeholder="请输入账号" id="username">
             </div>
             <div class="mui-input-row">
                 <label><span class="mui-icon mui-icon-locked"></span>密码：</label>
-                <input type="password" class="mui-input-clear mui-input-password  " placeholder="请输入密码" id="password">
+                <input type="password" class="mui-input-password" placeholder="请输入密码" id="password">
             </div>
             <div class="mui-input-row">
                 <label><span class="mui-icon mui-icon-person"></span>昵称</label>
-                <input type="text" class="mui-input-clear  mui-input-speech" placeholder="请输入昵称" id="nickname">
+                <input type="text" class="mui-input-speech"  placeholder="请输入昵称" id="nickname">
             </div>
         </form>
         <div class="mui-content-padded" align="center">
