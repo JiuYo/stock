@@ -14,12 +14,6 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		var b = Math.random().toString(36).substr(2);
 		//把唯一的uuid赋值给输入框显示到界面
 		$("#auuid").val(b);
-	/* 	//加密方法
-		var c = compileStr(b);
-		alert(c)
-		//解密方法
-		var d = uncompileStr(c);
-		alert(d); */
 	});
 
 	

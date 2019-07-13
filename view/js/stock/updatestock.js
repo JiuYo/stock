@@ -180,6 +180,7 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		//监听左上角返回事件,当返回后,刷新stocklist.html页面数据
 		document.getElementById("isa").addEventListener('tap',function(){
 			var ws = plus.webview.getWebviewById("stock/stocklist.html");
+			console.log(ws)
 			ws.reload(true);
 	});
 	
