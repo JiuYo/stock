@@ -47,8 +47,8 @@ define(['jquery',"mui","common","service/stock/stock","model/UserModel",'utils/s
 		var priceVal = $("#price").val();
 		params.price = priceVal;
 		// 进货时间
-		var dateVal = $('#date').html();
-		params.date = dateVal;
+		// var dateVal = $('#date').html();
+		params.date = dateutil.getNewDate();
 		params.create_time = dateutil.getNewDate();
 		params.stock = countVal;
 		params.sale = 0;
