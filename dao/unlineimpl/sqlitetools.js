@@ -176,7 +176,7 @@ define(['jquery','common',"model/UserModel",'utils/systemutil'], function ($,com
 			   if(params.page == 1){
 				   rows = 0;
 			   }else{
-				   rows = page*params.rows;
+				   rows = (params.page-1)*params.rows;
 			   }
 			   pageSql = " limit "+rows+" , "+params.rows+ " ";
 		   }
